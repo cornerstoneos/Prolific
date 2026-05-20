@@ -183,13 +183,28 @@ footer{padding:44px 22px 36px;}
 .f-bottom{flex-direction:column;gap:12px;text-align:center;}
 .fr{grid-template-columns:1fr;}
 }
+.retainer{padding:100px 56px;background:var(--off);border-bottom:1px solid var(--line);}
+.ret-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-bottom:40px;}
+.ret-card{background:var(--white);padding:48px 36px;display:flex;flex-direction:column;transition:background .25s;}
+.ret-card:hover{background:var(--black);color:var(--white);}
+.ret-card:hover .ret-tier,.ret-card:hover .ret-price,.ret-card:hover .ret-period,.ret-card:hover .ret-detail{color:var(--white);}
+.ret-card:hover .ret-divider{background:rgba(255,255,255,.15);}
+.ret-card:hover .ret-cta{background:var(--white);color:var(--black);}
+.ret-tier{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:20px;}
+.ret-price{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;line-height:1;letter-spacing:.02em;}
+.ret-period{font-size:.62rem;color:var(--mid);margin-bottom:28px;letter-spacing:.1em;}
+.ret-divider{height:1px;background:var(--line);margin-bottom:24px;}
+.ret-detail{font-size:.74rem;line-height:1.8;color:var(--mid);flex:1;margin-bottom:28px;}
+.ret-cta{display:inline-block;padding:12px 24px;background:var(--black);color:var(--white);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:all .2s;font-family:'Montserrat',sans-serif;text-align:center;}
+.ret-note{font-size:.72rem;color:var(--mid);line-height:1.7;border-top:1px solid var(--line);padding-top:24px;font-style:italic;}
+@media(max-width:900px){.ret-grid{grid-template-columns:1fr 1fr;}.retainer{padding:72px 22px;}}
 </style>
 </head>
 <body>
 <div class="cur" id="cur"><div class="cur-d" id="cd"></div><div class="cur-r" id="cr"></div></div>
 <nav id="nav">
   <a href="#" class="nl">
-/#
+    <img src="logo.jpg" alt="Prolific"/>
     <span class="nl-t">Prolific</span>
   </a>
   <div class="nr">
@@ -197,7 +212,7 @@ footer{padding:44px 22px 36px;}
     <a href="#work">Work</a>
     <a href="#packages">Packages</a>
     <a href="#inquiry">Contact</a>
-    <a href="https://calendly.com/prolificgrp/30min" target="_blank" class="nb">Book a Consultation</a>
+    <a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank" class="nb">Book Now</a>
   </div>
 </nav>
 <section class="hero">
@@ -206,9 +221,9 @@ footer{padding:44px 22px 36px;}
   <h1 class="hero-title">Curated<br/><em>Property</em><br/>Experiences</h1>
   <p class="hero-script">Refined media and design for select properties.</p>
   <div class="hero-rule"></div>
-  <p class="hero-sub">Everything your listing needs — photos, video, 3D tour, drone, floor plans — one visit, 48-hour delivery. Book a free consultation and we'll handle the rest.</p>
+  <p class="hero-sub">Everything your listing needs — photos, video, 3D tour, drone, floor plans — one visit, next-day delivery. Book now and we'll handle the rest.</p>
   <div class="hero-actions">
-    <a href="https://calendly.com/prolificgrp/30min" target="_blank" class="btn-dark">Book a Consultation</a>
+    <a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank" class="btn-dark">Book Now</a>
     <a href="#work" class="btn-outline">View Our Work</a>
   </div>
 </section>
@@ -222,7 +237,7 @@ footer{padding:44px 22px 36px;}
     <span class="mqi"><b>Drone Footage</b></span><span class="mqi">·</span>
     <span class="mqi"><b>Virtual Staging</b></span><span class="mqi">·</span>
     <span class="mqi"><b>Social Content</b></span><span class="mqi">·</span>
-    <span class="mqi"><b>48-Hour Delivery</b></span><span class="mqi">·</span>
+    <span class="mqi"><b>Next-Day Delivery</b></span><span class="mqi">·</span>
     <span class="mqi"><b>Photography</b></span><span class="mqi">·</span>
     <span class="mqi"><b>Cinematic Video</b></span><span class="mqi">·</span>
     <span class="mqi"><b>3D Tours</b></span><span class="mqi">·</span>
@@ -231,7 +246,7 @@ footer{padding:44px 22px 36px;}
     <span class="mqi"><b>Drone Footage</b></span><span class="mqi">·</span>
     <span class="mqi"><b>Virtual Staging</b></span><span class="mqi">·</span>
     <span class="mqi"><b>Social Content</b></span><span class="mqi">·</span>
-    <span class="mqi"><b>48-Hour Delivery</b></span><span class="mqi">·</span>
+    <span class="mqi"><b>Next-Day Delivery</b></span><span class="mqi">·</span>
   </div>
 </div>
 <section class="serve rv" id="serve">
@@ -291,16 +306,55 @@ footer{padding:44px 22px 36px;}
   </div>
   <div id="tab-residential" class="pkg-panel active">
     <img src="IMG_1794.jpeg" alt="Residential Packages" class="pkg-image"/>
-    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (&lt;48 hours)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span><span class="pkg-addon">Measurements</span></div></div>
+    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (Same-Day)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span><span class="pkg-addon">Measurements</span></div></div>
   </div>
   <div id="tab-development" class="pkg-panel">
     <img src="IMG_2087.jpeg" alt="Development Packages" class="pkg-image"/>
-    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (&lt;48 hours)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span></div></div>
+    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (Same-Day)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span></div></div>
   </div>
   <div id="tab-property" class="pkg-panel">
     <img src="IMG_2056.jpeg" alt="Property Mgmt Packages" class="pkg-image"/>
-    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (&lt;48 hours)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span><span class="pkg-addon">Measurements</span></div></div>
+    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (Same-Day)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span><span class="pkg-addon">Measurements</span></div></div>
   </div>
+</section>
+<section class="retainer rv" id="retainer">
+  <div class="sl">Retainer Packages</div>
+  <h2 class="st">Monthly Media. <em>Every Month.</em></h2>
+  <div class="ret-grid">
+    <div class="ret-card">
+      <div class="ret-tier">Starter</div>
+      <div class="ret-price">$200</div>
+      <div class="ret-period">/ month</div>
+      <div class="ret-divider"></div>
+      <div class="ret-detail">2 shoots per month<br/>Photos only<br/>Standard turnaround</div>
+      <a href="https://buy.stripe.com/fZueVefx99O82RKdIrfrW0b" target="_blank" class="ret-cta">Book Starter</a>
+    </div>
+    <div class="ret-card">
+      <div class="ret-tier">Active</div>
+      <div class="ret-price">$450</div>
+      <div class="ret-period">/ month</div>
+      <div class="ret-divider"></div>
+      <div class="ret-detail">4 shoots per month<br/>Photos + one video<br/>Standard turnaround</div>
+      <a href="https://buy.stripe.com/28EdRa70D3pKakcfQzfrW07" target="_blank" class="ret-cta">Book Active</a>
+    </div>
+    <div class="ret-card">
+      <div class="ret-tier">Power</div>
+      <div class="ret-price">$1,500</div>
+      <div class="ret-period">/ month</div>
+      <div class="ret-divider"></div>
+      <div class="ret-detail">4 full Curated Property Experiences/month<br/>Priority scheduling<br/>Full service<br/>Exclusivity per market available</div>
+      <a href="https://calendly.com/prolificgrp/30min" target="_blank" class="ret-cta">Book via Calendly</a>
+    </div>
+    <div class="ret-card">
+      <div class="ret-tier">Power Unlimited + Developers / Builders</div>
+      <div class="ret-price">Custom</div>
+      <div class="ret-period">pricing</div>
+      <div class="ret-divider"></div>
+      <div class="ret-detail">Tailored volume &amp; scope<br/>Built for developers, builders &amp; large portfolios<br/>Priority scheduling &amp; full service</div>
+      <a href="https://calendly.com/prolificgrp/30min" target="_blank" class="ret-cta">Book via Calendly</a>
+    </div>
+  </div>
+  <p class="ret-note">Unused shoots don't roll over. Exclusivity per market available at Power tier.</p>
 </section>
 <section class="measurements rv">
   <div class="meas-inner">
@@ -315,10 +369,10 @@ footer{padding:44px 22px 36px;}
       </div>
     </div>
     <div class="meas-right">
-      <div class="meas-stat"><div class="meas-stat-num">48h</div><div class="meas-stat-lbl">Delivery</div></div>
+      <div class="meas-stat"><div class="meas-stat-num">24h</div><div class="meas-stat-lbl">Delivery</div></div>
       <div class="meas-stat"><div class="meas-stat-num">1</div><div class="meas-stat-lbl">Site Visit</div></div>
       <div class="meas-stat"><div class="meas-stat-num">8+</div><div class="meas-stat-lbl">Deliverables</div></div>
-      <div class="meas-stat"><div class="meas-stat-num">S.FL</div><div class="meas-stat-lbl">Keys to PBC</div></div>
+      <div class="meas-stat"><div class="meas-stat-num" style="font-size:1.6rem;">South Florida</div><div class="meas-stat-lbl">Keys to PBC</div></div>
     </div>
   </div>
 </section>
@@ -329,7 +383,7 @@ footer{padding:44px 22px 36px;}
     <div class="proc-step"><div class="ps-n">01</div><div class="ps-t">Inquire</div><div class="ps-d">Submit your intake form or book directly. We confirm availability and package details within 24 hours.</div><span class="ps-b">5 Minutes</span></div>
     <div class="proc-step"><div class="ps-n">02</div><div class="ps-t">Book Your Date</div><div class="ps-d">Select your shoot date via Calendly. Receive instant confirmation with everything you need to prepare the property.</div><span class="ps-b">Instant Confirmation</span></div>
     <div class="proc-step"><div class="ps-n">03</div><div class="ps-t">We Shoot</div><div class="ps-d">We arrive on time. Photos, video, 3D scan, measurements, drone — all completed in one efficient visit.</div><span class="ps-b">One Visit</span></div>
-    <div class="proc-step"><div class="ps-n">04</div><div class="ps-t">You Receive</div><div class="ps-d">All deliverables in one organized Google Drive link within 48 hours. MLS-ready, social-ready, print-ready.</div><span class="ps-b">48-Hour Delivery</span></div>
+    <div class="proc-step"><div class="ps-n">04</div><div class="ps-t">You Receive</div><div class="ps-d">All deliverables in one organized Google Drive link next day. MLS-ready, social-ready, print-ready.</div><span class="ps-b">Next-Day Delivery</span></div>
   </div>
 </section>
 <section class="inquiry rv" id="inquiry">
@@ -341,7 +395,7 @@ footer{padding:44px 22px 36px;}
       <div class="inq-details">
         <div class="inq-det">Residential · Development · Property Management</div>
         <div class="inq-det">Standard · Premium · Elite packages available</div>
-        <div class="inq-det">48-hour delivery on all packages</div>
+        <div class="inq-det">Next-day delivery on all packages</div>
         <div class="inq-det">All files delivered via Google Drive link</div>
         <div class="inq-det">Works with agents from any brokerage</div>
       </div>
@@ -355,7 +409,7 @@ footer{padding:44px 22px 36px;}
         <div class="if-title">Start Your Inquiry</div>
         <p class="if-sub">Book a shoot directly or submit your full intake details.</p>
         <div class="if-ql">
-          <a href="https://calendly.com/prolificgrp/30min" target="_blank" class="if-qbtn"><div class="if-qbtn-ico">📅</div><div class="if-qbtn-lbl">Book a Consultation</div><div class="if-qbtn-sub">30-min call, no commitment</div></a>
+          <a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank" class="if-qbtn"><div class="if-qbtn-ico">📅</div><div class="if-qbtn-lbl">Book Now</div><div class="if-qbtn-sub">Instant booking, no commitment</div></a>
           <a href="https://form.jotform.com/253508449354160" target="_blank" class="if-qbtn"><div class="if-qbtn-ico">📋</div><div class="if-qbtn-lbl">Intake Form</div><div class="if-qbtn-sub">Full project details</div></a>
         </div>
         <div class="if-div"><span>or send a quick message</span></div>
@@ -384,7 +438,7 @@ footer{padding:44px 22px 36px;}
     </div>
     <div style="display:flex;gap:56px;">
       <div class="f-col"><div class="f-col-title">Navigate</div><a href="#serve">Services</a><a href="#work">Work</a><a href="#packages">Packages</a><a href="#process">Process</a></div>
-      <div class="f-col"><div class="f-col-title">Book</div><a href="https://calendly.com/prolificgrp/30min" target="_blank">Schedule a Consultation</a><a href="https://form.jotform.com/253508449354160" target="_blank">Intake Form</a><a href="#inquiry">Get in Touch</a></div>
+      <div class="f-col"><div class="f-col-title">Book</div><a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank">Book Now</a><a href="https://form.jotform.com/253508449354160" target="_blank">Intake Form</a><a href="#inquiry">Get in Touch</a></div>
       <div class="f-col"><div class="f-col-title">Follow</div><a href="https://www.instagram.com/prolificgroupllc?igsh=amtmZ3dnaTQyMjE2&utm_source=qr" target="_blank">Instagram</a><a href="https://www.tiktok.com/@prolificgroupllc?_r=1&_t=ZP-95Iq59NgRxe" target="_blank">TikTok</a></div>
     </div>
   </div>
