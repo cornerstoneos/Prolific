@@ -80,18 +80,38 @@ nav.sc{background:rgba(250,250,248,.96);backdrop-filter:blur(20px);border-color:
 .svc-ico{font-size:1.6rem;margin-bottom:18px;display:block;}
 .svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;letter-spacing:.04em;margin-bottom:8px;}
 .svc-desc{font-size:.72rem;line-height:1.7;color:var(--mid);}
-.packages{padding:100px 56px;border-bottom:1px solid var(--line);}
-.pkg-tabs{display:flex;gap:0;margin-bottom:56px;border-bottom:1px solid var(--line);}
-.ptab{padding:14px 32px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;background:none;border-left:none;border-right:none;border-top:none;font-family:'Montserrat',sans-serif;}
-.ptab.active{color:var(--black);border-bottom-color:var(--black);}
-.ptab:hover{color:var(--black);}
-.pkg-panel{display:none;}
-.pkg-panel.active{display:block;}
-.pkg-image{width:100%;max-width:760px;margin:0 auto;display:block;border:1px solid var(--line);}
-.pkg-addons{margin-top:40px;background:var(--off);border:1px solid var(--line);padding:36px 40px;max-width:760px;margin-left:auto;margin-right:auto;}
-.pkg-addons-title{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:16px;}
-.pkg-addon-list{display:flex;flex-wrap:wrap;gap:10px;}
-.pkg-addon{font-size:.7rem;color:var(--black);border:1px solid var(--line);padding:6px 16px;}
+.packages{padding:100px 56px 0;border-bottom:1px solid var(--line);}
+.pkg-spread{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.pkg-card{position:relative;overflow:hidden;}
+.pkg-card img{width:100%;display:block;transition:transform .6s ease;}
+.pkg-card:hover img{transform:scale(1.03);}
+.pkg-card-foot{position:absolute;bottom:0;left:0;right:0;padding:18px 22px;background:linear-gradient(transparent,rgba(12,12,12,.65));}
+.pkg-card-lbl{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.pkg-cpe{text-align:center;padding:56px 40px;border-bottom:1px solid var(--line);}
+.pkg-cpe-eye{font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mid);margin-bottom:18px;}
+.pkg-cpe-btn{display:block;width:fit-content;margin:0 auto 16px;padding:15px 52px;background:var(--black);color:var(--white);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s;font-family:'Montserrat',sans-serif;}
+.pkg-cpe-btn:hover{background:#2a2a2a;}
+.pkg-cpe-note{font-size:.6rem;color:var(--dim);letter-spacing:.09em;}
+.bk-menu{padding:0;}
+.bk-row{display:grid;grid-template-columns:160px 1fr;border-top:1px solid var(--line);padding:44px 0;}
+.bk-row:last-child{border-bottom:1px solid var(--line);}
+.bk-cat{font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);line-height:2;padding-top:18px;}
+.bk-items{display:flex;flex-direction:column;}
+.bk-item{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--black);transition:padding-left .3s ease;}
+.bk-item:last-child{border-bottom:none;}
+.bk-item:hover{padding-left:8px;}
+.bk-num{font-family:'Cormorant Garamond',serif;font-size:.85rem;color:var(--dim);flex-shrink:0;width:24px;line-height:1;}
+.bk-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;letter-spacing:.03em;}
+.bk-line{flex:1;height:1px;background:var(--line);transition:background .3s;}
+.bk-item:hover .bk-line{background:var(--black);}
+.bk-cta{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);flex-shrink:0;transition:color .3s;}
+.bk-item:hover .bk-cta{color:var(--black);}
+.monthly-panel{display:flex;justify-content:space-between;align-items:center;gap:40px;background:var(--black);padding:56px 56px;margin:56px -56px 0;}
+.monthly-eye{font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:10px;}
+.monthly-ttl{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--white);letter-spacing:.04em;margin-bottom:10px;}
+.monthly-det{font-size:.7rem;color:rgba(255,255,255,.4);line-height:1.75;max-width:500px;}
+.monthly-cta{display:inline-block;flex-shrink:0;padding:14px 36px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .25s;white-space:nowrap;font-family:'Montserrat',sans-serif;}
+.monthly-cta:hover{border-color:rgba(255,255,255,.6);color:var(--white);}
 .measurements{padding:80px 56px;background:var(--black);color:var(--white);border-bottom:1px solid #222;}
 .meas-inner{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;}
 .meas-left .st{color:var(--white);margin-bottom:20px;}
@@ -177,27 +197,20 @@ nav{padding:18px 22px;}
 .lookbook{grid-template-columns:1fr 1fr;}
 .meas-inner,.inq-inner{grid-template-columns:1fr;gap:48px;}
 .meas-right{grid-template-columns:1fr 1fr;}
-.pkg-tabs{overflow-x:auto;}
 footer{padding:44px 22px 36px;}
 .fi2{flex-direction:column;gap:28px;}
 .f-bottom{flex-direction:column;gap:12px;text-align:center;}
 .fr{grid-template-columns:1fr;}
 }
-.retainer{padding:100px 56px;background:var(--off);border-bottom:1px solid var(--line);}
-.ret-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-bottom:40px;}
-.ret-card{background:var(--white);padding:48px 36px;display:flex;flex-direction:column;transition:background .25s;}
-.ret-card:hover{background:var(--black);color:var(--white);}
-.ret-card:hover .ret-tier,.ret-card:hover .ret-price,.ret-card:hover .ret-period,.ret-card:hover .ret-detail{color:var(--white);}
-.ret-card:hover .ret-divider{background:rgba(255,255,255,.15);}
-.ret-card:hover .ret-cta{background:var(--white);color:var(--black);}
-.ret-tier{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:20px;}
-.ret-price{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;line-height:1;letter-spacing:.02em;}
-.ret-period{font-size:.62rem;color:var(--mid);margin-bottom:28px;letter-spacing:.1em;}
-.ret-divider{height:1px;background:var(--line);margin-bottom:24px;}
-.ret-detail{font-size:.74rem;line-height:1.8;color:var(--mid);flex:1;margin-bottom:28px;}
-.ret-cta{display:inline-block;padding:12px 24px;background:var(--black);color:var(--white);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:all .2s;font-family:'Montserrat',sans-serif;text-align:center;}
-.ret-note{font-size:.72rem;color:var(--mid);line-height:1.7;border-top:1px solid var(--line);padding-top:24px;font-style:italic;}
-@media(max-width:900px){.ret-grid{grid-template-columns:1fr 1fr;}.retainer{padding:72px 22px;}}
+@media(max-width:900px){
+.packages{padding:72px 22px 0;}
+.pkg-spread{grid-template-columns:1fr;}
+.bk-row{grid-template-columns:1fr;gap:6px;padding:28px 0;}
+.bk-cat{padding-top:0;padding-bottom:4px;}
+.bk-name{font-size:1.2rem;}
+.monthly-panel{flex-direction:column;gap:24px;padding:44px 22px;margin:44px -22px 0;text-align:center;}
+.monthly-det{max-width:100%;}
+}
 </style>
 </head>
 <body>
@@ -253,7 +266,7 @@ footer{padding:44px 22px 36px;}
   <div class="sl">Who We Serve</div>
   <h2 class="st">Built for Every <em>Property Type</em></h2>
   <div class="serve-grid">
-    <div class="sv"><div class="sv-num">01</div><div class="sv-label">Residential</div><div class="sv-title">Agents &amp; Homeowners</div><div class="sv-desc">From single listings to high-volume agents, we deliver everything your MLS and marketing needs — photos, video, 3D, drone, floor plans, and social content in one visit.</div><ul class="sv-items"><li>30+ HDR photos</li><li>Cinematic listing video</li><li>Asteroom 3D tour</li><li>Drone footage</li><li>Floor plans &amp; measurements</li><li>Social content packs</li></ul><a href="#packages" class="sv-cta">View Packages →</a></div>
+    <div class="sv"><div class="sv-num">01</div><div class="sv-label">Residential</div><div class="sv-title">Agents &amp; Homeowners</div><div class="sv-desc">From single listings to high-volume agents, we deliver everything your MLS and marketing needs — photos, video, 3D, drone, floor plans, and social content in one visit.</div><ul class="sv-items"><li>30+ HDR photos</li><li>Cinematic listing video</li><li>3D virtual tour</li><li>Drone footage</li><li>Floor plans &amp; measurements</li><li>Social content packs</li></ul><a href="#packages" class="sv-cta">View Packages →</a></div>
     <div class="sv"><div class="sv-num">02</div><div class="sv-label">Development</div><div class="sv-title">Developers &amp; Builders</div><div class="sv-desc">From pre-sale to launch, we craft bespoke media visions that captivate buyers. Renderings, pitch decks, time-lapse documentation, and full project marketing coordination.</div><ul class="sv-items"><li>Renderings &amp; maps</li><li>Pitch decks &amp; signage</li><li>Interactive site plans</li><li>Post-construction visuals</li><li>Time-lapse documentation</li><li>Full project coordination</li></ul><a href="#packages" class="sv-cta">View Packages →</a></div>
     <div class="sv"><div class="sv-num">03</div><div class="sv-label">Property Management</div><div class="sv-title">Managers &amp; Investors</div><div class="sv-desc">Portfolio-wide media suites built to attract elite tenants and maximize yields. 3D tours with dollhouse view, neighborhood maps, event coverage, and custom branding.</div><ul class="sv-items"><li>3D tours with dollhouse view</li><li>Neighborhood maps</li><li>Portfolio-wide promo</li><li>Event coverage</li><li>Full strategy &amp; branding</li><li>Social content packs</li></ul><a href="#packages" class="sv-cta">View Packages →</a></div>
   </div>
@@ -270,17 +283,6 @@ footer{padding:44px 22px 36px;}
     <div class="proof-item"><img src="IMG_2056.jpeg" alt="Architectural ceiling detail" loading="lazy"/></div>
     <div class="proof-item"><img src="2026-03-26-09-03-23-044.jpeg" alt="Aerial drone view" loading="lazy"/></div>
   </div>
-  <a href="https://www.asteroommls.com/pviewer?hideleadgen=1&token=y5neCIXZU0GAoPZ9Nhy4bw" target="_blank" rel="noopener"
-    style="display:block;margin-top:3px;text-decoration:none;position:relative;background:#0a0a0a;padding:64px 40px;text-align:center;cursor:pointer;transition:background .25s;"
-    onmouseover="this.style.background='#111'" onmouseout="this.style.background='#0a0a0a'">
-    <div style="font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(244,243,238,.3);margin-bottom:20px;font-family:'Montserrat',sans-serif;">Asteroom · 3D Virtual Tour</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:300;color:rgba(244,243,238,.85);letter-spacing:.06em;margin-bottom:16px;">Walk Through the Property</div>
-    <div style="font-size:.72rem;color:rgba(244,243,238,.3);margin-bottom:32px;font-family:'Montserrat',sans-serif;letter-spacing:.1em;">Immersive 3D tour — every room, every angle</div>
-    <div style="display:inline-flex;align-items:center;gap:14px;border:1px solid rgba(244,243,238,.2);padding:14px 36px;color:rgba(244,243,238,.7);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;font-family:'Montserrat',sans-serif;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
-      Launch 3D Tour
-    </div>
-  </a>
 </section>
 <section class="services rv" id="services">
   <div class="sl">What We Deliver</div>
@@ -288,7 +290,7 @@ footer{padding:44px 22px 36px;}
   <div class="svc-grid">
     <div class="svc"><span class="svc-ico">📸</span><div class="svc-name">Photography</div><div class="svc-desc">30+ HDR edited images. Interiors, exteriors, twilight, and detail shots ready for MLS and print.</div></div>
     <div class="svc"><span class="svc-ico">🎬</span><div class="svc-name">Cinematic Video</div><div class="svc-desc">Full listing video with MLS cuts, short-form reels for Instagram and TikTok, and branded edits.</div></div>
-    <div class="svc"><span class="svc-ico">🔄</span><div class="svc-name">3D Tours</div><div class="svc-desc">Immersive Asteroom virtual tours with dollhouse view and shareable link for MLS embedding.</div></div>
+    <div class="svc"><span class="svc-ico">🔄</span><div class="svc-name">3D Tours</div><div class="svc-desc">Immersive virtual tours with dollhouse view and shareable link for MLS embedding.</div></div>
     <div class="svc"><span class="svc-ico">🚁</span><div class="svc-name">Drone Footage</div><div class="svc-desc">FAA-compliant aerial photography and video. Neighborhood context, site overviews, and establishing shots.</div></div>
     <div class="svc"><span class="svc-ico">📐</span><div class="svc-name">Floor Plans</div><div class="svc-desc">Professionally measured and rendered floor plans. Dimensioned layouts ready for MLS and marketing.</div></div>
     <div class="svc"><span class="svc-ico">📏</span><div class="svc-name">Measurements</div><div class="svc-desc">Precise room-by-room measurements captured on-site. Accurate square footage documentation for listings and appraisals.</div></div>
@@ -297,64 +299,77 @@ footer{padding:44px 22px 36px;}
   </div>
 </section>
 <section class="packages rv" id="packages">
-  <div class="sl">Our Packages</div>
-  <h2 class="st">Standard. Premium. <em>Elite.</em></h2>
-  <div class="pkg-tabs">
-    <button class="ptab active" onclick="switchTab('residential',this)">Residential</button>
-    <button class="ptab" onclick="switchTab('development',this)">Development</button>
-    <button class="ptab" onclick="switchTab('property',this)">Property Mgmt</button>
-  </div>
-  <div id="tab-residential" class="pkg-panel active">
-    <img src="IMG_1794.jpeg" alt="Residential Packages" class="pkg-image"/>
-    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (Same-Day)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span><span class="pkg-addon">Measurements</span></div></div>
-  </div>
-  <div id="tab-development" class="pkg-panel">
-    <img src="IMG_2087.jpeg" alt="Development Packages" class="pkg-image"/>
-    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (Same-Day)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span></div></div>
-  </div>
-  <div id="tab-property" class="pkg-panel">
-    <img src="IMG_2056.jpeg" alt="Property Mgmt Packages" class="pkg-image"/>
-    <div class="pkg-addons"><div class="pkg-addons-title">Add-Ons Available with Any Package</div><div class="pkg-addon-list"><span class="pkg-addon">Rush Delivery (Same-Day)</span><span class="pkg-addon">Virtual Staging</span><span class="pkg-addon">Interior Design Consult</span><span class="pkg-addon">Storage Solutions</span><span class="pkg-addon">Social Content</span><span class="pkg-addon">Measurements</span></div></div>
-  </div>
-</section>
-<section class="retainer rv" id="retainer">
-  <div class="sl">Retainer Packages</div>
-  <h2 class="st">Monthly Media. <em>Every Month.</em></h2>
-  <div class="ret-grid">
-    <div class="ret-card">
-      <div class="ret-tier">Starter</div>
-      <div class="ret-price">$200</div>
-      <div class="ret-period">/ month</div>
-      <div class="ret-divider"></div>
-      <div class="ret-detail">2 shoots per month<br/>Photos only<br/>Standard turnaround</div>
-      <a href="https://buy.stripe.com/fZueVefx99O82RKdIrfrW0b" target="_blank" class="ret-cta">Book Starter</a>
+  <div class="sl">Packages &amp; Retainers</div>
+  <h2 class="st">The Full <em>Experience.</em></h2>
+  <div class="pkg-spread">
+    <div class="pkg-card">
+      <img src="IMG_2229.jpeg" alt="Residential Packages" loading="lazy"/>
+      <div class="pkg-card-foot"><span class="pkg-card-lbl">Residential</span></div>
     </div>
-    <div class="ret-card">
-      <div class="ret-tier">Active</div>
-      <div class="ret-price">$450</div>
-      <div class="ret-period">/ month</div>
-      <div class="ret-divider"></div>
-      <div class="ret-detail">4 shoots per month<br/>Photos + one video<br/>Standard turnaround</div>
-      <a href="https://buy.stripe.com/28EdRa70D3pKakcfQzfrW07" target="_blank" class="ret-cta">Book Active</a>
+    <div class="pkg-card">
+      <img src="IMG_2230.jpeg" alt="Development Packages" loading="lazy"/>
+      <div class="pkg-card-foot"><span class="pkg-card-lbl">Development</span></div>
     </div>
-    <div class="ret-card">
-      <div class="ret-tier">Power</div>
-      <div class="ret-price">$1,500</div>
-      <div class="ret-period">/ month</div>
-      <div class="ret-divider"></div>
-      <div class="ret-detail">4 full Curated Property Experiences/month<br/>Priority scheduling<br/>Full service<br/>Exclusivity per market available</div>
-      <a href="https://calendly.com/prolificgrp/30min" target="_blank" class="ret-cta">Book via Calendly</a>
-    </div>
-    <div class="ret-card">
-      <div class="ret-tier">Power Unlimited + Developers / Builders</div>
-      <div class="ret-price">Custom</div>
-      <div class="ret-period">pricing</div>
-      <div class="ret-divider"></div>
-      <div class="ret-detail">Tailored volume &amp; scope<br/>Built for developers, builders &amp; large portfolios<br/>Priority scheduling &amp; full service</div>
-      <a href="https://calendly.com/prolificgrp/30min" target="_blank" class="ret-cta">Book via Calendly</a>
+    <div class="pkg-card">
+      <img src="IMG_2231.jpeg" alt="Property Management Packages" loading="lazy"/>
+      <div class="pkg-card-foot"><span class="pkg-card-lbl">Property Mgmt</span></div>
     </div>
   </div>
-  <p class="ret-note">Unused shoots don't roll over. Exclusivity per market available at Power tier.</p>
+  <div class="pkg-cpe">
+    <p class="pkg-cpe-eye">The Complete Curated Property Experience</p>
+    <a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank" class="pkg-cpe-btn">Book the Full Experience</a>
+    <p class="pkg-cpe-note">Photos · Video · 3D Tour · Drone · Floor Plans · Measurements · Social Content</p>
+  </div>
+  <div class="bk-menu">
+    <div class="bk-row">
+      <div class="bk-cat">Curated<br/>Combos</div>
+      <div class="bk-items">
+        <a href="https://buy.stripe.com/eVq9AUacP5xS9g8bAjfrW02" target="_blank" class="bk-item">
+          <span class="bk-num">01</span>
+          <span class="bk-name">Photos + Video + Drone</span>
+          <span class="bk-line"></span>
+          <span class="bk-cta">Book →</span>
+        </a>
+        <a href="https://buy.stripe.com/00waEY2Kn9O8akcawffrW05" target="_blank" class="bk-item">
+          <span class="bk-num">02</span>
+          <span class="bk-name">Choose Any Two Services</span>
+          <span class="bk-line"></span>
+          <span class="bk-cta">Book →</span>
+        </a>
+      </div>
+    </div>
+    <div class="bk-row">
+      <div class="bk-cat">À la<br/>Carte</div>
+      <div class="bk-items">
+        <a href="https://buy.stripe.com/dRmbJ284H8K49g833NfrW01" target="_blank" class="bk-item">
+          <span class="bk-num">03</span>
+          <span class="bk-name">Photography Only</span>
+          <span class="bk-line"></span>
+          <span class="bk-cta">Book →</span>
+        </a>
+        <a href="https://buy.stripe.com/cNi9AUet50dy1NGfQzfrW04" target="_blank" class="bk-item">
+          <span class="bk-num">04</span>
+          <span class="bk-name">3D Virtual Tour</span>
+          <span class="bk-line"></span>
+          <span class="bk-cta">Book →</span>
+        </a>
+        <a href="https://buy.stripe.com/14A14o98L6BWdwodIrfrW06" target="_blank" class="bk-item">
+          <span class="bk-num">05</span>
+          <span class="bk-name">Floor Plans + Measurements</span>
+          <span class="bk-line"></span>
+          <span class="bk-cta">Book →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="monthly-panel">
+    <div class="monthly-left">
+      <span class="monthly-eye">Monthly Retainer</span>
+      <div class="monthly-ttl">Power — $1,500 / month</div>
+      <p class="monthly-det">4 full Curated Property Experiences per month · Priority scheduling · Full service · Exclusivity per market available</p>
+    </div>
+    <a href="https://buy.stripe.com/fZu9AU0Cf0dybogeMvfrW00" target="_blank" class="monthly-cta">Start Monthly →</a>
+  </div>
 </section>
 <section class="measurements rv">
   <div class="meas-inner">
@@ -363,7 +378,7 @@ footer{padding:44px 22px 36px;}
       <h2 class="st">Precision at <em>Every Scale</em></h2>
       <p class="meas-copy">Every property measured room by room. Accurate square footage, dimensioned layouts, and professional floor plans — all included in select packages or available as a standalone add-on.</p>
       <div class="meas-items">
-        <div class="meas-item"><div class="meas-n">01</div><div><div class="meas-t">Asteroom PDR Capture</div><div class="meas-d">On-site scanning with Ricoh Theta for precise 3D measurements</div></div></div>
+        <div class="meas-item"><div class="meas-n">01</div><div><div class="meas-t">3D Capture</div><div class="meas-d">On-site scanning with Ricoh Theta for precise 3D measurements</div></div></div>
         <div class="meas-item"><div class="meas-n">02</div><div><div class="meas-t">Floor Plan Rendering</div><div class="meas-d">Dimensioned layouts ready for MLS, marketing, and appraisals</div></div></div>
         <div class="meas-item"><div class="meas-n">03</div><div><div class="meas-t">Square Footage Report</div><div class="meas-d">Room-by-room documentation for listing accuracy</div></div></div>
       </div>
@@ -457,7 +472,6 @@ const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',window.scrollY>40));
 const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);obs.unobserve(e.target);}});},{threshold:.06});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-function switchTab(id,btn){document.querySelectorAll('.pkg-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');}
 function handleSubmit(e){e.preventDefault();const b=e.target;b.textContent='Sent ✓';b.style.background='#555';setTimeout(()=>{b.textContent='Send Inquiry →';b.style.background='';},3000);}
 </script>
 </body>
