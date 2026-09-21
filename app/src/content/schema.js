@@ -26,8 +26,6 @@
  *   cta       string   the on-piece ask, part of the content itself — not a
  *                      website button. 'Soft — link in bio' is a legitimate
  *                      value.
- *   status    string   'live' | 'planned' | 'gap'. 'gap' = identified as
- *                      missing, not yet built.
  */
 
 export const segments = [
@@ -42,7 +40,6 @@ export const segments = [
         cadence: 'Per closed deal',
         purpose: 'Proof of velocity',
         cta: 'See what fast media does for your next listing',
-        status: 'live',
       },
       {
         slug: 'weekend-dump',
@@ -50,7 +47,6 @@ export const segments = [
         cadence: 'Weekly',
         purpose: 'Volume & coverage proof, geo-tagged',
         cta: 'Soft — link in bio',
-        status: 'live',
       },
       {
         slug: 'highlight-house',
@@ -58,7 +54,6 @@ export const segments = [
         cadence: 'Weekly',
         purpose: 'Aesthetic discovery',
         cta: 'Book your next listing shoot',
-        status: 'live',
       },
       {
         slug: 'first-shoot-discount',
@@ -66,7 +61,6 @@ export const segments = [
         cadence: 'Monthly',
         purpose: 'Micro-commitment entry point',
         cta: 'First shoot, half off — see the difference',
-        status: 'planned',
       },
     ],
   },
@@ -82,8 +76,6 @@ export const segments = [
         cadence: 'Once, then pinned evergreen',
         purpose: 'Institutional trust, systems proof',
         cta: 'See how we document every property',
-        // Identified gap: never built.
-        status: 'gap',
       },
       {
         slug: 'volume-capacity',
@@ -91,7 +83,6 @@ export const segments = [
         cadence: 'Monthly',
         purpose: 'Proves scale handling',
         cta: 'Talk to us about your next order volume',
-        status: 'planned',
       },
       {
         slug: 'documentation-rigor',
@@ -99,7 +90,6 @@ export const segments = [
         cadence: 'Monthly',
         purpose: 'X-ray thoroughness differentiator',
         cta: 'Get a property fully documented, not just photographed',
-        status: 'planned',
       },
       {
         slug: 'turnaround-speed',
@@ -107,7 +97,6 @@ export const segments = [
         cadence: 'Ongoing, as data builds',
         purpose: 'Speed is the core institutional sell',
         cta: 'Reduce your turnaround time',
-        status: 'planned',
       },
     ],
   },
@@ -123,7 +112,6 @@ export const segments = [
         cadence: 'Per project milestone',
         purpose: 'Long-cycle stay-top-of-mind',
         cta: 'Document your next project from ground up',
-        status: 'planned',
       },
       {
         slug: 'rendering-showcase',
@@ -131,7 +119,6 @@ export const segments = [
         cadence: 'As available',
         purpose: 'Positions Prolific beyond photography',
         cta: 'Soft — portfolio link',
-        status: 'planned',
       },
     ],
   },
@@ -147,7 +134,6 @@ export const segments = [
         cadence: 'Per shoot',
         purpose: 'Differentiates from residential aesthetic content',
         cta: 'Full commercial site documentation, done right',
-        status: 'planned',
       },
       {
         slug: 'multifamily-volume',
@@ -155,7 +141,6 @@ export const segments = [
         cadence: 'Monthly',
         purpose: 'Ties commercial + PM + AMC into one thread',
         cta: 'See what we cover at scale',
-        status: 'planned',
       },
     ],
   },

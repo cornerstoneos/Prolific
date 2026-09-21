@@ -84,7 +84,7 @@ export default function Piece() {
           textAlign: 'center',
         }}
       >
-        /{piece.slug} · {piece.cadence} · {piece.status}
+        /{piece.slug} · {piece.cadence}
       </div>
     </div>
   )
