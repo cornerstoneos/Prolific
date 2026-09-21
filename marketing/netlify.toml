@@ -1,0 +1,11 @@
+# This site's Netlify dashboard "Base directory" must be set to `marketing`
+# so this config only governs that Netlify site -- never the one serving the
+# repo root. Do not move this file to the repo root.
+[build]
+  command = "npm install && npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
