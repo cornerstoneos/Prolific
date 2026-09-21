@@ -1,20 +1,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
-
 body {
-  background: #fafaf8;
-  color: #0c0c0c;
+  background: #0a0a0a;
+  color: #f2f1ed;
   font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 img, video { max-width: 100%; }
-
-input, textarea, select, button { font: inherit; }
-
-input::placeholder, textarea::placeholder { color: #c8c8c0; }
-
 a { color: inherit; }

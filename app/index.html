@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prolific — Content Engine</title>
-    <meta
-      name="description"
-      content="Prolific documents properties, not just photographs them. One visit, next-day delivery, decision-ready media."
-    />
-    <link rel="icon" href="/engine/media/logo.jpg" />
+    <title>Prolific — Marketing Engine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,37 +12,6 @@
     />
   </head>
   <body>
-    <!--
-      NETLIFY FORMS MIRROR — do not delete.
-
-      Netlify's form-detection bot only scans built static HTML at deploy
-      time. The real form is rendered by React (src/components/LeadForm.jsx)
-      and is therefore invisible to that bot. This static mirror is what gets
-      detected; the React form then POSTs against it.
-
-      Every `name` here MUST stay in sync with LeadForm.jsx:
-        form name  -> prolific-lead   (FORM_NAME export)
-        fields     -> form-name, segment, bot-field, name, email,
-                      company, phone, volume, message
-    -->
-    <form
-      name="prolific-lead"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      enctype="multipart/form-data"
-      hidden
-    >
-      <input type="hidden" name="form-name" value="prolific-lead" />
-      <input type="hidden" name="segment" />
-      <input name="bot-field" />
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="text" name="company" />
-      <input type="tel" name="phone" />
-      <input type="text" name="volume" />
-      <textarea name="message"></textarea>
-    </form>
-
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

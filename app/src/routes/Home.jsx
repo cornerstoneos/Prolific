@@ -1,120 +1,61 @@
 import { Link } from 'react-router-dom'
 import { t } from '../theme'
-import { site } from '../content/site'
-import Reveal from '../components/Reveal'
+import { pieces } from '../content/schema'
 import Eyebrow from '../components/Eyebrow'
-import Divider from '../components/Divider'
 import GhostPanel from '../components/GhostPanel'
-import MediaSlot from '../components/MediaSlot'
 
 /**
- * Internal library view of every page in the project -- NOT a public nav.
- * Every asset gets an entry here so nothing is reachable only by typing a URL.
- * Add a row whenever you add a route.
- *   path  string  router path (the deployed URL is /engine + path)
- *   label string  short display name
- *   meta  string  one line: what it is / what state it is in
- *   thumb string  optional preview image; empty -> placeholder, never a gap
+ * The whole tool. One flat grid of every content piece in the production
+ * menu. Open a card's route, screen-record it, that's the post.
+ * No marketing copy, no forms, no photos on this page — just the index.
  */
-const ASSETS = [
-  {
-    path: '/content-engine',
-    label: 'Marketing Engine',
-    meta: 'Full landing page · 4 segment sections · lead capture live',
-    thumb: '/engine/media/IMG_2282.jpeg',
-  },
-  {
-    path: '/listing/sample-property',
-    label: 'Listing Template',
-    meta: 'Per-property page · sample config, media slots empty',
-    thumb: '/engine/media/IMG_2087.jpeg',
-  },
-  {
-    path: '/schema',
-    label: 'Content Schema',
-    meta: 'Internal production menu · every segment & content type',
-    thumb: '/engine/media/IMG_2056.jpeg',
-  },
-]
-
 export default function Home() {
   return (
-    <div style={{ background: t.white, minHeight: '100vh' }}>
-      <div style={{ padding: 'clamp(64px, 9vw, 110px) clamp(20px, 5vw, 56px)', maxWidth: 1180, margin: '0 auto' }}>
-        <Reveal>
-          <Eyebrow tone="light" style={{ marginBottom: 22 }}>
-            Internal asset library
-          </Eyebrow>
-          <h1
-            style={{
-              fontFamily: t.serif,
-              fontSize: 'clamp(2.2rem, 5.5vw, 4rem)',
-              fontWeight: 300,
-              letterSpacing: '0.03em',
-              margin: '0 0 16px',
-              color: t.black,
-            }}
-          >
-            Prolific
-          </h1>
-          <p style={{ fontFamily: t.sans, fontSize: '0.8rem', lineHeight: 1.95, color: t.mid, maxWidth: 520, margin: 0 }}>
-            Every page in this project, listed. {ASSETS.length} assets.
-          </p>
-        </Reveal>
-
-        <Divider style={{ margin: 'clamp(36px, 5vw, 56px) 0' }} />
+    <div style={{ minHeight: '100vh', background: t.bg, padding: '64px 24px' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
+        <Eyebrow style={{ marginBottom: 14 }}>Prolific — Marketing Engine</Eyebrow>
+        <div style={{ fontFamily: t.sans, fontSize: '0.78rem', color: t.muted, marginBottom: 48 }}>
+          Select an asset · screen record any route · that's your post
+        </div>
 
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))',
-            gap: 3,
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: 14,
+            textAlign: 'left',
           }}
         >
-          {ASSETS.map((asset, i) => (
-            <Reveal key={asset.path} delay={i * 0.07}>
-              <Link to={asset.path} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
-                <GhostPanel tone="light" style={{ overflow: 'hidden', height: '100%' }}>
-                  <div style={{ aspectRatio: '16 / 10', background: '#0c0c0c', overflow: 'hidden' }}>
-                    <MediaSlot src={asset.thumb} alt={asset.label} label="No preview" />
-                  </div>
-                  <div style={{ padding: '22px 22px 26px' }}>
-                    <div
-                      style={{
-                        fontFamily: t.serif,
-                        fontSize: '1.4rem',
-                        fontWeight: 400,
-                        letterSpacing: '0.03em',
-                        color: t.black,
-                        marginBottom: 8,
-                      }}
-                    >
-                      {asset.label}
-                    </div>
-                    <div style={{ fontFamily: t.sans, fontSize: '0.68rem', lineHeight: 1.8, color: t.mid, marginBottom: 14 }}>
-                      {asset.meta}
-                    </div>
-                    <div
-                      style={{
-                        fontFamily: t.sans,
-                        fontSize: '0.52rem',
-                        letterSpacing: '0.22em',
-                        textTransform: 'uppercase',
-                        color: t.gold,
-                      }}
-                    >
-                      Open →
-                    </div>
-                  </div>
-                </GhostPanel>
-              </Link>
-            </Reveal>
+          {pieces.map((p) => (
+            <Link key={p.slug} to={`/${p.slug}`} style={{ textDecoration: 'none' }}>
+              <GhostPanel style={{ padding: '18px 20px', height: '100%' }}>
+                <div
+                  style={{
+                    fontFamily: t.sans,
+                    fontSize: '0.92rem',
+                    fontWeight: 600,
+                    color: t.gold,
+                    marginBottom: 6,
+                  }}
+                >
+                  {p.type}
+                </div>
+                <div
+                  style={{
+                    fontFamily: t.mono,
+                    fontSize: '0.7rem',
+                    color: t.dim,
+                    marginBottom: 10,
+                  }}
+                >
+                  /{p.slug}
+                </div>
+                <div style={{ fontFamily: t.sans, fontSize: '0.72rem', color: t.muted, lineHeight: 1.6 }}>
+                  {p.cadence} · {p.purpose}
+                </div>
+              </GhostPanel>
+            </Link>
           ))}
-        </div>
-
-        <Divider style={{ margin: 'clamp(40px, 5vw, 64px) 0 26px' }} />
-        <div style={{ fontFamily: t.sans, fontSize: '0.6rem', letterSpacing: '0.16em', color: t.dim }}>
-          {site.domain || 'domain not set'} · legacy site still served at /
         </div>
       </div>
     </div>
