@@ -1,0 +1,11 @@
+[build]
+  command = "npm install && npm run build"
+  publish = "dist"
+
+# The SPA lives at /engine/*, so the client-side-routing rewrite is scoped to
+# that subtree. A root-level /* -> /index.html catch-all would swallow
+# /engine/<route> deep links and serve the legacy page instead.
+[[redirects]]
+  from = "/engine/*"
+  to = "/engine/index.html"
+  status = 200
