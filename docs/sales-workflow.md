@@ -1,7 +1,7 @@
 # Prolific Sales Plan
 
 **This is the plan. Refer to it, stick to it, and change it only at the Sunday review (§9) when real results say so.**
-Companion to `docs/delivery-workflow.md` (how work is delivered). Lead names, phone numbers, and emails stay in the tracker, never in this repo.
+**Scope: sales and customer acquisition only.** Delivery lives in `docs/delivery-workflow.md`; marketing (content, site, portfolio) is its own track. This doc only notes where sales hands off to them. Lead names, phone numbers, and emails stay in the tracker, never in this repo.
 
 ---
 
@@ -59,7 +59,7 @@ Built on Alex Hormozi's value equation: raise the **outcome** and the **odds it 
 
 **Give value first** (Hormozi: give so much it feels strange not to buy). Every cold lane opens with something free and useful (§5).
 
-**Free is never just free.** Every free deliverable also becomes portfolio and content: a case study, a post, a sample link for the next message. Get the client's OK to post it before starting.
+**Free is never just free.** Get the client's OK up front to use the free work as a sample. Sales uses it as the link in the next message; marketing gets it for content.
 
 **The ladder, in every lane:** free value → first paid job → second job → **offer the retainer after the third job.**
 
@@ -216,7 +216,6 @@ Borrowed from Grant Cardone (massive action; obscurity is the enemy), Hormozi (t
 3. Every touch logged in the tracker the moment it happens
 4. 5 minutes of reps: read the messages and call opener **out loud** before the block
 
-**Every week:** 3 posts showing the work (content is part of being the example).
 
 **When:** one fixed block every day, same time, same place. Default: **30 minutes each night; emails scheduled to send at 8 am.** Calls happen in the gaps during the day.
 
@@ -264,14 +263,12 @@ Where $5,000 net comes from once the ladders work. The retainers are the hardest
 
 ---
 
-## 11. Setup checklist (one-time)
+## 11. Sales setup checklist (one-time)
 
-- [ ] File the Prolific DBA and open a business bank account (Black Lab Holdings)
 - [ ] One-pager for property managers (print for drop-ins)
 - [ ] Rollout-plan template for developers
 - [ ] Listing-audit template (commercial + residential): the 3 fixes in §6.5 email 2
 - [ ] Add tracker columns (§9); move the named targets in
-- [ ] Update site: "media and marketing agency" positioning, service area Keys to Port St. Lucie, far-trip fee $50 (waived on a CPE)
 
 These run **alongside** outreach, not before it. Property manager, agent, and warm outreach can start tomorrow.
 
@@ -283,5 +280,12 @@ These run **alongside** outreach, not before it. Property manager, agent, and wa
 - **Capacity (solo):** weekdays 8–10 am, some evenings (fewer after DST ends Nov 1; twilight ~5:45–6:15 pm, right after work), Saturday afternoon, Sunday. Day job in Broward; can slip out.
 - **Asteroom today:** $60–75 per job, $20–40 more for far trips, ~$300/week average.
 - **Home base:** Sunny Isles. Goes wherever the work is.
-- **Camera:** iPhone for now; first direct-client profits buy a camera.
 - Asteroom terms and drone: the owner handles these. Not tracked here.
+
+---
+
+## 13. Handoffs (not sales, owned elsewhere)
+
+- **Booked → delivery:** stage 6 hands the job to delivery stage 1 (Intake).
+- **To marketing:** free-work samples for content; site copy (agency positioning, service area Keys to Port St. Lucie, far-trip fee).
+- **Business setup:** DBA, business bank account, camera.
