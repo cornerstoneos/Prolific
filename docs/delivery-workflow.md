@@ -117,6 +117,25 @@ Tier mapping: Pre-Construction = Announce + Build the hype. Model Residence Shoo
 
 ---
 
+## 5a. Listings — the Curated Property Experience
+
+**Lead offer for agents and agent teams.** Everything, delivered as one experience. Sell this first; à la carte only if the client doesn't want all of it.
+
+Curated Property Experience includes:
+- HDR photos (full shot list + room slots)
+- Listing video: 60–90s horizontal, unbranded MLS version, 15–30s vertical reel
+- 3D tour — Asteroom Enhanced (lighting-corrected, dollhouse)
+- Edited floor plan with measurements
+- Social pack
+- Drone — **once Part 107 is in hand**
+
+À la carte: any single item above, with the Basic Asteroom floor plan.
+
+- **OPEN:** pricing for the full experience vs. à la carte (the Asteroom cost is built in either way).
+- **OPEN:** whether property managers get a version of it, or stay on their spec.
+
+---
+
 ## 6. Capture checklists
 
 ### Shot slots (idea borrowed from Asteroom, improved)
@@ -196,8 +215,8 @@ Asteroom produces these from the 3D scan; Prolific's job is to order the right l
 
 | Level | Cost to Prolific | Includes | Used for |
 |---|---|---|---|
-| Basic | ~$15 (**OPEN:** verify) | Floor plan | Standard agent / PM jobs |
-| Premium | ~$60 | Edited floor plan, lighting-corrected 3D tour, dollhouse view | Developers + all curated/premium property experiences |
+| Basic | ~$15 (**OPEN:** verify) | Floor plan | À la carte and standard PM jobs |
+| Enhanced | ~$60 | Edited floor plan, lighting-corrected 3D tour, dollhouse view | Developers + every Curated Property Experience |
 
 Price the Asteroom cost into each package; it is a per-job expense.
 
@@ -207,7 +226,7 @@ Price the Asteroom cost into each package; it is a per-job expense.
 - [ ] Total square footage roughly matches county property appraiser records (explain any big gap)
 - [ ] Doors, windows, stairs in the right places; orientation correct
 - [ ] 3D tour: no skipped rooms, no stitching errors, sensible start point
-- [ ] Premium: lighting corrections applied, dollhouse renders cleanly
+- [ ] Enhanced: lighting corrections applied, dollhouse renders cleanly
 - [ ] Branding/unbranded version per client profile
 
 ### Still to write
