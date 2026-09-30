@@ -151,9 +151,46 @@ Asteroom's upload screen gives each required shot its own slot with a line drawi
 - No clearance → tell the client and adjust price before the shoot
 - Part 107: **in progress** — scheduling the test after studying. Until certified, no drone on client jobs, paid or free (see §7).
 
+### Video (phone + gimbal; no drone indoors)
+
+**Problem being solved:** not enough footage to edit a full video. Fix it with a coverage quota, not by stretching clips in the edit.
+
+**Footage math:** a finished clip is ~2–3 seconds on screen. A 60–90s video needs ~30–40 usable clips, so shoot ~3x that.
+
+**Per room (the quota):**
+- [ ] 1 fly-through pass entering the room (continuous, walk-in feel)
+- [ ] 3 moves from the menu below, each taken twice
+- [ ] 1 detail shot (fixture, finish, view)
+- Hero rooms (kitchen, living, primary suite, pool/outdoor): 5 moves instead of 3
+
+**Move menu:** push-in, pull-out, lateral slide, orbit around a foreground object (parallax), rise/lower, reveal from behind a wall or doorframe, tilt up.
+
+**Every take:**
+- 8–10 seconds, with a 2-second still hold at the start and end (gives the editor cut points)
+- Exposure and focus locked (window light otherwise pumps the exposure)
+- 4K; 24 or 30 fps for normal moves, 60 fps for slow-motion moves
+- Shot horizontal with the subject centered, so a vertical crop still works
+- Plus a dedicated vertical pass of the 3–5 best moves for reels
+
+**Order on site:** per room — photos, then video, then 3D scan — so the room is staged once.
+Allow ~20–30 minutes of video for a typical 3/2 home.
+
+**Pre-departure check:** every room slot has its fly-through + move count.
+
+**Deliverables by vertical (draft):**
+
+| Vertical | Video deliverables |
+|---|---|
+| Agents | 60–90s horizontal listing video (branded + unbranded MLS version), 15–30s vertical reel |
+| Agent teams (retainer) | Same, in the team's brand standard |
+| Property managers | 30–45s per unit or building, optional vertical |
+| REO / AMC | None unless ordered |
+| Developers | 90–120s model residence hero film, vertical reels per rollout drop, progress recaps |
+
+- **OPEN:** confirm lengths and whether the unbranded MLS version is always included.
+
 ### Still to write
 
-- **OPEN:** video routine (shot list, cadence, deliverable lengths)
 - **OPEN:** floor plans and measurements routine (check what Asteroom already produces from the scan)
 - **OPEN:** QC checklists for renderings, site plans, social packs, time-lapse, landing page
 
