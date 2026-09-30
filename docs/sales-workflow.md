@@ -30,11 +30,13 @@ No priority order. Effort is **spread across all lanes**, weighted toward volume
 
 | Lane | Why | Share of weekly touches |
 |---|---|---|
-| **Property managers** | Volume: units every month. Heaviest lane | 20 |
-| **Developers** (incl. boutique projects) | Few media companies go after them. Big projects, recurring through the rollout | 10 |
-| **Commercial agents / brokers** | Also rarely approached. Spaces need 3D, measured plans, marketing | 10 |
-| **Residential agents** | Only agents who actually get listings: top listers and teams. Plus warm contacts from the realtor days | 5 |
-| **REO / asset managers / banks** | Own direct clients. Mostly vendor applications, not selling | 5 |
+| **Property managers** | Volume: units every month | 15 |
+| **Developers** (incl. boutique projects) | Few media companies go after them. High ticket, recurring through the rollout | 10 |
+| **Commercial agents / brokers** | Also rarely approached. Spaces need 3D, measured plans, marketing | 15 |
+| **Residential agents** | Only agents who actually get listings: top listers and teams. Plus warm contacts from the realtor days | 10 |
+| **REO / asset managers / banks** | **Slow roll.** Vendor applications are out of our control. No packets, no insurance just to apply | 0 for now |
+
+**Focus on what we control and what produces sooner.** REO and vendor work is volume, and it'll be useful later as a training ground for new hires before they shoot luxury listings. It isn't where the time goes now.
 
 **Asteroom:** keep doing excellent work there. It's revenue now and it isn't a sales lane. What Asteroom has taught us (shot lists, slots, speed, QC) is what the vendor profile in §5.5 is built from.
 
@@ -108,38 +110,99 @@ Built on Alex Hormozi's value equation: raise the **outcome** and the **odds it 
 - **Free value (cold):** a listing audit, same as §5.3.
 - **Yes looks like:** one Curated Property Experience → second → Power retainer.
 
-### 5.5 REO / asset managers / banks
+### 5.5 REO / asset managers / banks — slow roll
 
-This lane is **having your stuff together**, not marketing. Build the vendor packet once, then apply everywhere.
+On hold as an active lane. No vendor packets and no insurance just to apply.
 
-- **Vendor packet:** W-9 (Black Lab Holdings), certificate of insurance (general liability), one-page capability statement (services, coverage Keys → Port St. Lucie, turnaround, samples), rate sheet.
-- **Who:** Vendor Manager, Property Preservation, Field Services, REO / Asset Manager. Use their vendor portal or signup email.
-- **Rate floor:** never below what Asteroom pays ($60–75 plus travel).
-- **Follow-up:** about the application itself: did it arrive, what's missing, when does onboarding open.
-- **Targets:** VMC REO LLC, A&D Mortgage, The Loan Store, Newrez, Mutual of Omaha Mortgage, PNC, UIF Corporation, Fannie Mae supplier registration, and the REO companies on the Outreach sheet.
+- Answer inbound requests and keep warm contacts warm (e.g. VMC REO LLC).
+- Revisit when there's a team to feed volume to. REO orders make good starter jobs for new hires.
+- Targets for later: VMC REO LLC, A&D Mortgage, The Loan Store, Newrez, Mutual of Omaha Mortgage, PNC, UIF Corporation, Fannie Mae supplier registration, the REO companies on the Outreach sheet.
 
 ---
 
-## 6. Messages
+## 6. Email sequences
 
-Short and plain, written like a realtor talking to another professional. The structure matters: **their business → free value → one easy question.**
+### 6.1 Cadence (every cold lane)
 
-**Property manager:**
-> Hi [name], I'm [name] with Prolific. I was a realtor, now I run a media and marketing agency for real estate. For property managers we shoot units (photos + 3D tour) with fast turnaround, consistent across every property. I'd like to shoot your next vacant unit free so you can see the difference in your listings. Who handles your vacancies?
+| Day | Touch |
+|---|---|
+| 1 | **Email 1**: personal line + the free offer + one easy question |
+| 3–4 | **Call** the business line (property managers, commercial). Skip if there's no business number |
+| 7 | **Email 2**: reply in the same thread with something new (a sample, or the free thing itself) |
+| 14 | **Email 3**: close the loop. Short, no pressure, door left open |
+| 60 | One revival email with a new angle, then leave it |
 
-**Developer:**
-> Hi [name], I saw [project]. I run Prolific, a real estate media and marketing agency. I put together marketing rollouts for new developments, from pre-construction renderings through the model residence launch. I'd like to send you a one-page rollout plan for [project], free, no strings. Want me to put it together?
+**Any reply → warm.** Answer the same day and follow up until they buy, say no, or ask you to stop.
 
-**Commercial agent:**
-> Hi [name], I looked at your listing at [address] and put together three quick ideas to get it more attention: [link / attached]. I run Prolific, a real estate media and marketing agency. If any of it's useful, I'd love to help on the next one.
+### 6.2 Sending rules
 
-**Residential (warm):**
-> Hey [name], it's [name]. I left the listing side and started Prolific, a media and marketing agency for agents. Photos, video, 3D tours, floor plans, fast turnaround. Got anything coming up? And who do you know that's listing a lot right now?
+- Send from your Prolific email address, by hand. No mass-mail tools.
+- Plain text. No attachments or images in email 1, and at most one link.
+- **Email 1 needs a personal line** about their listing, project, or properties. No line, no send.
+- Write at night, **schedule to send 8 am** on weekdays.
+- Signature on every email: name, Prolific, phone, website, business mailing address, and *"Not the right fit? Just reply 'no' and I won't email again."* Commercial email law (CAN-SPAM) requires the address and a way to opt out.
+- Daily load once the sequences are running: 10 new emails + that day's follow-ups (about 30 emails, most of them 1-minute replies).
 
-**REO / bank:**
-> Hi [name], I run Prolific, a property media company covering South Florida from the Keys to Port St. Lucie. REO and occupancy photo orders, 3D tours, floor plans, fast turnaround, to your shot list. I'd like to get set up as a vendor. Who handles onboarding for Florida? W-9, insurance, and capability sheet attached.
+### 6.3 Property managers
 
-**Cold follow-up (touches 2 and 3):** one new thing (a sample, a case study, a stat, a local observation) + "is there someone else I should talk to?"
+**Email 1** — Subject: *your next vacant unit*
+> Hi {first},
+>
+> {Personal line: e.g. "I saw you've got a few units open around {area}."}
+>
+> I'm {name}. I was a realtor, and now I run Prolific, a real estate media and marketing agency. For property managers, we shoot units with photos and a 3D tour, so renters can walk the place before they call, and every property looks consistent.
+>
+> I'd like to shoot your next vacant unit free so you can compare it to what you're running now. Who handles your vacancies?
+
+**Email 2** (day 7) — same thread
+> Hi {first}, here's a unit we shot recently so you can see the difference: {link}. With the 3D tour, the people who call have already walked the unit. The free unit is still open for your next vacancy. Worth a try?
+
+**Email 3** (day 14) — same thread
+> Hi {first}, I don't want to keep filling your inbox, so this is my last note for now. If a vacancy sits too long or a new property comes on, I'm one email away. {link}
+
+### 6.4 Developers
+
+**Email 1** — Subject: *marketing rollout for {project}*
+> Hi {first},
+>
+> I've been following {project} on {street}. {Personal line: stage of construction, what caught your eye.}
+>
+> I run Prolific, a real estate media and marketing agency. We plan and produce marketing for new developments, from pre-construction renderings through the model residence launch.
+>
+> I'd like to put together a one-page marketing rollout for {project}: what to release and when, from now to sell-out. Free, no strings. Want me to send it?
+
+**Email 2** (day 7)
+> Hi {first}, here's how we lay out a rollout: announce, build the hype, construction progress, model launch, sales push, hand-off. {link to the Development Packages video} Happy to map it to {project}. Just say the word.
+
+**Email 3** (day 14)
+> Hi {first}, last note from me for now. When {project} gets closer to launch and you want a hand with the marketing, I'm here. Good luck with the build.
+
+### 6.5 Agents (commercial and residential)
+
+Residential: only agents with real listing volume. Warm contacts from the realtor days get a call or text instead (§6.6).
+
+**Email 1** — Subject: *3 ideas for {address}*
+> Hi {first},
+>
+> I came across your listing at {address}. {Personal line: what stands out about the property.}
+>
+> I put together 3 quick ideas to get it more attention: the lead photo, and what a measured floor plan and 3D tour would add. I was a realtor myself; now I run Prolific, a real estate media and marketing agency. Want me to send them over?
+
+**Email 2** (day 7) — give the audit whether or not they answered
+> Hi {first}, here are the 3 ideas for {address}:
+> 1. {Lead photo: which one should lead, and why}
+> 2. {What's missing: 3D tour, measured floor plan, twilight, video}
+> 3. {One marketing idea: a reel, a social post, a feature to spotlight}
+>
+> Happy to help on this one or the next.
+
+**Email 3** (day 14)
+> Hi {first}, last note for now. When the next listing comes up, I'd love to show you what we can do with it. {link}
+
+### 6.6 Warm contacts (former colleagues)
+
+Call or text, not email:
+> Hey {first}, it's {name}. I left the listing side and started Prolific, a media and marketing agency for agents: photos, video, 3D tours, floor plans, fast turnaround. Got anything coming up? And who do you know that's listing a lot right now?
 
 ---
 
@@ -153,7 +216,7 @@ Borrowed from Grant Cardone (massive action; obscurity is the enemy), Hormozi (t
 3. Every touch logged in the tracker the moment it happens
 4. 5 minutes of reps: read the messages and call opener **out loud** before the block
 
-**Every week:** 3 posts showing the work (content is part of being the example), plus 1 vendor application.
+**Every week:** 3 posts showing the work (content is part of being the example).
 
 **When:** one fixed block every day, same time, same place. Default: **30 minutes each night; emails scheduled to send at 8 am.** Calls happen in the gaps during the day.
 
@@ -196,8 +259,7 @@ Where $5,000 net comes from once the ladders work. The retainers are the hardest
 |---|---|---|
 | Property manager accounts | 2 accounts × ~8 units at $175 | ~$2,300 |
 | Agent retainer (Power) | 1 team | ~$1,200 |
-| REO / bank orders | ~10 orders | ~$800 |
-| Developer / commercial projects | 1 project, averaged | ~$700 |
+| Developer / commercial projects | 1–2 projects, averaged | ~$1,500 |
 | **Total** | | **~$5,000** |
 
 ---
@@ -205,15 +267,13 @@ Where $5,000 net comes from once the ladders work. The retainers are the hardest
 ## 11. Setup checklist (one-time)
 
 - [ ] File the Prolific DBA and open a business bank account (Black Lab Holdings)
-- [ ] Get a general liability insurance quote → certificate of insurance
-- [ ] Vendor packet (§5.5)
 - [ ] One-pager for property managers (print for drop-ins)
 - [ ] Rollout-plan template for developers
-- [ ] Listing-audit template (commercial + residential)
+- [ ] Listing-audit template (commercial + residential): the 3 fixes in §6.5 email 2
 - [ ] Add tracker columns (§9); move the named targets in
 - [ ] Update site: "media and marketing agency" positioning, service area Keys to Port St. Lucie, far-trip fee $50 (waived on a CPE)
 
-These run **alongside** outreach, not before it. Property manager and warm residential outreach can start tomorrow.
+These run **alongside** outreach, not before it. Property manager, agent, and warm outreach can start tomorrow.
 
 ---
 
