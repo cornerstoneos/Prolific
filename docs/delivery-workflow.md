@@ -135,8 +135,8 @@ Current pricing (from the site and Stripe links):
 
 | Offer | Price |
 |---|---|
-| Curated Property Experience (full) | **OPEN:** confirm price |
-| Combo: Photos + Video + Drone | **OPEN:** confirm price |
+| Curated Property Experience (full) | $500 |
+| Combo: Photos + Video + Drone | $250 |
 | Combo: any two services | $200 |
 | Photography only | $125 |
 | 3D virtual tour | $150 |
@@ -144,6 +144,10 @@ Current pricing (from the site and Stripe links):
 | **Power retainer** (agent teams / brokerages) | $1,500/month = 4 full CPEs (~$375 each), priority scheduling, market exclusivity available |
 
 - Power is the agent-team retainer lane from §4.
+- Price math: Photos+Video+Drone ($250) + 3D ($150) + Floor plans ($100) = $500 = the CPE price. So the full experience currently saves nothing vs. buying the pieces; only the social pack is "free".
+- **OPEN:** make the CPE the obvious choice — show the à la carte value (e.g. "a $600+ value") by pricing social content standalone, or trim the CPE price.
+- **OPEN:** pricing is flat regardless of home size. Consider size tiers (e.g. under 2,500 / 2,500–4,000 / 4,000+ sq ft) — a large Palm Beach home takes far longer to shoot and edit.
+- **OPEN:** is video or drone available on its own, and can they count in "any two services"?
 - **OPEN:** Power rules — do unused CPEs roll over? What does "exclusivity per market" cover (zip, city, price band)?
 - **OPEN:** check margin on Power: ~$375 per CPE minus ~$60 Asteroom Enhanced leaves ~$315 for photos + video edit + social + travel.
 - **Drone is in paid offers now** (Photos + Video + Drone combo; site says "FAA-compliant"). Until Part 107, remove drone from paid combos and the "FAA-compliant" claim.
