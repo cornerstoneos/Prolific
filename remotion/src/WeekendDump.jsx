@@ -15,26 +15,27 @@ export default function WeekendDump() {
   return (
     <AbsoluteFill
       style={{
-        background: '#0a0a0a',
+        background: '#fafaf8',
         alignItems: 'center',
         justifyContent: 'center',
-        fontFamily: 'system-ui, sans-serif',
+        fontFamily: "'Montserrat', system-ui, sans-serif",
       }}
     >
       <div style={{ opacity, transform: `translateY(${y}px)`, textAlign: 'center' }}>
         <div
           style={{
-            fontSize: 28,
+            fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+            fontSize: 24,
             fontWeight: 700,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            color: '#c9a227',
+            color: '#b8965a',
             marginBottom: 16,
           }}
         >
           Weekend Dump
         </div>
-        <div style={{ fontSize: 16, color: '#8a8a86' }}>Weekly · Volume &amp; coverage proof, geo-tagged</div>
+        <div style={{ fontSize: 16, color: '#888880' }}>Weekly · Volume &amp; coverage proof, geo-tagged</div>
       </div>
     </AbsoluteFill>
   )

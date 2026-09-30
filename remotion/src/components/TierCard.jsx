@@ -1,9 +1,9 @@
 import { useCurrentFrame, interpolate, AbsoluteFill } from 'remotion'
 
-const GOLD = '#c9a227'
-const FG = '#f2f1ed'
-const MUTED = '#9a9a94'
-const HAIRLINE = 'rgba(201,162,39,0.3)'
+const GOLD = '#b8965a'
+const FG = '#0c0c0c'
+const MUTED = '#888880'
+const HAIRLINE = 'rgba(184,150,90,0.32)'
 
 /**
  * One tier, full-frame. Reused by DevelopmentPackages.jsx for each of the
@@ -24,7 +24,7 @@ export default function TierCard({ badge, title, note, items }) {
   return (
     <AbsoluteFill
       style={{
-        background: '#0a0a0a',
+        background: '#fafaf8',
         fontFamily: "'Montserrat', system-ui, sans-serif",
         padding: '0 90px',
         justifyContent: 'center',

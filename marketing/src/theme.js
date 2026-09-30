@@ -1,13 +1,15 @@
-// Single dark internal-tool surface. Matches the reference pattern: near-
-// black background, gold accent, gray text. No light mode, no marketing
-// theming — this is a tool, not a site.
+// Prolific's real brand system — black/white editorial base with gold
+// accent, matching the live site (repo-root index.html) and the logo.
+// This was previously a dark near-black scheme carried over from the EVEN
+// reference tool's own colors, not Prolific's — fixed to use the real
+// palette so this doesn't read as someone else's tool.
 export const t = {
-  bg: '#0a0a0a',
-  fg: '#f2f1ed',
-  muted: '#8a8a86',
-  dim: '#5c5c58',
-  line: 'rgba(184,150,90,0.22)',
-  gold: '#c9a227',
+  bg: '#fafaf8',
+  fg: '#0c0c0c',
+  muted: '#888880',
+  dim: '#c8c8c0',
+  line: 'rgba(184,150,90,0.34)',
+  gold: '#b8965a',
 
   serif: "'Cormorant Garamond', Georgia, serif",
   sans: "'Montserrat', system-ui, -apple-system, sans-serif",

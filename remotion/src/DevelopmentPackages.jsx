@@ -1,9 +1,9 @@
 import { Series, useCurrentFrame, interpolate, AbsoluteFill } from 'remotion'
 import TierCard from './components/TierCard'
 
-const GOLD = '#c9a227'
-const FG = '#f2f1ed'
-const MUTED = '#9a9a94'
+const GOLD = '#b8965a'
+const FG = '#0c0c0c'
+const MUTED = '#888880'
 
 function OpenCard() {
   const frame = useCurrentFrame()
@@ -12,7 +12,7 @@ function OpenCard() {
   return (
     <AbsoluteFill
       style={{
-        background: '#0a0a0a',
+        background: '#fafaf8',
         alignItems: 'center',
         justifyContent: 'center',
         fontFamily: "'Montserrat', system-ui, sans-serif",
@@ -56,7 +56,7 @@ function CloseCard() {
   return (
     <AbsoluteFill
       style={{
-        background: '#0a0a0a',
+        background: '#fafaf8',
         alignItems: 'center',
         justifyContent: 'center',
         fontFamily: "'Montserrat', system-ui, sans-serif",

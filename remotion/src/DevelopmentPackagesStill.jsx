@@ -1,9 +1,9 @@
 import { AbsoluteFill } from 'remotion'
 
-const GOLD = '#c9a227'
-const FG = '#f2f1ed'
-const MUTED = '#9a9a94'
-const HAIRLINE = 'rgba(201,162,39,0.28)'
+const GOLD = '#b8965a'
+const FG = '#0c0c0c'
+const MUTED = '#888880'
+const HAIRLINE = 'rgba(184,150,90,0.34)'
 
 // Same tier content as DevelopmentPackages.jsx, kept in sync manually since
 // this is a separate static layout, not a frame grab from the motion piece.
@@ -51,7 +51,7 @@ export default function DevelopmentPackagesStill() {
   return (
     <AbsoluteFill
       style={{
-        background: '#0a0a0a',
+        background: '#fafaf8',
         fontFamily: "'Montserrat', system-ui, sans-serif",
         display: 'flex',
         flexDirection: 'column',
@@ -95,7 +95,7 @@ export default function DevelopmentPackagesStill() {
         }}
       >
         {TIERS.map((tier) => (
-          <div key={tier.title} style={{ background: '#0a0a0a', padding: '46px 34px' }}>
+          <div key={tier.title} style={{ background: '#fafaf8', padding: '46px 34px' }}>
             <div
               style={{
                 fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
