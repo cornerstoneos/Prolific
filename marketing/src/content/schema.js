@@ -120,6 +120,13 @@ export const segments = [
         purpose: 'Positions Prolific beyond photography',
         cta: 'Soft — portfolio link',
       },
+      {
+        slug: 'development-packages',
+        type: 'Development packages',
+        cadence: 'Evergreen',
+        purpose: 'Tier/offer clarity for developer prospects',
+        cta: 'Soft — DM for scope',
+      },
     ],
   },
 
