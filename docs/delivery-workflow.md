@@ -131,7 +131,22 @@ Curated Property Experience includes:
 
 À la carte: any single item above, with the Basic Asteroom floor plan.
 
-- **OPEN:** pricing for the full experience vs. à la carte (the Asteroom cost is built in either way).
+Current pricing (from the site and Stripe links):
+
+| Offer | Price |
+|---|---|
+| Curated Property Experience (full) | **OPEN:** confirm price |
+| Combo: Photos + Video + Drone | **OPEN:** confirm price |
+| Combo: any two services | $200 |
+| Photography only | $125 |
+| 3D virtual tour | $150 |
+| Floor plans + measurements | $100 |
+| **Power retainer** (agent teams / brokerages) | $1,500/month = 4 full CPEs (~$375 each), priority scheduling, market exclusivity available |
+
+- Power is the agent-team retainer lane from §4.
+- **OPEN:** Power rules — do unused CPEs roll over? What does "exclusivity per market" cover (zip, city, price band)?
+- **OPEN:** check margin on Power: ~$375 per CPE minus ~$60 Asteroom Enhanced leaves ~$315 for photos + video edit + social + travel.
+- **Drone is in paid offers now** (Photos + Video + Drone combo; site says "FAA-compliant"). Until Part 107, remove drone from paid combos and the "FAA-compliant" claim.
 - **OPEN:** whether property managers get a version of it, or stay on their spec.
 
 ---
