@@ -89,7 +89,13 @@ Email alone doesn't convert. It's the backbone that carries the free value and k
 
 **A touch is any of these.** 50 a week across all channels, not 50 emails.
 
-**Cold follow-up:** each touch brings something new, never "just checking in." After the sequence with no response → park 60 days, one more try.
+**Cold follow-up:** each touch brings something new, never "just checking in." After the sequence with no response → nurture (below).
+
+**Nurture (long-term follow-up):** most people don't need us the day we reach out. An agent may not have a listing this month. Anyone who hasn't said no stays on a nurture track:
+- **One touch about every 30 days**, rotating channels and angles. **Never the same message twice.**
+- Rotation ideas: a new sample, a market note, "saw your new listing on {street}", a holiday mention, a quick hello at their open house, a LinkedIn comment on their post.
+- **Trigger:** a new sign from someone on nurture → the upgrade offer for that listing right away (§5.1a).
+- Log every nurture touch and the angle used, so the next one is different.
 **Warm follow-up** (replied, spoke, or met): follow up until they buy, say no, or ask you to stop.
 
 ### 5.1 Weekly rhythm (fits the day job)
@@ -277,7 +283,7 @@ South Florida is a melting pot. Cater to each community the way we cater to each
 | **Haitian / Caribbean** | Haitian Creole versions of the core messages, native-speaker reviewed. Community business networks and chambers |
 | **Jewish** | Respect Shabbat: no calls, texts, or emails to observant prospects from Friday sundown to Saturday nightfall. Keep the holiday calendar (Rosh Hashanah, Yom Kippur, Sukkot, Passover); don't pitch on those days |
 | **Russian-speaking / Eastern European, Turkish** (strong around Sunny Isles) | Russian versions of the core messages, native-speaker reviewed. Relationships and referrals first |
-| **Everyone** | Know the major holidays (e.g. Lunar New Year, Carnival, Diwali). A genuine greeting to people you already know; no pitches built around holidays |
+| **Everyone** | Know the major holidays (e.g. Lunar New Year, Carnival, Diwali). Mentioning the holiday in a message is good ("Happy New Year", "hope the holidays were good"). It's a line in the message, not the pitch itself |
 
 - Add a **Language** column to the tracker, and send in that language.
 - Content made for these communities is marketing's job. This section is about outreach only.
