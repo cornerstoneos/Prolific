@@ -390,3 +390,15 @@ These run **alongside** outreach, not before it. Property manager, agent, and wa
 - **Booked → delivery:** stage 6 hands the job to delivery stage 1 (Intake).
 - **To marketing:** free-work samples for content; site copy (agency positioning, service area Keys to Port St. Lucie, far-trip fee).
 - **Business setup:** DBA, business bank account, camera.
+
+---
+
+## 14. Next session: make the Curated Property Experience an offer agents can't refuse
+
+The CPE ($500) is the core offer for agents. Work out the sales psychology to convert it. Starting points (Hormozi's Grand Slam Offer):
+
+- **Value stack:** today the CPE costs the same as buying the pieces separately (delivery doc §5a), so it doesn't feel like a deal. Show the stacked value next to the price.
+- **Bonuses** that cost little and matter to agents (social pack, branded listing page, listing-appointment materials).
+- **A guarantee that isn't about turnaround** (e.g. a reshoot if they're not happy).
+- **Reasons to act now:** limited spots per week, first-listing pricing.
+- **The pitch itself:** how to present $500 to an agent who's used to paying $125 for photos.
