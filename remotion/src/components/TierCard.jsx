@@ -1,9 +1,8 @@
 import { useCurrentFrame, interpolate, AbsoluteFill } from 'remotion'
 
-const GOLD = '#b8965a'
 const FG = '#0c0c0c'
 const MUTED = '#888880'
-const HAIRLINE = 'rgba(184,150,90,0.32)'
+const HAIRLINE = 'rgba(12,12,12,0.16)'
 
 /**
  * One tier, full-frame. Reused by DevelopmentPackages.jsx for each of the
@@ -39,7 +38,7 @@ export default function TierCard({ badge, title, note, items }) {
               fontWeight: 700,
               letterSpacing: 6,
               textTransform: 'uppercase',
-              color: GOLD,
+              color: FG,
               marginBottom: 20,
             }}
           >
@@ -60,7 +59,7 @@ export default function TierCard({ badge, title, note, items }) {
         {note && (
           <div style={{ fontSize: 24, color: MUTED, marginTop: 16, maxWidth: 640 }}>{note}</div>
         )}
-        <div style={{ width: 64, height: 2, background: GOLD, marginTop: 30 }} />
+        <div style={{ width: 64, height: 2, background: FG, marginTop: 30 }} />
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
@@ -81,7 +80,7 @@ export default function TierCard({ badge, title, note, items }) {
                 paddingTop: i === 0 ? 0 : 20,
               }}
             >
-              <div style={{ width: 20, height: 1, background: GOLD, flexShrink: 0 }} />
+              <div style={{ width: 20, height: 1, background: FG, flexShrink: 0 }} />
               <div style={{ fontSize: 30, fontWeight: 300, color: FG }}>{item}</div>
             </div>
           )

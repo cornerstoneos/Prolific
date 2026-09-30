@@ -1,6 +1,6 @@
 import { t } from '../theme'
 
-// Small-caps gold label. Used once per page, top of the grid or a piece.
+// Small-caps label. Used once per page, top of the grid or a piece.
 export default function Eyebrow({ children, style, ...rest }) {
   return (
     <div
@@ -11,7 +11,7 @@ export default function Eyebrow({ children, style, ...rest }) {
         fontWeight: 700,
         letterSpacing: '0.38em',
         textTransform: 'uppercase',
-        color: t.gold,
+        color: t.fg,
         ...style,
       }}
     >

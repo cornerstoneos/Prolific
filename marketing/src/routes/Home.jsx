@@ -33,7 +33,7 @@ export default function Home() {
                 fontWeight: 700,
                 letterSpacing: '0.24em',
                 textTransform: 'uppercase',
-                color: t.gold,
+                color: t.fg,
                 marginBottom: 18,
               }}
             >
@@ -55,7 +55,7 @@ export default function Home() {
                         fontFamily: t.sans,
                         fontSize: '0.92rem',
                         fontWeight: 600,
-                        color: t.gold,
+                        color: t.fg,
                         marginBottom: 6,
                       }}
                     >

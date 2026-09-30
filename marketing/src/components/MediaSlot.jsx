@@ -15,7 +15,7 @@ function Placeholder({ label }) {
         justifyContent: 'center',
         gap: 10,
         background:
-          'radial-gradient(circle at 50% 42%, rgba(184,150,90,0.16) 0%, rgba(12,12,12,0) 62%), #0c0c0c',
+          'radial-gradient(circle at 50% 42%, rgba(250,250,248,0.1) 0%, rgba(12,12,12,0) 62%), #0c0c0c',
         color: 'rgba(250,250,248,0.4)',
         fontFamily: t.sans,
         fontSize: '0.56rem',
@@ -30,7 +30,7 @@ function Placeholder({ label }) {
           width: 34,
           height: 34,
           borderRadius: '50%',
-          border: `1px solid ${t.gold}`,
+          border: '1px solid rgba(250,250,248,0.5)',
           opacity: 0.6,
         }}
       />

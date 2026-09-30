@@ -31,7 +31,7 @@ export default function Piece() {
         }}
       >
         <div style={{ fontFamily: t.sans, fontSize: '1rem', color: t.fg }}>No piece at "{slug}"</div>
-        <Link to="/" style={{ fontFamily: t.mono, fontSize: '0.7rem', color: t.gold }}>
+        <Link to="/" style={{ fontFamily: t.mono, fontSize: '0.7rem', color: t.fg }}>
           ← back to index
         </Link>
       </div>

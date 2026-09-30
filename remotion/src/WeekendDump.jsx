@@ -29,7 +29,7 @@ export default function WeekendDump() {
             fontWeight: 700,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            color: '#b8965a',
+            color: '#0c0c0c',
             marginBottom: 16,
           }}
         >

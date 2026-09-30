@@ -1,7 +1,8 @@
 import { Series, useCurrentFrame, interpolate, AbsoluteFill } from 'remotion'
 import TierCard from './components/TierCard'
+import AllTiersScreen from './components/AllTiersScreen'
+import { tiers } from './tiers'
 
-const GOLD = '#b8965a'
 const FG = '#0c0c0c'
 const MUTED = '#888880'
 
@@ -28,7 +29,7 @@ function OpenCard() {
             fontWeight: 700,
             letterSpacing: 6,
             textTransform: 'uppercase',
-            color: GOLD,
+            color: FG,
             marginBottom: 28,
           }}
         >
@@ -92,54 +93,16 @@ function CloseCard() {
   )
 }
 
-// Tier content. Structure B (locked): Pre-Construction and Model Residence
-// Shoot stand alone as two entry points; Premium bundles both; Elite adds
-// the recurring/ongoing layer. No price, no add-ons -- both dropped per
-// brief.
-const TIERS = [
-  {
-    badge: 'Standalone — Pre-Construction',
-    title: 'Pre-Construction',
-    items: [
-      'Styled site plan & map',
-      'Exterior renderings',
-      'Interior renderings',
-      'Styled floor plan',
-      'Amenity renderings',
-      'Social pack',
-    ],
-  },
-  {
-    badge: 'Standalone — Model Complete',
-    title: 'Model Residence Shoot',
-    note: 'Sold on its own to projects already using someone else for pre-construction renderings.',
-    items: ['Photography', 'Video', 'Drone', '3D tour'],
-  },
-  {
-    badge: 'Full Process',
-    title: 'Premium',
-    items: ['Pre-Construction, bundled', 'Model Residence Shoot, bundled'],
-  },
-  {
-    badge: 'Full Process',
-    title: 'Elite',
-    items: [
-      'Everything in Premium',
-      'Recurring progress photography',
-      'Interactive digital twin & hotspots',
-      'Full marketing coordination — pre-sale through launch',
-      'Time-lapse documentation',
-      'Landing page',
-    ],
-  },
-]
+// Tier content lives in tiers.js -- shared with AllTiersScreen so the
+// individual cards and the recap never drift out of sync.
 
 const OPEN_FRAMES = 60
 const TIER_FRAMES = 90
+const RECAP_FRAMES = 90
 const CLOSE_FRAMES = 60
 
 export const developmentPackagesDuration =
-  OPEN_FRAMES + TIERS.length * TIER_FRAMES + CLOSE_FRAMES
+  OPEN_FRAMES + tiers.length * TIER_FRAMES + RECAP_FRAMES + CLOSE_FRAMES
 
 export default function DevelopmentPackages() {
   return (
@@ -147,11 +110,15 @@ export default function DevelopmentPackages() {
       <Series.Sequence durationInFrames={OPEN_FRAMES}>
         <OpenCard />
       </Series.Sequence>
-      {TIERS.map((tier) => (
+      {tiers.map((tier) => (
         <Series.Sequence key={tier.title} durationInFrames={TIER_FRAMES}>
           <TierCard {...tier} />
         </Series.Sequence>
       ))}
+      {/* Recap: everything at a glance, right before the close card. */}
+      <Series.Sequence durationInFrames={RECAP_FRAMES}>
+        <AllTiersScreen />
+      </Series.Sequence>
       <Series.Sequence durationInFrames={CLOSE_FRAMES}>
         <CloseCard />
       </Series.Sequence>
