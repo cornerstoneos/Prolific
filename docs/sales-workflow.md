@@ -102,6 +102,25 @@ Email alone doesn't convert. It's the backbone that carries the free value and k
 | Sunday | Open houses; prep the week's target list; Sunday review (§9) |
 | 1–2× a month | One industry event: developer / commercial (e.g. local ULI, NAIOP, CCIM chapters) or Realtor association / property-manager association meetings |
 
+### 5.1a Sign capture (lead source, always on)
+
+Everyone with a sign up has a live listing or a vacancy **right now**. The drives already happen (Asteroom jobs, errands, the commute), so every drive is lead capture.
+
+| Sign | Lead goes to | First move |
+|---|---|---|
+| **For Sale** (agent sign) | Residential agents (§5.5) | Listing audit for *that* address: "3 ideas for {address}" |
+| **For Sale By Owner** / Zillow FSBO | Residential: FSBO (§5.5) | In person at their open house, or knock. Offer the listing media package |
+| **For Lease / For Sale** (commercial) | Commercial (§5.4) | Listing audit for that space |
+| **For Rent** | Property managers (§5.3) or small landlords | Free-unit offer |
+| **Coming Soon** / construction fence | Developers (§5.2) | Rollout plan for that project |
+
+**Rules:**
+- **Capture only while stopped or parked.** Photo of the sign, or a voice memo: address, name, number.
+- Log it in the tracker that night: sign type, address, name, brokerage, number, date. Source = "Sign".
+- Skip the property you're shooting that day for Asteroom.
+- **FSBO numbers are personal phones.** Check the number against the National Do Not Call Registry before calling; in person is better anyway. No cold texts.
+- **Target: 10 signs a week.** Each one is a lead with a live listing, and it feeds the 50 touches.
+
 ### 5.2 Developers (incl. boutique)
 
 - **Who:** developer principal, head of sales, marketing director. Boutique projects (4–30 units) are the sweet spot: they rarely have a media team.
@@ -143,7 +162,8 @@ Email alone doesn't convert. It's the backbone that carries the free value and k
 
 ### 5.5 Residential agents
 
-- **Who:** only agents with real listing volume (check active and sold listings), teams, brokerage owners.
+- **Who:** only agents with real listing volume (check active and sold listings), teams, brokerage owners. **A For Sale sign means a live listing**, so sign capture (§5.1a) is the main source.
+- **FSBO sellers:** people selling without an agent who still want quality media. Find them from signs and Zillow FSBO listings. Offer: the Curated Property Experience or Photos + Video. Meet them at their open house.
 - **Warm first:** call or text former colleagues and realtor contacts (§6.6). Ask for their listings and for referrals.
 - **In person:** broker open houses and Realtor association meetings. Show work on your phone, ask about their next listing.
 - **Cold sequence:** Email 1 offering the listing audit → call → Email 2 with the audit → meet at their open house.
@@ -259,7 +279,8 @@ Borrowed from Grant Cardone (massive action; obscurity is the enemy), Hormozi (t
 1. **10 touches**, spread across the lanes per §3
 2. Every follow-up due today, done today
 3. Every touch logged in the tracker the moment it happens
-4. 5 minutes of reps: read the messages and call opener **out loud** before the block
+4. Signs captured on every drive (10 a week)
+5. 5 minutes of reps: read the messages and call opener **out loud** before the block
 
 
 **When:** one fixed block every day, same time, same place. Default: **30 minutes each night; emails scheduled to send at 8 am.** Calls happen in the gaps during the day.
@@ -283,7 +304,9 @@ The goal is to make outreach and wins feel normal. Rules:
 ## 9. Tracking and review
 
 **Tracker:** the "Prolific Outreach" Google Sheet. Columns:
-`Lane | Company | Person | Title | Channel | Stage | Last touch | Next touch | Touches | Notes`
+`Lane | Source | Company | Person | Title | Address | Channel | Stage | Last touch | Next touch | Touches | Notes`
+
+Source: Sign, Zillow, LinkedIn, Event, Referral, Warm, Research.
 Sort by **Next touch** each night. That's tomorrow's follow-up list.
 
 **Stages:** 1 Find · 2 First touch · 3 Follow-up · 4 Conversation · 5 Offer · 6 Booked (→ delivery stage 1) · 7 Delivered · 8 Review + referral · 9 Repeat / retainer
