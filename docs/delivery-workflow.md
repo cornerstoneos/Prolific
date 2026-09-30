@@ -261,4 +261,6 @@ Price the Asteroom cost into each package; it is a per-job expense.
 - **OPEN:** Asteroom agreement terms — known rule: no handing business cards to agents met on Asteroom jobs. Confirm whether a broader non-solicitation clause exists before contacting their banks and asset managers directly.
 - **OPEN:** does the Asteroom app show or export room tags from the 3D scan?
 - **OPEN:** file storage (no Google Drive yet) and CRM
+- Site offers: virtual staging and signage removed (not offered). Twilight offered. **OPEN:** pitch decks (still listed under Development) — discuss scope.
+- **OPEN:** site still promises a Google Drive link in "How It Works" and the inquiry section — update once the delivery page is decided.
 - Agent acquisition / proof of concept is a separate thread.
