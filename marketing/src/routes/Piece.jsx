@@ -4,13 +4,11 @@ import { pieceBySlug } from '../content/schema'
 import MediaSlot from '../components/MediaSlot'
 
 /**
- * One content piece, as an empty template. This is the route someone opens
- * and screen-records — the recording is the post. No baked copy, no
- * photos, no CTA buttons, no site chrome. Just the piece's own identity
- * (small, out of the way) and an empty canvas.
- *
- * When a piece is ready to be built, its real media/copy lives in a config
- * this route reads from — not hardcoded here.
+ * One content piece. Until it's built, this is an empty template -- the
+ * canvas shows a "coming soon" placeholder. Once built, `piece.media`
+ * (schema.js) points at the real rendered file and it plays right here.
+ * Either way: no baked copy, no CTA buttons, no site chrome beyond the
+ * piece's own identity, small and out of the way.
  */
 export default function Piece() {
   const { slug } = useParams()
@@ -71,7 +69,7 @@ export default function Piece() {
         }}
       >
         <div style={{ width: '100%', maxWidth: 480, aspectRatio: '9 / 16' }}>
-          <MediaSlot label={piece.type} />
+          <MediaSlot src={piece.media} label={piece.type} />
         </div>
       </div>
 

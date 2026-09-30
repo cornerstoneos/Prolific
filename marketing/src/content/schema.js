@@ -26,6 +26,11 @@
  *   cta       string   the on-piece ask, part of the content itself — not a
  *                      website button. 'Soft — link in bio' is a legitimate
  *                      value.
+ *   media     string   OPTIONAL. Path (under public/) to the rendered
+ *                      output once a piece is actually built -- video or
+ *                      image, auto-detected by extension. Omitted/absent
+ *                      -> the piece's page shows the "coming soon"
+ *                      placeholder. EXAMPLE: '/media/weekend-dump.mp4'
  */
 
 export const segments = [
@@ -126,6 +131,10 @@ export const segments = [
         cadence: 'Evergreen',
         purpose: 'Tier/offer clarity for developer prospects',
         cta: 'Soft — DM for scope',
+        // Rendered via remotion/src/DevelopmentPackages.jsx, copied into
+        // public/media/. Re-copy here any time that composition is
+        // re-rendered -- this file is not auto-synced from remotion/.
+        media: '/media/development-packages.mp4',
       },
     ],
   },
