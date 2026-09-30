@@ -61,7 +61,20 @@ Built on Alex Hormozi's value equation: raise the **outcome** and the **odds it 
 
 **Free is never just free.** Get the client's OK up front to use the free work as a sample. Sales uses it as the link in the next message; marketing gets it for content.
 
-**The ladder, in every lane:** free value → first paid job → second job → **offer the retainer after the third job.**
+**Door-opener vs. core offer.** The door-opener gets the conversation. The core offer is what Prolific sells. Don't confuse the two: the door-opener is never the pitch we hang our hat on.
+
+| Lane | Door-opener (gets the conversation) | Core offer (what we sell) |
+|---|---|---|
+| Residential agents | Upgrade for their active listing (3D tour, floor plan, updated photos, video) | **Curated Property Experience** ($500) on the next listing |
+| Agent teams / brokerages | Same | **Power retainer** ($1,500/month) |
+| FSBO sellers | Meet at their open house | Curated Property Experience or Photos + Video |
+| Commercial | Upgrade for the listed space | Full media + marketing for each space → brokerage account |
+| Property managers | First unit free | Monthly account at $175/unit |
+| Developers | Free rollout plan for their project | Development tiers: Pre-Construction, Model Residence Shoot, Premium, Elite |
+
+Signs are an entry point, not the whole plan. Every channel in §5.0 stays in play.
+
+**The ladder, in every lane:** door-opener → first paid job (core offer) → second job → **offer the retainer after the third job.**
 
 | Lane | Retainer / recurring version |
 |---|---|
@@ -158,7 +171,8 @@ Everyone with a sign up has a live listing or a vacancy **right now**. The drive
 ### 5.4 Commercial agents / brokers
 
 - **Who:** commercial listing agents: retail, office, industrial, small multifamily.
-- **Offer:** an **upgrade for their active listing**: 3D tour, measured floor plan, updated photos, video. If no → "keep us in mind for the next one."
+- **Door-opener:** an upgrade for their active listing: 3D tour, measured floor plan, updated photos. If no → "keep us in mind for the next one."
+- **Core offer:** full media + marketing for each space → brokerage monthly account.
 - **Sequence:**
   1. LinkedIn connect
   2. Email 1: the upgrade offer (§6.5)
@@ -174,6 +188,7 @@ Everyone with a sign up has a live listing or a vacancy **right now**. The drive
 - **Warm first:** call or text former colleagues and realtor contacts (§6.6). Ask for their listings and for referrals.
 - **In person:** broker open houses and Realtor association meetings. Show work on your phone, ask about their next listing.
 - **Cold sequence:** Email 1 with the upgrade offer for their active listing → call → Email 2 with a sample → meet at their open house.
+- **Door-opener:** the upgrade for their active listing. **Core offer:** the Curated Property Experience on the next listing.
 - **Yes looks like:** one Curated Property Experience → second → Power retainer.
 
 ### 5.6 REO / asset managers / banks — parked
