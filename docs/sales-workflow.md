@@ -26,19 +26,19 @@ No deadline. What we control is the work put in, so that's what gets scored (§7
 
 ## 3. The lanes
 
-No priority order. Effort is **spread across all lanes**, weighted toward volume and toward markets other media companies aren't working. Every lane has its own playbook (§5), and every lane ends in a retainer or monthly account.
+No priority order. Effort is **spread across all lanes**, weighted toward relationships that pay off big and toward markets other media companies aren't working. Every lane has its own playbook (§5), and every lane ends in a retainer or monthly account.
 
-| Lane | Why | Share of weekly touches |
+| Lane | Why | Weekly touches |
 |---|---|---|
+| **Developers** (incl. boutique projects) | Least tapped and highest ticket. Won through relationships, so start building them now | 15 |
 | **Property managers** | Volume: units every month | 15 |
-| **Developers** (incl. boutique projects) | Few media companies go after them. High ticket, recurring through the rollout | 10 |
-| **Commercial agents / brokers** | Also rarely approached. Spaces need 3D, measured plans, marketing | 15 |
+| **Commercial agents / brokers** | Also rarely approached. Spaces need 3D, measured plans, marketing | 10 |
 | **Residential agents** | Only agents who actually get listings: top listers and teams. Plus warm contacts from the realtor days | 10 |
-| **REO / asset managers / banks** | **Slow roll.** Vendor applications are out of our control. No packets, no insurance just to apply | 0 for now |
+| **REO / asset managers / banks** | **Parked.** Needs approvals we don't control. Answer inbound only | 0 |
 
-**Focus on what we control and what produces sooner.** REO and vendor work is volume, and it'll be useful later as a training ground for new hires before they shoot luxury listings. It isn't where the time goes now.
+**Why developers get pushed now:** a developer deal takes months of relationship, so the clock has to start early. Vendor work waits on someone else's approval, so it waits.
 
-**Asteroom:** keep doing excellent work there. It's revenue now and it isn't a sales lane. What Asteroom has taught us (shot lists, slots, speed, QC) is what the vendor profile in §5.5 is built from.
+**Asteroom:** keep doing excellent work there. It's revenue now and it isn't a sales lane.
 
 **Build while selling.** The developer package, renderings, and the rest get built *alongside* sales, not before. Sell what exists; every conversation shapes what gets built next. Nothing waits for everything to be finished.
 
@@ -69,81 +69,126 @@ Built on Alex Hormozi's value equation: raise the **outcome** and the **odds it 
 | Residential agents / teams | Power: $1,500/month for 4 Curated Property Experiences |
 | Developers | Elite tier: the full rollout, billed by milestone |
 | Commercial | Monthly account for a brokerage's listings (priced per space) |
-| REO / banks | Vendor panel: steady orders on their terms |
 
 ---
 
-## 5. Lane playbooks
+## 5. Outreach plan
 
-**Channels:** email is the main cold channel. Calls go to business lines only. Texts and DMs are **warm only**: someone who's replied, met you, or knows you. No mass texting and no cold DMs.
+### 5.0 Channels: what converts
 
-**Cold follow-up:** 3 touches about a week apart, **each with something new**, never "just checking in." No reply → park 60 days, then one more try.
+Email alone doesn't convert. It's the backbone that carries the free value and keeps you in front of them. **What closes deals is being in the room and on the phone.** Every lane mixes channels, ranked here by how well they convert:
+
+| # | Channel | Use it for |
+|---|---|---|
+| 1 | **In person** | Developer site visits and industry events, PM office drop-ins, broker open houses, association meetings |
+| 2 | **Phone** | Business lines. The call after the email, and booking the meeting |
+| 3 | **Referrals** | Ask every client, every warm contact, every "no": *"Who do you know that…?"* |
+| 4 | **LinkedIn** | Connect and comment on their posts *before* pitching. Warms up the cold email. No cold pitch DMs |
+| 5 | **Email** | First offer, the free value, follow-up (copy in §6) |
+| 6 | **Text / DM** | Warm only: someone who's replied, met you, or knows you |
+
+**A touch is any of these.** 50 a week across all channels, not 50 emails.
+
+**Cold follow-up:** each touch brings something new, never "just checking in." After the sequence with no response → park 60 days, one more try.
 **Warm follow-up** (replied, spoke, or met): follow up until they buy, say no, or ask you to stop.
 
-### 5.1 Property managers
+### 5.1 Weekly rhythm (fits the day job)
 
-- **Who:** owner, director of operations, leasing manager.
-- **Free value:** shoot their next vacant unit free (once per company).
-- **Touches:** 1) email with the free-unit offer → 2) email with a sample unit link → 3) call the office → 4) in-person drop-in with a printed one-pager (realtor move; PM offices are walk-in).
-- **Yes looks like:** the free unit → paid units → monthly account.
-- **Targets:** HomeRiver (expand), Campbell Property Management (touch 1 sent), Mark Spain, 9 Miami-Dade companies on the Outreach sheet.
+| When | What |
+|---|---|
+| Weeknights, 30 min | Research, write emails (scheduled for 8 am), LinkedIn connects and comments, prep audits and rollout plans |
+| Weekday gaps | Calls to business lines; PM office drop-ins near the day job (Broward) |
+| Saturday afternoon | Broker open houses (residential and commercial agents), developer site drive-bys |
+| Sunday | Open houses; prep the week's target list; Sunday review (§9) |
+| 1–2× a month | One industry event: developer / commercial (e.g. local ULI, NAIOP, CCIM chapters) or Realtor association / property-manager association meetings |
 
 ### 5.2 Developers (incl. boutique)
 
-- **Who:** the developer principal, head of sales, or marketing director. Boutique projects (4–30 units) are the sweet spot: they rarely have a media team.
-- **Finding them:** building permits, "coming soon" signs, construction fences with a developer's name, LinkedIn.
-- **Free value:** a one-page **marketing rollout plan** for *their* project (from the delivery doc §5: Announce → Build the hype → Singles → Release → Tour → Hand-off). It shows agency thinking and costs only time.
-- **Touches:** 1) email offering the rollout plan → 2) send the plan → 3) call → 4) ask for a 15-minute walk-through on site.
+- **Who:** developer principal, head of sales, marketing director. Boutique projects (4–30 units) are the sweet spot: they rarely have a media team.
+- **Finding them:** building permits, "coming soon" signs, construction fences with the developer's name, LinkedIn, industry events.
+- **Free value:** a one-page **marketing rollout plan** for *their* project (Announce → Build the hype → Construction → Model launch → Sales push → Hand-off).
+- **Sequence:**
+  1. LinkedIn connect + comment on a project post
+  2. Email 1: offer the rollout plan (§6.4)
+  3. Call: "I sent over an offer for a rollout plan for {project}; want me to walk you through it?"
+  4. Email 2: the plan itself
+  5. **Ask for 15 minutes on site** to walk the project. This is the conversion point
+  6. Show up in person at the site or an event they'll be at
 - **Yes looks like:** the showcase project (free or discounted) → Pre-Construction or Model Residence Shoot → Elite.
 
-### 5.3 Commercial agents / brokers
+### 5.3 Property managers
+
+- **Who:** owner, director of operations, leasing manager.
+- **Free value:** shoot their next vacant unit free (once per company).
+- **Sequence:**
+  1. Email 1: the free-unit offer (§6.3)
+  2. Call the office (day 3–4)
+  3. **Drop in** with a printed one-pager. PM offices are walk-in; this is the conversion point
+  4. Email 2: a sample unit
+  5. Email 3: close the loop
+- **Yes looks like:** the free unit → paid units → monthly account.
+- **Targets:** HomeRiver (expand), Campbell Property Management (touch 1 sent), Mark Spain, 9 Miami-Dade companies on the Outreach sheet.
+
+### 5.4 Commercial agents / brokers
 
 - **Who:** commercial listing agents: retail, office, industrial, small multifamily.
-- **Free value:** a **listing audit**. Pick one of their live listings; send 3 specific fixes (what's missing, what the lead photo should be, what a 3D tour and measured plan would add).
-- **Touches:** 1) email the audit → 2) email a sample of a space → 3) call.
+- **Free value:** a **listing audit**: 3 specific fixes for one of their live listings.
+- **Sequence:**
+  1. LinkedIn connect
+  2. Email 1: offer the audit (§6.5)
+  3. Call (day 3–4)
+  4. Email 2: the audit itself
+  5. Meet in person: their office, a broker event, or a property they're showing
 - **Yes looks like:** one space → brokerage monthly account.
 
-### 5.4 Residential agents
+### 5.5 Residential agents
 
-- **Who:** only agents with real listing volume (check their active and sold listings), teams, and brokerage owners. Skip agents without listings; they can't sustain a vendor.
-- **Warm first:** former colleagues and realtor contacts. Ask them for their listings, and ask "who do you know that lists a lot?"
-- **Free value (cold):** a listing audit, same as §5.3.
+- **Who:** only agents with real listing volume (check active and sold listings), teams, brokerage owners.
+- **Warm first:** call or text former colleagues and realtor contacts (§6.6). Ask for their listings and for referrals.
+- **In person:** broker open houses and Realtor association meetings. Show work on your phone, ask about their next listing.
+- **Cold sequence:** Email 1 offering the listing audit → call → Email 2 with the audit → meet at their open house.
 - **Yes looks like:** one Curated Property Experience → second → Power retainer.
 
-### 5.5 REO / asset managers / banks — slow roll
+### 5.6 REO / asset managers / banks — parked
 
-On hold as an active lane. No vendor packets and no insurance just to apply.
+Answer inbound requests and keep warm contacts warm (e.g. VMC REO LLC). Revisit when there's a team to feed volume to; REO orders make good starter jobs for new hires.
 
-- Answer inbound requests and keep warm contacts warm (e.g. VMC REO LLC).
-- Revisit when there's a team to feed volume to. REO orders make good starter jobs for new hires.
-- Targets for later: VMC REO LLC, A&D Mortgage, The Loan Store, Newrez, Mutual of Omaha Mortgage, PNC, UIF Corporation, Fannie Mae supplier registration, the REO companies on the Outreach sheet.
+### 5.7 Conversion checkpoints
+
+Planning estimates, corrected at the Sunday review with real numbers:
+
+| Step | Per week |
+|---|---|
+| Touches | 50 |
+| Conversations (reply, call, meeting) | ~5 |
+| Free deliverables given (audit, rollout plan, free unit) | ~2 |
+| New paid job or project | aiming for 1 every 1–2 weeks at first |
+
+If conversations stay low for 3 weeks → change the channel mix or the offer, not the effort.
 
 ---
 
-## 6. Email sequences
+## 6. Copy
 
-### 6.1 Cadence (every cold lane)
+### 6.1 Call opener (business lines)
 
-| Day | Touch |
-|---|---|
-| 1 | **Email 1**: personal line + the free offer + one easy question |
-| 3–4 | **Call** the business line (property managers, commercial). Skip if there's no business number |
-| 7 | **Email 2**: reply in the same thread with something new (a sample, or the free thing itself) |
-| 14 | **Email 3**: close the loop. Short, no pressure, door left open |
-| 60 | One revival email with a new angle, then leave it |
+> Hi, this is {name} with Prolific. I sent {first} a note about {the free offer} for {project / listing / properties}. Is {first} around? … {If yes:} I'll be quick: I was a realtor, now I run a real estate media and marketing agency. I'd like to {free offer}. Would that be useful?
 
-**Any reply → warm.** Answer the same day and follow up until they buy, say no, or ask you to stop.
+### 6.2 In-person (drop-in, open house, event)
 
-### 6.2 Sending rules
+> Hey, I'm {name} with Prolific. I was a realtor; now I run a media and marketing agency for real estate. {Show one piece of work on the phone.} What are you working on next? … Can I send you {free offer} for it?
+
+Get a card or a number every time. Log it that night.
+
+### Email rules
 
 - Send from your Prolific email address, by hand. No mass-mail tools.
 - Plain text. No attachments or images in email 1, and at most one link.
 - **Email 1 needs a personal line** about their listing, project, or properties. No line, no send.
 - Write at night, **schedule to send 8 am** on weekdays.
 - Signature on every email: name, Prolific, phone, website, business mailing address, and *"Not the right fit? Just reply 'no' and I won't email again."* Commercial email law (CAN-SPAM) requires the address and a way to opt out.
-- Daily load once the sequences are running: 10 new emails + that day's follow-ups (about 30 emails, most of them 1-minute replies).
 
-### 6.3 Property managers
+### 6.3 Email — property managers
 
 **Email 1** — Subject: *your next vacant unit*
 > Hi {first},
@@ -160,7 +205,7 @@ On hold as an active lane. No vendor packets and no insurance just to apply.
 **Email 3** (day 14) — same thread
 > Hi {first}, I don't want to keep filling your inbox, so this is my last note for now. If a vacancy sits too long or a new property comes on, I'm one email away. {link}
 
-### 6.4 Developers
+### 6.4 Email — developers
 
 **Email 1** — Subject: *marketing rollout for {project}*
 > Hi {first},
@@ -177,7 +222,7 @@ On hold as an active lane. No vendor packets and no insurance just to apply.
 **Email 3** (day 14)
 > Hi {first}, last note from me for now. When {project} gets closer to launch and you want a hand with the marketing, I'm here. Good luck with the build.
 
-### 6.5 Agents (commercial and residential)
+### 6.5 Email — agents (commercial and residential)
 
 Residential: only agents with real listing volume. Warm contacts from the realtor days get a call or text instead (§6.6).
 
