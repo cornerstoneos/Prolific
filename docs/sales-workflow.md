@@ -96,7 +96,7 @@ Email alone doesn't convert. It's the backbone that carries the free value and k
 
 | When | What |
 |---|---|
-| Weeknights, 30 min | Research, write emails (scheduled for 8 am), LinkedIn connects and comments, prep audits and rollout plans |
+| Weeknights, 30 min | Research, write emails (scheduled for 8 am), LinkedIn connects and comments, prep rollout plans |
 | Weekday gaps | Calls to business lines; PM office drop-ins near the day job (Broward) |
 | Saturday afternoon | Broker open houses (residential and commercial agents), developer site drive-bys |
 | Sunday | Open houses; prep the week's target list; Sunday review (§9) |
@@ -108,15 +108,16 @@ Everyone with a sign up has a live listing or a vacancy **right now**. The drive
 
 | Sign | Lead goes to | First move |
 |---|---|---|
-| **For Sale** (agent sign) | Residential agents (§5.5) | Listing audit for *that* address: "3 ideas for {address}" |
-| **For Sale By Owner** / Zillow FSBO | Residential: FSBO (§5.5) | In person at their open house, or knock. Offer the listing media package |
-| **For Lease / For Sale** (commercial) | Commercial (§5.4) | Listing audit for that space |
+| **For Sale** (agent sign) | Residential agents (§5.5) | Upgrade offer for *that* listing: 3D tour, updated photos, floor plan, video |
+| **For Sale By Owner** / Zillow FSBO | Residential: FSBO (§5.5) | In person at their open house, or knock. Offer the full listing media package |
+| **For Lease / For Sale** (commercial) | Commercial (§5.4) | Upgrade offer for that space: 3D tour, measured floor plan, updated photos |
 | **For Rent** | Property managers (§5.3) or small landlords | Free-unit offer |
 | **Coming Soon** / construction fence | Developers (§5.2) | Rollout plan for that project |
 
 **Rules:**
-- **Capture only while stopped or parked.** Photo of the sign, or a voice memo: address, name, number.
-- Log it in the tracker that night: sign type, address, name, brokerage, number, date. Source = "Sign".
+- Photo of the sign, or a voice memo: address, name, number.
+- **Log it in the tracker (the Outreach sheet), not in a chat.** Chats drop things; the sheet doesn't. Sign type, address, name, brokerage, number, date. Source = "Sign". If you're behind, drop a batch of sign photos into a Claude session and have them transcribed into the sheet.
+- **Sign leads are prospects, not clients.** They enter at stage 1 (Find). Nobody is a client until they've booked.
 - Skip the property you're shooting that day for Asteroom.
 - **FSBO numbers are personal phones.** Check the number against the National Do Not Call Registry before calling; in person is better anyway. No cold texts.
 - **Target: 10 signs a week.** Each one is a lead with a live listing, and it feeds the 50 touches.
@@ -151,22 +152,22 @@ Everyone with a sign up has a live listing or a vacancy **right now**. The drive
 ### 5.4 Commercial agents / brokers
 
 - **Who:** commercial listing agents: retail, office, industrial, small multifamily.
-- **Free value:** a **listing audit**: 3 specific fixes for one of their live listings.
+- **Offer:** an **upgrade for their active listing**: 3D tour, measured floor plan, updated photos, video. If no → "keep us in mind for the next one."
 - **Sequence:**
   1. LinkedIn connect
-  2. Email 1: offer the audit (§6.5)
+  2. Email 1: the upgrade offer (§6.5)
   3. Call (day 3–4)
-  4. Email 2: the audit itself
+  4. Email 2: a sample of a space
   5. Meet in person: their office, a broker event, or a property they're showing
 - **Yes looks like:** one space → brokerage monthly account.
 
 ### 5.5 Residential agents
 
 - **Who:** only agents with real listing volume (check active and sold listings), teams, brokerage owners. **A For Sale sign means a live listing**, so sign capture (§5.1a) is the main source.
-- **FSBO sellers:** people selling without an agent who still want quality media. Find them from signs and Zillow FSBO listings. Offer: the Curated Property Experience or Photos + Video. Meet them at their open house.
+- **FSBO sellers:** people selling without an agent who still want quality media. Find them from signs and Zillow's For Sale By Owner section, which also lists their open houses. Offer: the Curated Property Experience or Photos + Video. Meet them at their open house.
 - **Warm first:** call or text former colleagues and realtor contacts (§6.6). Ask for their listings and for referrals.
 - **In person:** broker open houses and Realtor association meetings. Show work on your phone, ask about their next listing.
-- **Cold sequence:** Email 1 offering the listing audit → call → Email 2 with the audit → meet at their open house.
+- **Cold sequence:** Email 1 with the upgrade offer for their active listing → call → Email 2 with a sample → meet at their open house.
 - **Yes looks like:** one Curated Property Experience → second → Power retainer.
 
 ### 5.6 REO / asset managers / banks — parked
@@ -181,7 +182,7 @@ Planning estimates, corrected at the Sunday review with real numbers:
 |---|---|
 | Touches | 50 |
 | Conversations (reply, call, meeting) | ~5 |
-| Free deliverables given (audit, rollout plan, free unit) | ~2 |
+| Offers made in a real conversation (upgrade, rollout plan, free unit) | ~2 |
 | New paid job or project | aiming for 1 every 1–2 weeks at first |
 
 If conversations stay low for 3 weeks → change the channel mix or the offer, not the effort.
@@ -246,20 +247,15 @@ Get a card or a number every time. Log it that night.
 
 Residential: only agents with real listing volume. Warm contacts from the realtor days get a call or text instead (§6.6).
 
-**Email 1** — Subject: *3 ideas for {address}*
+**Email 1** — Subject: *{address}*
 > Hi {first},
 >
 > I came across your listing at {address}. {Personal line: what stands out about the property.}
 >
-> I put together 3 quick ideas to get it more attention: the lead photo, and what a measured floor plan and 3D tour would add. I was a realtor myself; now I run Prolific, a real estate media and marketing agency. Want me to send them over?
+> I was a realtor myself; now I run Prolific, a real estate media and marketing agency. If you want to give it a push, we can add a 3D tour, a measured floor plan, updated photos, or a listing video, fast turnaround. Want me to send over what that would look like?
 
-**Email 2** (day 7) — give the audit whether or not they answered
-> Hi {first}, here are the 3 ideas for {address}:
-> 1. {Lead photo: which one should lead, and why}
-> 2. {What's missing: 3D tour, measured floor plan, twilight, video}
-> 3. {One marketing idea: a reel, a social post, a feature to spotlight}
->
-> Happy to help on this one or the next.
+**Email 2** (day 7)
+> Hi {first}, here's a recent listing we did so you can see the quality: {link}. Happy to do the same for {address}, or if the timing's not right, keep us in mind for your next one.
 
 **Email 3** (day 14)
 > Hi {first}, last note for now. When the next listing comes up, I'd love to show you what we can do with it. {link}
@@ -268,6 +264,23 @@ Residential: only agents with real listing volume. Warm contacts from the realto
 
 Call or text, not email:
 > Hey {first}, it's {name}. I left the listing side and started Prolific, a media and marketing agency for agents: photos, video, 3D tours, floor plans, fast turnaround. Got anything coming up? And who do you know that's listing a lot right now?
+
+---
+
+### 6.7 Communities
+
+South Florida is a melting pot. Cater to each community the way we cater to each lane: **cater, don't pander.** Speak their language, respect their calendar, show up where they are.
+
+| Community | How we cater |
+|---|---|
+| **Spanish-speaking** (largest, underserved by English-only vendors) | Every message in English **and** Spanish. Spanish copy reviewed by a native speaker before use, never an unchecked machine translation |
+| **Haitian / Caribbean** | Haitian Creole versions of the core messages, native-speaker reviewed. Community business networks and chambers |
+| **Jewish** | Respect Shabbat: no calls, texts, or emails to observant prospects from Friday sundown to Saturday nightfall. Keep the holiday calendar (Rosh Hashanah, Yom Kippur, Sukkot, Passover); don't pitch on those days |
+| **Russian-speaking / Eastern European, Turkish** (strong around Sunny Isles) | Russian versions of the core messages, native-speaker reviewed. Relationships and referrals first |
+| **Everyone** | Know the major holidays (e.g. Lunar New Year, Carnival, Diwali). A genuine greeting to people you already know; no pitches built around holidays |
+
+- Add a **Language** column to the tracker, and send in that language.
+- Content made for these communities is marketing's job. This section is about outreach only.
 
 ---
 
@@ -304,7 +317,7 @@ The goal is to make outreach and wins feel normal. Rules:
 ## 9. Tracking and review
 
 **Tracker:** the "Prolific Outreach" Google Sheet. Columns:
-`Lane | Source | Company | Person | Title | Address | Channel | Stage | Last touch | Next touch | Touches | Notes`
+`Lane | Source | Company | Person | Title | Address | Language | Channel | Stage | Last touch | Next touch | Touches | Notes`
 
 Source: Sign, Zillow, LinkedIn, Event, Referral, Warm, Research.
 Sort by **Next touch** each night. That's tomorrow's follow-up list.
@@ -335,7 +348,6 @@ Where $5,000 net comes from once the ladders work. The retainers are the hardest
 
 - [ ] One-pager for property managers (print for drop-ins)
 - [ ] Rollout-plan template for developers
-- [ ] Listing-audit template (commercial + residential): the 3 fixes in §6.5 email 2
 - [ ] Add tracker columns (§9); move the named targets in
 
 These run **alongside** outreach, not before it. Property manager, agent, and warm outreach can start tomorrow.
