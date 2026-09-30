@@ -149,7 +149,7 @@ Asteroom's upload screen gives each required shot its own slot with a line drawi
 - Near airports (PBI, FLL, MIA, Lantana, Boca): LAANC authorization via an app such as Aloft
 - Palm Beach near Mar-a-Lago: temporary flight restrictions can appear on short notice
 - No clearance → tell the client and adjust price before the shoot
-- **OPEN:** Part 107 certificate status
+- Part 107: **in progress** — scheduling the test after studying. Until certified, no drone on client jobs, paid or free (see §7).
 
 ### Still to write
 
@@ -161,6 +161,8 @@ Asteroom's upload screen gives each required shot its own slot with a line drawi
 
 ## 7. Open business items
 
+- **Drone until Part 107:** the recreational exception covers flying purely for fun. Footage used for any business purpose (a free add-on to a paid shoot, Prolific's own marketing) counts as commercial and needs Part 107. Pause drone on jobs until certified.
+- First direct REO/AMC lead: VMC REO LLC (met through day job, separate from Asteroom). Confirm the day job has no conflict-of-interest rule about it.
 - **OPEN:** Asteroom agreement terms — known rule: no handing business cards to agents met on Asteroom jobs. Confirm whether a broader non-solicitation clause exists before contacting their banks and asset managers directly.
 - **OPEN:** does the Asteroom app show or export room tags from the 3D scan?
 - **OPEN:** file storage (no Google Drive yet) and CRM
