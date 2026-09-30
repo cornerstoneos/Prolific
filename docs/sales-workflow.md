@@ -3,6 +3,8 @@
 Status: **interview in progress.** Nothing here is agreed yet. It records answers so far.
 Open items are marked **OPEN**. Companion to `docs/delivery-workflow.md`, which stays the source of truth for how work is delivered.
 
+Lead names, phone numbers, and emails stay in the lead tracker, never in this repo.
+
 ---
 
 ## 1. The goal
@@ -10,23 +12,50 @@ Open items are marked **OPEN**. Companion to `docs/delivery-workflow.md`, which 
 **Net $5,000 a month from direct clients, three months in a row.**
 
 - Asteroom income counts as **$0** toward the goal. The point is to cut out the middleman.
-- "Net" means after job costs (Asteroom Enhanced, gas, tolls). **OPEN:** separate business funds first (own bank account) so the number is real, not estimated.
-- Three consistent months is the proof point for the next step. **OPEN:** what that next step is (leaving the day job?) and the target start month.
+- "Net" means after job costs (Asteroom Enhanced, gas, tolls).
 - In weekly terms: about **$1,150–1,250 net per week** from direct work.
+- What happens after three months gets decided then. Hitting $5,000 is what buys the choice.
+- Location isn't the goal. Prolific goes wherever the work is (home base: Sunny Isles).
+- **OPEN:** target month for the first $5,000 month.
+
+### Money setup
+
+- Entity: **Black Lab Holdings** (EIN exists), with Prolific as a DBA. **OPEN:** file the DBA and open a business bank account. All direct-client revenue and costs run through it, so the $5,000 is a real number.
 
 ---
 
 ## 2. Where we are (2026-09-30)
 
-- **Asteroom:** $60–100 per job depending on distance. Average about $300/week (**OPEN:** confirm this is pay, not job count). This week is heavier: 8 shoots booked, 6 done by Wednesday.
+- **Asteroom:** $60–75 per job, plus $20–40 extra for far trips (Homestead, western Palm Beach acreage). About $300/week on average; this week is heavier, with 8 shoots.
 - **Direct clients:** none paying yet.
-- **Leads:** VMC REO LLC (just a lead so far). A few other REO/AMC and property-manager contacts, no outreach yet.
-- **Outreach so far:** DMs on Facebook, Instagram, and LinkedIn. **No responses at all.**
 - **Audience:** Instagram ~100, TikTok ~30, Facebook business page 0.
-- **Proof:** lots of work shot, not yet cleanly presented. No reviews or testimonials.
-- **Gear:** iPhone only (no DSLR/mirrorless right now).
-- **Lead tracking:** a Google Sheet plus Claude chats. Not clean.
+- **Proof:** lots of work shot, but limited in what can be posted out of respect for those clients. No reviews or testimonials.
+- **Gear:** iPhone only right now. Previously a Canon 80D, then a Sony ZV-E10 with a 10–18mm lens. **Decided:** direct-client profits buy a camera.
 - **Budget:** $0 for now; profits get reinvested. Spending to land the first clients can be discussed.
+
+### Lead list (Google Sheet "Prolific Outreach", as of 2026-09-30)
+
+| Type | Count | Notes |
+|---|---|---|
+| Property managers / rentals | 9 | Miami-Dade companies, phone + website only, no named contact |
+| REO / asset managers | 4 companies + 1 REO agent | One has a named contact and email |
+| Agents | 9 | Most found through open houses dated April; ~6 months old |
+| FSBO | 2 | Miami (33175) |
+
+- The sheet has **no status, date, or next-step columns.** There's no record of who was contacted, when, how, or what they said.
+- VMC REO LLC is not on the sheet yet.
+
+### Outreach so far
+
+DMs on Facebook, Instagram, and LinkedIn. **No responses at all.** Current DM:
+
+> Hi [name] thanks for connecting! I do listing media 3D tours, drone, floor plans, HDR photos for agents across Miami-Dade, Broward, and Palm Beach, fast turnaround. Happy to send samples if useful for an upcoming listing.
+
+Problems:
+- **It offers drone.** Drone can't be sold until Part 107. Remove it.
+- It's a service list. Every media company sends this same message.
+- "Happy to send samples" asks the agent to do a step. Put the sample link in the first message.
+- It isn't about their listing. Name a specific listing of theirs.
 
 ---
 
@@ -37,10 +66,12 @@ Open items are marked **OPEN**. Companion to `docs/delivery-workflow.md`, which 
 | Weekday mornings | 8–10 am | Before the day job |
 | Weekday evenings | Some after 6 pm | Drops when DST ends **Sun Nov 1, 2026** (sunset ~5:35–5:45 pm through winter) |
 | During work | Can slip out | Day job is in Broward; Deep South Miami and Palm Beach jobs have to fit around it |
-| Weekends | Mostly open | Best time for full Curated Property Experiences and open houses |
+| Saturday | After noon | Day job in the morning |
+| Sunday | Open | Best day for full Curated Property Experiences and open houses |
 
-- Service area: the Keys to Port St. Lucie. Far trips (Keys, St. Lucie) cost more unless it's a CPE. **OPEN:** the far-trip fee. Note the site says "Keys to Palm Beach County".
+- Service area: the Keys to Port St. Lucie. **Far-trip fee: $50** (Keys, St. Lucie), waived on a Curated Property Experience. **OPEN:** update the site ("Keys to Palm Beach County") and decide where "far" starts.
 - **Opportunity:** after DST ends, twilight falls around 5:45–6:15 pm, right after work. Twilight shoots (already on the site) fit the evening window all winter.
+- **Opportunity:** open houses run Saturday afternoon and Sunday, exactly when the owner is free.
 - **OPEN:** time for one full CPE, start to finish (drive + shoot + edit). Time the next one.
 
 ---
@@ -58,9 +89,9 @@ A starting target per month, not agreed yet. Net figures are rough estimates.
 | Developers | Showcase project only | $0 | $0 |
 | **Total** | | | **~$5,000** |
 
-- Developers stay a slow roll: one free or discounted showcase project for the portfolio and a case study. Not counted toward the three-month goal.
-- **OPEN:** REO/AMC and property-manager rates when booked direct (what they pay per order or unit).
-- **OPEN:** capacity check. About 6 CPEs, 4 retainer CPEs, 10 REO orders, and 4 PM units a month, alongside Asteroom work, has to fit the windows in §3.
+- Developers stay a slow roll: one free or discounted showcase project for the portfolio and a case study (package already built, `remotion/src/tiers.js`). Not counted toward the goal.
+- For comparison: Asteroom pays $60–75 for a job that includes 3D. **OPEN:** direct REO and property-manager rates. Direct should beat what Asteroom pays you.
+- **OPEN:** capacity check. This volume alongside Asteroom work has to fit §3.
 
 ---
 
@@ -68,9 +99,9 @@ A starting target per month, not agreed yet. Net figures are rough estimates.
 
 1. **Not enough outreach.** Volume is low.
 2. **No proof of concept, even in my own head.** Confidence follows proof. Get the portfolio out first.
-3. **Outreach gets zero responses.** Cold DMs aren't working.
-4. **Gear:** iPhone only. **OPEN:** does this limit the $500 CPE with beach-market agents? Is a camera the first reinvestment?
-5. **No clean lead tracking.**
+3. **Outreach gets zero responses.** See the DM problems in §2.
+4. **Gear:** iPhone only until profits buy a camera.
+5. **No clean lead tracking.** The sheet has no status or follow-up dates.
 
 ---
 
@@ -78,24 +109,37 @@ A starting target per month, not agreed yet. Net figures are rough estimates.
 
 | | Agents | Agent teams (Power) | REO / AMC | Property managers | Developers |
 |---|---|---|---|---|---|
-| Target | Beach-area listings (**OPEN:** which cities, price band) | Teams / brokerages in the same area | Banks, asset managers, AMCs covering South Florida | Local PM and leasing companies | One showcase project |
-| Known leads | None direct | None | VMC REO LLC + a few known names | A few known names | Development package built (`remotion/src/tiers.js`) |
-| Blocker | No proof, no responses | Needs agent proof first | No outreach yet; Asteroom terms | Asteroom terms (**OPEN**) | Needs a project to showcase |
-| First move | Proof piece (§7), then in-person | After 2–3 agent CPEs | Vendor signup with VMC | After Asteroom terms confirmed | Pick the showcase target |
+| Target | Anywhere the work is; Sunny Isles is home base | Teams / brokerages | Banks, asset managers, AMCs covering South Florida | Local PM and leasing companies | One showcase project |
+| On the sheet | 9 agents, 2 FSBO | None | 4 companies + 1 REO agent; VMC to add | 9 companies | None |
+| Blocker | No proof, DMs get no replies | Needs agent proof first | No outreach yet; Asteroom terms | Asteroom terms (**OPEN**) | Needs a project to showcase |
+| First move | Proof piece (§7), then open houses | After 2–3 agent CPEs | Vendor signup with VMC | After Asteroom terms confirmed | Pick the showcase target |
 
-- **Asteroom rule:** no soliciting agents met on Asteroom jobs. **OPEN:** whether a broader non-solicit covers Asteroom's bank, REO, and PM clients. No outreach to them until confirmed.
+- **Asteroom rule:** no soliciting agents met on Asteroom jobs. **OPEN:** whether a broader non-solicit covers Asteroom's bank, REO, and PM clients. **OPEN:** which companies on the sheet came from Asteroom jobs.
 
 ---
 
 ## 7. Proof of concept
 
-- Plan: shoot a **"fancy open house"**, a nice listing at its best, for portfolio footage. Asteroom houses aren't always showcase quality.
-- **OPEN:** whose listing, which agent, and what date.
-- Get existing work out cleanly: a portfolio page, plus IG and TikTok posts. **OPEN:** which past work Prolific has the right to post (Asteroom / HomeRiver jobs may not be).
+- **Fancy open house:** shoot a nice listing at its best for portfolio footage. The owner will find the agent and listing. **OPEN:** date.
+- Get existing work out cleanly (portfolio page, IG, TikTok), using only work that respects the clients it was shot for.
 - Collect a testimonial and a Google review from every free or discounted shoot.
 
 ---
 
-## 8. OPEN — next interview round
+## 8. Draft sales stages (to agree on)
 
-See the round-2 questions in the session. Answers go into the sections above.
+Same idea as the 12 delivery stages. Every lead moves through these, whatever the client type.
+
+| # | Stage | What happens |
+|---|---|---|
+| 1 | Find | Lead added to the tracker: type, company, source, and whether it's Asteroom-safe |
+| 2 | First touch | One message or visit, specific to them, with a link to proof |
+| 3 | Follow-up | Set touches on set days until they reply or the sequence ends |
+| 4 | Conversation | Reply, call, or meeting. Learn what they need and how they order |
+| 5 | Offer | The right offer for the client type (CPE, Power, vendor rate, unit rate, showcase) |
+| 6 | Booked | Calendly or vendor signup; payment per `delivery-workflow.md` §4. Hand off to delivery stage 1 (Intake) |
+| 7 | Delivered | Delivery workflow runs |
+| 8 | Review + referral | Ask for a review, a testimonial, and one name |
+| 9 | Repeat | Next listing, next order, or a retainer pitch |
+
+**OPEN:** agree on these, then the touches per client type for stage 3.
