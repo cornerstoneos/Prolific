@@ -1,0 +1,167 @@
+# Prolific Delivery Workflow (working draft)
+
+Status: **yellow light.** Flow is agreed in principle; details below are still being decided.
+Open items are marked **OPEN**. Update this doc as decisions are made.
+
+---
+
+## 1. The 12 stages (every vertical)
+
+| # | Stage | What happens |
+|---|---|---|
+| 1 | Intake | Order comes in. Capture: vertical, requested company (→ client profile), property, deliverables, deadline, payment, job notes. |
+| 2 | Treatment | The creative plan (concept, mood, story, key shots, music, deliverable map). Depth depends on vertical — see §3. Drone airspace check happens here. |
+| 3 | Prep | Build the room list and shot slots from the treatment + client profile. |
+| 4 | Capture | Shoot. **Pre-departure check:** every slot filled before leaving the property. |
+| 5 | Ingest | Raw files backed up to storage the same day, standard folder structure. |
+| 6 | Edit | Owner edits. |
+| 7 | QC pass 1 (AI) | Sorts photos into slots, flags empty slots, rule violations (open closets, lids up, fans on), tilted verticals, blown windows, blur, wrong sizes, bad names. |
+| 8 | QC pass 2 (owner) | Owner reviews flags and approves. Nothing ships without this. |
+| 9 | Package | Export per destination (MLS, print, social, lender portal); name per client profile. |
+| 10 | Deliver | Per vertical — see §4. |
+| 11 | Revisions | Log every request and round (even with no cap), fix, re-QC, redeliver. |
+| 12 | Close-out | Payment, archive, ask for review/testimonial. |
+
+**Why the pre-departure check matters:** a missed bedroom in Wellington cost ~3 hours of driving and a Sunday. The most expensive miss happens on site, so the most important check happens before leaving.
+
+---
+
+## 2. Client profiles (layered rules)
+
+Most specific layer wins.
+
+| Layer | Example | Set by |
+|---|---|---|
+| 1. Prolific standard | Default shot list, framing, fans off | Prolific, once |
+| 2. Platform | Asteroom upload slots, 2D + 3D | Asteroom |
+| 3. Client | HomeRiver rules (below) | The client, via the platform |
+| 4. Job notes | Access, parking, occupancy | Each order |
+
+The Asteroom order card names the client under **Requested company** — that field selects the Layer 3 profile.
+
+### Layer 3 example — HomeRiver (via Asteroom), updated 2026-09-30
+
+- Closets closed; pantry closed; toilet lid closed
+- Main room lights only; fan lights, chandeliers, pendants off unless the room is too dark
+- Front: 3 angled shots (left, center, right), framed tighter on the house, full frontage visible
+- Backyard: full rear facing the house + one wide landscape shot facing away (toward fence/yard)
+- Interior: kitchen (full, closer), living/family/great/bonus/media rooms, dining/breakfast nook, **every** bedroom, **every** bathroom, laundry (even in a closet), garage/carport, covered patio/sunroom
+
+### Other client profiles
+
+- **OPEN:** bank/REO profiles (e.g. toilet seats up, AC unit, water heater, address photo). Write one per requested company as orders come in.
+
+### Layer 4 — job notes (structured fields)
+
+Security gates and apartments make these critical. Capture every order:
+
+- Access: gate code, door code, lockbox, key pickup, unit/building number
+- Parking and where to enter the complex
+- On-site contact and whether they'll be present
+- Occupancy: vacant / tenant-occupied / owner-occupied; pets
+- Utilities on or off (power off changes the lighting rules)
+- Anything unusual
+
+Codes and contact details stay in the job record only — never in shared docs, the repo, or client-facing pages.
+
+---
+
+## 3. Treatment depth by vertical
+
+| Vertical | Treatment |
+|---|---|
+| REO / AMC | None — the lender's required list is the treatment. Compliance, not creativity. |
+| Property managers | Once per retainer: look, per-unit-type shot list, naming. |
+| Agents, one-off | One-page template: selling points, hero shots, video mood. |
+| Agent teams / brokerages (retainer) | Once per retainer, as a brand standard. |
+| Developers | Full treatment + rollout plan (§5). |
+
+**Retainer rule:** a retainer client's treatment and standards are set up once; every job after that skips straight to capture.
+
+---
+
+## 4. How the verticals differ
+
+| | Agents (one-off) | Agent teams (retainer) | Property managers | REO / AMC | Developers |
+|---|---|---|---|---|---|
+| Unit of work | Listing | Listing | Unit / building | Order | Multi-month project |
+| Orders arrive | Booking link | Recurring | Recurring (HomeRiver) | Their platform (Asteroom now) | Scoped contract |
+| Naming | Address | Agent / address | Property / building / unit | Their spec | Project / phase / date |
+| Approval before release | No | No | No | Their acceptance review | Yes (renderings) |
+| Delivery | Branded listing page | One recurring link | One recurring link, grouped by property | Upload to their system | Project hub (rollout timeline) |
+| Payment | Deposit at booking, balance on delivery | Monthly | Monthly | Their terms | Milestones |
+| Turnaround | Next day | Next day | Next day | Their deadline | Scheduled cadence |
+| Biggest QC risk | Looks | Brand consistency | Consistency across units | Missing required shots | Accuracy + sign-off |
+
+---
+
+## 5. Developers — the rollout
+
+| Phase | Construction stage | Drops |
+|---|---|---|
+| Announce | Pre-construction | Site plan & map, hero exterior rendering, teaser social pack |
+| Build the hype | Pre-sale | Interior & amenity renderings, floor plans, landing page live |
+| Singles | Construction | Progress photos every two weeks (set day); time-lapse at key stages (walls up, topping out) |
+| Release | Model complete | Model residence shoot: photos, video, drone, 3D tour, digital twin |
+| Tour | Sales push | Ongoing social, landing page updates |
+| Hand-off | Sell-out / turnover | Final time-lapse, full archive, landing page transferred to client |
+
+Tier mapping: Pre-Construction = Announce + Build the hype. Model Residence Shoot = Release. Premium = both. Elite = the full rollout.
+
+- Renderings: made in-house. Draft → client review → revisions → approval → release. No stated revision cap; log every round.
+- Progress photos: same camera positions every visit. The reference image for each slot is the previous visit's photo.
+- **OPEN:** time-lapse capture method (fixed site camera vs. ~1-hour iPhone sessions at milestones).
+- **OPEN:** who approves on the developer side — ask in discovery meetings.
+- Landing page: build it to be transferable, hand off at launch, offer optional paid upkeep.
+- Plan a free or discounted showcase project for portfolio.
+
+---
+
+## 6. Capture checklists
+
+### Shot slots (idea borrowed from Asteroom, improved)
+
+Asteroom's upload screen gives each required shot its own slot with a line drawing of the expected framing. Weak spot: all interior rooms go into one "Other Photos" box, where a missed bedroom hides.
+
+**Our version:** interior slots are generated from the room list (Bedroom 1/2/3, Bath 1/2 …). An empty slot is impossible to miss.
+
+### Standard exterior (Prolific default; client profiles override)
+
+- [ ] Street view
+- [ ] Front: left 45°, center, right 45°
+- [ ] Driveway / garage
+- [ ] Both sides
+- [ ] From house facing out to backyard
+- [ ] Backyard facing house (mid-yard)
+- [ ] Backyard corners at 45°
+- [ ] Address number *(REO)*
+- [ ] AC unit *(REO)*
+- [ ] Water heater *(REO)*
+
+### Standard interior
+
+- [ ] Every room on the room list — 2D photo
+- [ ] Every room on the room list — 3D scan
+- [ ] Closets, blinds, lights, fans, toilet lids per client profile
+
+### Drone (checked at Treatment, re-checked morning of shoot)
+
+- Near airports (PBI, FLL, MIA, Lantana, Boca): LAANC authorization via an app such as Aloft
+- Palm Beach near Mar-a-Lago: temporary flight restrictions can appear on short notice
+- No clearance → tell the client and adjust price before the shoot
+- **OPEN:** Part 107 certificate status
+
+### Still to write
+
+- **OPEN:** video routine (shot list, cadence, deliverable lengths)
+- **OPEN:** floor plans and measurements routine (check what Asteroom already produces from the scan)
+- **OPEN:** QC checklists for renderings, site plans, social packs, time-lapse, landing page
+
+---
+
+## 7. Open business items
+
+- **OPEN:** Asteroom agreement terms — known rule: no handing business cards to agents met on Asteroom jobs. Confirm whether a broader non-solicitation clause exists before contacting their banks and asset managers directly.
+- **OPEN:** does the Asteroom app show or export room tags from the 3D scan?
+- **OPEN:** file storage (no Google Drive yet) and CRM
+- Agent acquisition / proof of concept is a separate thread.
