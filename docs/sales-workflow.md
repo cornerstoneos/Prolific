@@ -50,12 +50,14 @@ Built on Alex Hormozi's value equation: raise the **outcome** and the **odds it 
 |---|---|
 | Outcome | Units leased faster, listings that win the listing appointment, projects that sell before completion |
 | Odds | Proof (samples, case studies), our client's own shot list followed exactly, QC before anything ships |
-| Wait | Next-day delivery |
+| Wait | Fast turnaround |
 | Effort | One vendor, one link, set up once. Retainer clients skip straight to the shoot |
 
-**Guarantee: next-day delivery or 25% off that job.** Next-day is already the delivery standard. The guarantee just says it out loud.
+**No turnaround guarantee.** We say "fast turnaround" and deliver on it. Prolific competes on the full offer (media + marketing), not on matching another photographer's 24-hour promise. We build it our way.
 
 **Give value first** (Hormozi: give so much it feels strange not to buy). Every cold lane opens with something free and useful (§5).
+
+**Free is never just free.** Every free deliverable also becomes portfolio and content: a case study, a post, a sample link for the next message. Get the client's OK to post it before starting.
 
 **The ladder, in every lane:** free value → first paid job → second job → **offer the retainer after the third job.**
 
@@ -123,7 +125,7 @@ This lane is **having your stuff together**, not marketing. Build the vendor pac
 Short and plain, written like a realtor talking to another professional. The structure matters: **their business → free value → one easy question.**
 
 **Property manager:**
-> Hi [name], I'm [name] with Prolific. I was a realtor, now I run a media and marketing agency for real estate. For property managers we shoot units (photos + 3D tour) delivered next day, consistent across every property. I'd like to shoot your next vacant unit free so you can see the difference in your listings. Who handles your vacancies?
+> Hi [name], I'm [name] with Prolific. I was a realtor, now I run a media and marketing agency for real estate. For property managers we shoot units (photos + 3D tour) with fast turnaround, consistent across every property. I'd like to shoot your next vacant unit free so you can see the difference in your listings. Who handles your vacancies?
 
 **Developer:**
 > Hi [name], I saw [project]. I run Prolific, a real estate media and marketing agency. I put together marketing rollouts for new developments, from pre-construction renderings through the model residence launch. I'd like to send you a one-page rollout plan for [project], free, no strings. Want me to put it together?
@@ -132,10 +134,10 @@ Short and plain, written like a realtor talking to another professional. The str
 > Hi [name], I looked at your listing at [address] and put together three quick ideas to get it more attention: [link / attached]. I run Prolific, a real estate media and marketing agency. If any of it's useful, I'd love to help on the next one.
 
 **Residential (warm):**
-> Hey [name], it's [name]. I left the listing side and started Prolific, a media and marketing agency for agents. Photos, video, 3D tours, floor plans, all next day. Got anything coming up? And who do you know that's listing a lot right now?
+> Hey [name], it's [name]. I left the listing side and started Prolific, a media and marketing agency for agents. Photos, video, 3D tours, floor plans, fast turnaround. Got anything coming up? And who do you know that's listing a lot right now?
 
 **REO / bank:**
-> Hi [name], I run Prolific, a property media company covering South Florida from the Keys to Port St. Lucie. REO and occupancy photo orders, 3D tours, floor plans, 24–48 hours, to your shot list. I'd like to get set up as a vendor. Who handles onboarding for Florida? W-9, insurance, and capability sheet attached.
+> Hi [name], I run Prolific, a property media company covering South Florida from the Keys to Port St. Lucie. REO and occupancy photo orders, 3D tours, floor plans, fast turnaround, to your shot list. I'd like to get set up as a vendor. Who handles onboarding for Florida? W-9, insurance, and capability sheet attached.
 
 **Cold follow-up (touches 2 and 3):** one new thing (a sample, a case study, a stat, a local observation) + "is there someone else I should talk to?"
 
@@ -217,6 +219,7 @@ These run **alongside** outreach, not before it. Property manager and warm resid
 
 ## 12. Reference
 
+- **Turnaround:** say "fast turnaround" everywhere. No hour count promised in sales.
 - **Capacity (solo):** weekdays 8–10 am, some evenings (fewer after DST ends Nov 1; twilight ~5:45–6:15 pm, right after work), Saturday afternoon, Sunday. Day job in Broward; can slip out.
 - **Asteroom today:** $60–75 per job, $20–40 more for far trips, ~$300/week average.
 - **Home base:** Sunny Isles. Goes wherever the work is.
