@@ -187,11 +187,31 @@ Allow ~20–30 minutes of video for a typical 3/2 home.
 | REO / AMC | None unless ordered |
 | Developers | 90–120s model residence hero film, vertical reels per rollout drop, progress recaps |
 
-- **OPEN:** confirm lengths and whether the unbranded MLS version is always included.
+- Unbranded MLS version: always included for agents (no promotion on MLS).
+- **OPEN:** confirm lengths.
+
+### Floor plans, measurements, 3D tour finishing (via Asteroom)
+
+Asteroom produces these from the 3D scan; Prolific's job is to order the right level and QC the output.
+
+| Level | Cost to Prolific | Includes | Used for |
+|---|---|---|---|
+| Basic | ~$15 (**OPEN:** verify) | Floor plan | Standard agent / PM jobs |
+| Premium | ~$60 | Edited floor plan, lighting-corrected 3D tour, dollhouse view | Developers + all curated/premium property experiences |
+
+Price the Asteroom cost into each package; it is a per-job expense.
+
+**QC checklist for Asteroom output:**
+- [ ] Every room on the room list appears and is labeled correctly
+- [ ] Spot-check 2–3 room dimensions with a laser measure on site
+- [ ] Total square footage roughly matches county property appraiser records (explain any big gap)
+- [ ] Doors, windows, stairs in the right places; orientation correct
+- [ ] 3D tour: no skipped rooms, no stitching errors, sensible start point
+- [ ] Premium: lighting corrections applied, dollhouse renders cleanly
+- [ ] Branding/unbranded version per client profile
 
 ### Still to write
 
-- **OPEN:** floor plans and measurements routine (check what Asteroom already produces from the scan)
 - **OPEN:** QC checklists for renderings, site plans, social packs, time-lapse, landing page
 
 ---
