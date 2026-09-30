@@ -1,4 +1,4 @@
-import { Series, useCurrentFrame, interpolate, AbsoluteFill } from 'remotion'
+import { Series, useCurrentFrame, interpolate, AbsoluteFill, Img, staticFile } from 'remotion'
 import TierCard from './components/TierCard'
 import AllTiersScreen from './components/AllTiersScreen'
 import { tiers } from './tiers'
@@ -22,6 +22,10 @@ function OpenCard() {
       }}
     >
       <div style={{ opacity: o, transform: `translateY(${y}px)` }}>
+        <Img
+          src={staticFile('logo.jpg')}
+          style={{ width: 64, height: 64, objectFit: 'contain', marginBottom: 24 }}
+        />
         <div
           style={{
             fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
@@ -65,6 +69,10 @@ function CloseCard() {
       }}
     >
       <div style={{ opacity: o }}>
+        <Img
+          src={staticFile('logo.jpg')}
+          style={{ width: 72, height: 72, objectFit: 'contain', marginBottom: 26 }}
+        />
         <div
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",

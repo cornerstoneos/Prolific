@@ -1,4 +1,4 @@
-import { useCurrentFrame, interpolate, AbsoluteFill } from 'remotion'
+import { useCurrentFrame, interpolate, AbsoluteFill, Img, staticFile } from 'remotion'
 import { tiers } from '../tiers'
 
 const FG = '#0c0c0c'
@@ -102,6 +102,10 @@ export default function AllTiersScreen({ animate = true }) {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: 72 }}>
+        <Img
+          src={staticFile('logo.jpg')}
+          style={{ width: 52, height: 52, objectFit: 'contain', marginBottom: 18 }}
+        />
         <div
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
