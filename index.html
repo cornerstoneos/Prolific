@@ -3,229 +3,24 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Prolific — Curated Property Experiences</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root{--black:#0c0c0c;--white:#fafaf8;--off:#f2f1ed;--mid:#888880;--dim:#c8c8c0;--line:#e0dfd8;--gold:#b8965a;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--white);color:var(--black);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden;}
-.cur{position:fixed;top:0;left:0;pointer-events:none;z-index:9000;}
-.cur-d{position:absolute;width:6px;height:6px;background:var(--black);border-radius:50%;transform:translate(-50%,-50%);}
-.cur-r{position:absolute;width:32px;height:32px;border:1px solid var(--black);border-radius:50%;transform:translate(-50%,-50%);transition:width .18s,height .18s,opacity .18s;opacity:.4;}
-body.h .cur-r{width:52px;height:52px;opacity:.25;}
-nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 56px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,250,248,0);transition:background .4s,border-color .4s;border-bottom:1px solid transparent;}
-nav.sc{background:rgba(250,250,248,.96);backdrop-filter:blur(20px);border-color:var(--line);}
-.nl{display:flex;align-items:center;gap:14px;text-decoration:none;}
-.nl img{width:36px;height:36px;object-fit:contain;}
-.nl-t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;letter-spacing:.22em;color:var(--black);text-transform:uppercase;}
-.nr{display:flex;align-items:center;gap:32px;}
-.nr a{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s;}
-.nr a:hover{color:var(--black);}
-.nr .nb{background:var(--black);color:var(--white);padding:10px 26px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;transition:background .2s;}
-.nr .nb:hover{background:#333;}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 48px 80px;position:relative;background:var(--white);}
-.hero::after{content:'';position:absolute;bottom:0;left:56px;right:56px;height:1px;background:var(--line);}
-.hero-eyebrow{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mid);margin-bottom:32px;opacity:0;animation:fu .9s .3s ease forwards;}
-.hero-logo{width:90px;height:90px;object-fit:contain;margin:0 auto 40px;opacity:0;animation:fu .9s .1s ease forwards;}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,7.5rem);font-weight:300;line-height:.92;letter-spacing:.04em;text-transform:uppercase;opacity:0;animation:fu .9s .5s ease forwards;}
-.hero-title em{font-style:italic;font-weight:300;color:var(--mid);}
-.hero-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,2rem);color:var(--mid);margin:28px 0;opacity:0;animation:fu .9s .7s ease forwards;}
-.hero-rule{width:1px;height:60px;background:var(--line);margin:0 auto 32px;opacity:0;animation:fu .9s .8s ease forwards;}
-.hero-sub{max-width:520px;font-size:.82rem;line-height:1.9;color:var(--mid);margin:0 auto 48px;opacity:0;animation:fu .9s .9s ease forwards;}
-.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fu .9s 1.1s ease forwards;}
-.btn-dark{display:inline-block;padding:14px 40px;background:var(--black);color:var(--white);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s;font-family:'Montserrat',sans-serif;}
-.btn-dark:hover{background:#2a2a2a;}
-.btn-outline{display:inline-block;padding:13px 40px;border:1px solid var(--black);color:var(--black);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .2s;font-family:'Montserrat',sans-serif;}
-.btn-outline:hover{background:var(--black);color:var(--white);}
-.mq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden;white-space:nowrap;background:var(--white);}
-.mqt{display:inline-flex;animation:mq 22s linear infinite;}
-.mqi{font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:.14em;color:var(--mid);padding:0 44px;font-style:italic;}
-.mqi b{color:var(--black);font-style:normal;font-weight:400;}
-.sl{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mid);display:flex;align-items:center;gap:14px;margin-bottom:12px;}
-.sl::before{content:'';display:block;width:24px;height:1px;background:var(--mid);}
-.st{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.8rem);font-weight:300;line-height:1.05;letter-spacing:.04em;margin-bottom:56px;}
-.st em{font-style:italic;color:var(--mid);}
-.serve{padding:100px 56px;border-bottom:1px solid var(--line);}
-.serve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);}
-.sv{background:var(--white);padding:52px 44px;transition:background .3s;position:relative;overflow:hidden;}
-.sv:hover{background:var(--off);}
-.sv-num{font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(0,0,0,.04);line-height:1;position:absolute;top:20px;right:28px;}
-.sv-label{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:16px;}
-.sv-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;margin-bottom:16px;letter-spacing:.04em;}
-.sv-desc{font-size:.76rem;line-height:1.85;color:var(--mid);margin-bottom:28px;}
-.sv-items{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.sv-items li{font-size:.72rem;color:var(--black);display:flex;align-items:center;gap:10px;}
-.sv-items li::before{content:'';display:block;width:14px;height:1px;background:var(--black);flex-shrink:0;}
-.sv-cta{display:inline-block;margin-top:32px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:2px;transition:opacity .2s;}
-.sv-cta:hover{opacity:.5;}
-.work{padding:100px 56px;border-bottom:1px solid var(--line);}
-.lookbook{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
-.lb-item{overflow:hidden;position:relative;aspect-ratio:3/4;}
-.lb-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
-.lb-item:hover img{transform:scale(1.03);}
-.lb-tag{position:absolute;bottom:20px;left:20px;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:rgba(12,12,12,.6);padding:6px 14px;opacity:0;transition:opacity .3s;}
-.lb-item:hover .lb-tag{opacity:1;}
-.proof-top{display:grid;grid-template-columns:2fr 1fr;gap:3px;margin-bottom:3px;}
-.proof-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
-.proof-item{overflow:hidden;position:relative;}
-.proof-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
-.proof-item:hover img{transform:scale(1.03);}
-.proof-top .proof-item{height:460px;}
-.proof-bottom .proof-item{height:280px;}
-.services{padding:100px 56px;background:var(--off);border-bottom:1px solid var(--line);}
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);}
-.svc{background:var(--white);padding:40px 32px;transition:background .25s;}
-.svc:hover{background:var(--off);}
-.svc-ico{font-size:1.6rem;margin-bottom:18px;display:block;}
-.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;letter-spacing:.04em;margin-bottom:8px;}
-.svc-desc{font-size:.72rem;line-height:1.7;color:var(--mid);}
-.packages{padding:100px 56px 0;border-bottom:1px solid var(--line);}
-.pkg-spread{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
-.pkg-card{position:relative;overflow:hidden;}
-.pkg-card img{width:100%;display:block;transition:transform .6s ease;}
-.pkg-card:hover img{transform:scale(1.03);}
-.pkg-card-foot{position:absolute;bottom:0;left:0;right:0;padding:18px 22px;background:linear-gradient(transparent,rgba(12,12,12,.65));}
-.pkg-card-lbl{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);}
-.pkg-cpe{text-align:center;padding:56px 40px;border-bottom:1px solid var(--line);}
-.pkg-cpe-eye{font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mid);margin-bottom:18px;}
-.pkg-cpe-btn{display:block;width:fit-content;margin:0 auto 16px;padding:15px 52px;background:var(--black);color:var(--white);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s;font-family:'Montserrat',sans-serif;}
-.pkg-cpe-btn:hover{background:#2a2a2a;}
-.pkg-cpe-note{font-size:.6rem;color:var(--dim);letter-spacing:.09em;}
-.bk-menu{padding:0;}
-.bk-row{display:grid;grid-template-columns:160px 1fr;border-top:1px solid var(--line);padding:44px 0;}
-.bk-row:last-child{border-bottom:1px solid var(--line);}
-.bk-cat{font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);line-height:2;padding-top:18px;}
-.bk-items{display:flex;flex-direction:column;}
-.bk-item{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--black);transition:padding-left .3s ease;}
-.bk-item:last-child{border-bottom:none;}
-.bk-item:hover{padding-left:8px;}
-.bk-num{font-family:'Cormorant Garamond',serif;font-size:.85rem;color:var(--dim);flex-shrink:0;width:24px;line-height:1;}
-.bk-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;letter-spacing:.03em;}
-.bk-line{flex:1;height:1px;background:var(--line);transition:background .3s;}
-.bk-item:hover .bk-line{background:var(--black);}
-.bk-cta{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);flex-shrink:0;transition:color .3s;}
-.bk-item:hover .bk-cta{color:var(--black);}
-.monthly-panel{display:flex;justify-content:space-between;align-items:center;gap:40px;background:var(--black);padding:56px 56px;margin:56px -56px 0;}
-.monthly-eye{font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:10px;}
-.monthly-ttl{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--white);letter-spacing:.04em;margin-bottom:10px;}
-.monthly-det{font-size:.7rem;color:rgba(255,255,255,.4);line-height:1.75;max-width:500px;}
-.monthly-cta{display:inline-block;flex-shrink:0;padding:14px 36px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .25s;white-space:nowrap;font-family:'Montserrat',sans-serif;}
-.monthly-cta:hover{border-color:rgba(255,255,255,.6);color:var(--white);}
-.measurements{padding:80px 56px;background:var(--black);color:var(--white);border-bottom:1px solid #222;}
-.meas-inner{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;}
-.meas-left .st{color:var(--white);margin-bottom:20px;}
-.meas-left .st em{color:rgba(255,255,255,.35);}
-.meas-copy{font-size:.82rem;line-height:1.9;color:rgba(255,255,255,.5);margin-bottom:36px;}
-.meas-items{display:flex;flex-direction:column;gap:0;}
-.meas-item{display:flex;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);}
-.meas-item:last-child{border-bottom:none;}
-.meas-n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:rgba(255,255,255,.15);flex-shrink:0;width:32px;line-height:1;}
-.meas-t{font-size:.8rem;font-weight:500;color:var(--white);margin-bottom:4px;}
-.meas-d{font-size:.74rem;color:rgba(255,255,255,.45);line-height:1.6;}
-.meas-right{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);}
-.meas-stat{background:var(--black);padding:40px 32px;}
-.meas-stat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--white);line-height:1;margin-bottom:6px;}
-.meas-stat-lbl{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35);}
-.process{padding:100px 56px;border-bottom:1px solid var(--line);}
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);}
-.proc-step{background:var(--white);padding:44px 36px;transition:background .25s;}
-.proc-step:hover{background:var(--off);}
-.ps-n{font-family:'Cormorant Garamond',serif;font-size:3.5rem;color:rgba(0,0,0,.06);line-height:1;margin-bottom:24px;}
-.ps-t{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;letter-spacing:.04em;margin-bottom:10px;}
-.ps-d{font-size:.74rem;line-height:1.75;color:var(--mid);}
-.ps-b{display:inline-block;margin-top:16px;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);border:1px solid var(--line);padding:4px 10px;}
-.inquiry{padding:100px 56px;background:var(--off);}
-.inq-inner{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start;}
-.inq-copy{font-size:.82rem;line-height:1.9;color:var(--mid);margin-bottom:32px;}
-.inq-details{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
-.inq-det{font-size:.74rem;color:var(--mid);display:flex;align-items:center;gap:12px;}
-.inq-det::before{content:'';width:16px;height:1px;background:var(--mid);flex-shrink:0;}
-.inq-social{display:flex;gap:10px;}
-.isoc{display:flex;align-items:center;gap:8px;padding:9px 18px;border:1px solid var(--line);text-decoration:none;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);background:var(--white);transition:all .2s;}
-.isoc:hover{border-color:var(--black);color:var(--black);}
-.inq-form{background:var(--white);border:1px solid var(--line);padding:52px;}
-.if-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;letter-spacing:.04em;margin-bottom:6px;}
-.if-sub{font-size:.68rem;color:var(--mid);margin-bottom:32px;line-height:1.6;}
-.if-ql{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px;}
-.if-qbtn{display:flex;flex-direction:column;align-items:center;padding:18px 12px;border:1px solid var(--line);text-decoration:none;transition:all .2s;text-align:center;background:var(--white);}
-.if-qbtn:hover{border-color:var(--black);background:var(--off);}
-.if-qbtn-ico{font-size:1.1rem;margin-bottom:5px;}
-.if-qbtn-lbl{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);}
-.if-qbtn-sub{font-size:.55rem;color:var(--dim);margin-top:2px;}
-.if-div{display:flex;align-items:center;gap:14px;margin:20px 0;}
-.if-div span{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
-.if-div::before,.if-div::after{content:'';flex:1;height:1px;background:var(--line);}
-.fg{margin-bottom:16px;}
-.fl{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:6px;}
-.fi{width:100%;background:var(--white);border:1px solid var(--line);color:var(--black);padding:12px 14px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:300;outline:none;transition:border-color .2s;}
-.fi:focus{border-color:var(--black);}
-.fi::placeholder{color:var(--dim);}
-.fs{width:100%;background:var(--white);border:1px solid var(--line);color:var(--black);padding:12px 14px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:300;outline:none;appearance:none;}
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.fsub{width:100%;padding:14px;background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;margin-top:6px;transition:background .2s;font-weight:400;}
-.fsub:hover{background:#2a2a2a;}
-.fn{font-size:.58rem;color:var(--dim);text-align:center;margin-top:12px;letter-spacing:.07em;}
-footer{padding:60px 56px 44px;border-top:1px solid var(--line);background:var(--white);}
-.fi2{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px;}
-.f-logo{display:flex;align-items:center;gap:14px;}
-.f-logo img{width:38px;height:38px;object-fit:contain;}
-.f-logo-t{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;}
-.f-tag{font-size:.85rem;color:var(--mid);margin-top:6px;font-style:italic;font-family:'Cormorant Garamond',serif;}
-.f-col{display:flex;flex-direction:column;gap:8px;}
-.f-col-title{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:4px;}
-.f-col a{font-size:.68rem;color:var(--mid);text-decoration:none;transition:color .2s;}
-.f-col a:hover{color:var(--black);}
-.f-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--line);}
-.f-copy{font-size:.58rem;color:var(--dim);letter-spacing:.08em;}
-.f-vals{display:flex;gap:18px;}
-.f-vals span{font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
-@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
-.rv.vis{opacity:1;transform:translateY(0);}
-@media(max-width:900px){
-.proof-top,.proof-bottom{grid-template-columns:1fr;}
-.proof-top .proof-item,.proof-bottom .proof-item{height:240px;}
-nav{padding:18px 22px;}
-.nr a:not(.nb){display:none;}
-.hero{padding:100px 22px 70px;}
-.serve,.work,.services,.packages,.process,.inquiry{padding:72px 22px;}
-.measurements{padding:72px 22px;}
-.serve-grid,.svc-grid{grid-template-columns:1fr;}
-.proc-grid{grid-template-columns:1fr 1fr;}
-.lookbook{grid-template-columns:1fr 1fr;}
-.meas-inner,.inq-inner{grid-template-columns:1fr;gap:48px;}
-.meas-right{grid-template-columns:1fr 1fr;}
-footer{padding:44px 22px 36px;}
-.fi2{flex-direction:column;gap:28px;}
-.f-bottom{flex-direction:column;gap:12px;text-align:center;}
-.fr{grid-template-columns:1fr;}
-}
-@media(max-width:900px){
-.packages{padding:72px 22px 0;}
-.pkg-spread{grid-template-columns:1fr;}
-.bk-row{grid-template-columns:1fr;gap:6px;padding:28px 0;}
-.bk-cat{padding-top:0;padding-bottom:4px;}
-.bk-name{font-size:1.2rem;}
-.monthly-panel{flex-direction:column;gap:24px;padding:44px 22px;margin:44px -22px 0;text-align:center;}
-.monthly-det{max-width:100%;}
-}
-</style>
+<title>Prolific — Curated Property Experiences</title>
+<meta name="description" content="Real estate media and marketing for developers, property managers, and agents across South Florida."/>
+<link rel="stylesheet" href="site.css"/>
 </head>
 <body>
 <div class="cur" id="cur"><div class="cur-d" id="cd"></div><div class="cur-r" id="cr"></div></div>
 <nav id="nav">
-  <a href="#" class="nl">
+  <a href="index.html" class="nl">
     <img src="logo.jpg" alt="Prolific"/>
     <span class="nl-t">Prolific</span>
   </a>
   <div class="nr">
-    <a href="#serve">Services</a>
+    <a href="developers.html">Developers</a>
+    <a href="property-managers.html">Property Managers</a>
+    <a href="agents.html">Agents</a>
     <a href="#work">Work</a>
-    <a href="#packages">Packages</a>
-    <a href="#inquiry">Contact</a>
-    <a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank" class="nb">Book Now</a>
+    <a href="#inquiry" class="nb">Get Started</a>
   </div>
 </nav>
 <section class="hero">
@@ -234,9 +29,9 @@ footer{padding:44px 22px 36px;}
   <h1 class="hero-title">Curated<br/><em>Property</em><br/>Experiences</h1>
   <p class="hero-script">Refined media and design for select properties.</p>
   <div class="hero-rule"></div>
-  <p class="hero-sub">Everything your listing needs — photos, video, 3D tour, floor plans — one visit, fast turnaround, everything in one link. Drone coming soon. Book now and we'll handle the rest.</p>
+  <p class="hero-sub">Media and marketing for developers, property managers, and agents. Renderings, photography, video, 3D tours, and floor plans, delivered in one link.</p>
   <div class="hero-actions">
-    <a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank" class="btn-dark">Book Now</a>
+    <a href="#serve" class="btn-dark">Find Your Path</a>
     <a href="#work" class="btn-outline">View Our Work</a>
   </div>
 </section>
@@ -264,11 +59,11 @@ footer{padding:44px 22px 36px;}
 </div>
 <section class="serve rv" id="serve">
   <div class="sl">Who We Serve</div>
-  <h2 class="st">Built for Every <em>Property Type</em></h2>
+  <h2 class="st">Choose Your <em>Path</em></h2>
   <div class="serve-grid">
-    <div class="sv"><div class="sv-num">01</div><div class="sv-label">Residential</div><div class="sv-title">Agents &amp; Homeowners</div><div class="sv-desc">From single listings to high-volume agents, we deliver everything your MLS and marketing needs — photos, video, 3D, floor plans, and social content in one visit.</div><ul class="sv-items"><li>30+ HDR photos</li><li>Cinematic listing video</li><li>3D virtual tour</li><li>Drone footage (coming soon)</li><li>Floor plans &amp; measurements</li><li>Social content packs</li></ul><a href="#packages" class="sv-cta">View Packages →</a></div>
-    <div class="sv"><div class="sv-num">02</div><div class="sv-label">Development</div><div class="sv-title">Developers &amp; Builders</div><div class="sv-desc">We run your project like a release: announce, build the hype, launch, sell. One creative plan from pre-sale to hand-off, with every asset in one link.</div><ul class="sv-items"><li>Exterior, interior &amp; amenity renderings</li><li>Treatment &amp; rollout plan</li><li>Progress photos &amp; time-lapse</li><li>Model residence film</li><li>Landing page, yours to keep</li><li>Pitch decks</li></ul><a href="#packages" class="sv-cta">View Packages →</a></div>
-    <div class="sv"><div class="sv-num">03</div><div class="sv-label">Property Management</div><div class="sv-title">Managers &amp; Investors</div><div class="sv-desc">Portfolio-wide media suites built to attract elite tenants and maximize yields. 3D tours with dollhouse view, neighborhood maps, event coverage, and custom branding.</div><ul class="sv-items"><li>3D tours with dollhouse view</li><li>Unit &amp; amenity renderings</li><li>Finish &amp; staging options</li><li>Portfolio-wide promo</li><li>Full strategy &amp; branding</li><li>Social content packs</li></ul><a href="property-managers.html" class="sv-cta">For Property Managers →</a></div>
+    <div class="sv"><div class="sv-num">01</div><div class="sv-label">Development</div><div class="sv-title">Developers &amp; Builders</div><div class="sv-desc">We run your project like a release: announce, build the hype, launch, sell. One creative plan from pre-sale to hand-off, with every asset in one link.</div><ul class="sv-items"><li>Exterior, interior &amp; amenity renderings</li><li>Treatment &amp; rollout plan</li><li>Progress photos &amp; time-lapse</li><li>Model residence film</li><li>Landing page, yours to keep</li><li>Pitch decks</li></ul><a href="developers.html" class="sv-cta">For Developers →</a></div>
+    <div class="sv"><div class="sv-num">02</div><div class="sv-label">Property Management</div><div class="sv-title">Managers &amp; Investors</div><div class="sv-desc">Portfolio-wide media suites built to attract elite tenants and maximize yields. 3D tours with dollhouse view, neighborhood maps, event coverage, and custom branding.</div><ul class="sv-items"><li>3D tours with dollhouse view</li><li>Unit &amp; amenity renderings</li><li>Finish &amp; staging options</li><li>Portfolio-wide promo</li><li>Full strategy &amp; branding</li><li>Social content packs</li></ul><a href="property-managers.html" class="sv-cta">For Property Managers →</a></div>
+    <div class="sv"><div class="sv-num">03</div><div class="sv-label">Agents</div><div class="sv-title">Residential &amp; Commercial</div><div class="sv-desc">From single listings to high-volume agents, we deliver everything your MLS and marketing needs — photos, video, 3D, floor plans, and social content in one visit.</div><ul class="sv-items"><li>30+ HDR photos</li><li>Cinematic listing video</li><li>3D virtual tour</li><li>Drone footage (coming soon)</li><li>Floor plans &amp; measurements</li><li>Social content packs</li></ul><a href="agents.html" class="sv-cta">For Agents →</a></div>
   </div>
 </section>
 <section class="work rv" id="work">
@@ -282,124 +77,6 @@ footer{padding:44px 22px 36px;}
     <div class="proof-item"><img src="IMG_1794.jpeg" alt="Modern galley kitchen" loading="lazy"/></div>
     <div class="proof-item"><img src="IMG_2056.jpeg" alt="Architectural ceiling detail" loading="lazy"/></div>
     <div class="proof-item"><img src="2026-03-26-09-03-23-044.jpeg" alt="Aerial drone view" loading="lazy"/></div>
-  </div>
-</section>
-<section class="services rv" id="services">
-  <div class="sl">What We Deliver</div>
-  <h2 class="st">Every Service.<br/><em>One Visit.</em></h2>
-  <div class="svc-grid">
-    <div class="svc"><span class="svc-ico">📸</span><div class="svc-name">Photography</div><div class="svc-desc">30+ HDR edited images. Interiors, exteriors, twilight, and detail shots ready for MLS and print.</div></div>
-    <div class="svc"><span class="svc-ico">🎬</span><div class="svc-name">Cinematic Video</div><div class="svc-desc">Full listing video with MLS cuts, short-form reels for Instagram and TikTok, and branded edits.</div></div>
-    <div class="svc"><span class="svc-ico">🔄</span><div class="svc-name">3D Tours</div><div class="svc-desc">Immersive virtual tours with dollhouse view and shareable link for MLS embedding.</div></div>
-    <div class="svc"><span class="svc-ico">🚁</span><div class="svc-name">Drone Footage</div><div class="svc-desc">Coming soon. Aerial photography and video for neighborhood context, site overviews, and establishing shots.</div></div>
-    <div class="svc"><span class="svc-ico">📐</span><div class="svc-name">Floor Plans &amp; Measurements</div><div class="svc-desc">Room-by-room measurements captured on-site and turned into dimensioned floor plans for MLS, marketing, and appraisals.</div></div>
-    <div class="svc"><span class="svc-ico">🏛️</span><div class="svc-name">Architectural Renderings</div><div class="svc-desc">Exterior, interior, and amenity renderings from plans, with material and finish options. Sell it before it's built.</div></div>
-    <div class="svc"><span class="svc-ico">🌆</span><div class="svc-name">Twilight Photography</div><div class="svc-desc">Dusk exteriors with interior lights glowing. The hero shot that stops the scroll.</div></div>
-    <div class="svc"><span class="svc-ico">📱</span><div class="svc-name">Social Content</div><div class="svc-desc">Branded social packs with posts, reels, and long-form content. Standard (2 posts) and Advanced (5 posts/reels).</div></div>
-  </div>
-</section>
-<section class="packages rv" id="packages">
-  <div class="sl">Packages &amp; Retainers</div>
-  <h2 class="st">The Full <em>Experience.</em></h2>
-  <div class="pkg-spread">
-    <div class="pkg-card">
-      <img src="IMG_2229.jpeg" alt="Residential Packages" loading="lazy"/>
-      <div class="pkg-card-foot"><span class="pkg-card-lbl">Residential</span></div>
-    </div>
-    <div class="pkg-card">
-      <img src="IMG_2230.jpeg" alt="Development Packages" loading="lazy"/>
-      <div class="pkg-card-foot"><span class="pkg-card-lbl">Development</span></div>
-    </div>
-    <div class="pkg-card">
-      <img src="IMG_2231.jpeg" alt="Property Management Packages" loading="lazy"/>
-      <div class="pkg-card-foot"><span class="pkg-card-lbl">Property Mgmt</span></div>
-    </div>
-  </div>
-  <div class="pkg-cpe">
-    <p class="pkg-cpe-eye">The Complete Curated Property Experience</p>
-    <a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank" class="pkg-cpe-btn">Book the Full Experience</a>
-    <p class="pkg-cpe-note">Photos · Video · 3D Tour · Floor Plans · Measurements · Social Content · Drone (Coming Soon)</p>
-    <p class="pkg-cpe-note">Homes over 3,500 sq ft: size-based upcharge, quoted at booking.</p>
-  </div>
-  <div class="bk-menu">
-    <div class="bk-row">
-      <div class="bk-cat">Curated<br/>Combos</div>
-      <div class="bk-items">
-        <a href="https://buy.stripe.com/eVq9AUacP5xS9g8bAjfrW02" target="_blank" class="bk-item">
-          <span class="bk-num">01</span>
-          <span class="bk-name">Photos + Video</span>
-          <span class="bk-line"></span>
-          <span class="bk-cta">Book →</span>
-        </a>
-        <a href="https://buy.stripe.com/00waEY2Kn9O8akcawffrW05" target="_blank" class="bk-item">
-          <span class="bk-num">02</span>
-          <span class="bk-name">Choose Any Two Services</span>
-          <span class="bk-line"></span>
-          <span class="bk-cta">Book →</span>
-        </a>
-      </div>
-    </div>
-    <div class="bk-row">
-      <div class="bk-cat">À la<br/>Carte</div>
-      <div class="bk-items">
-        <a href="https://buy.stripe.com/dRmbJ284H8K49g833NfrW01" target="_blank" class="bk-item">
-          <span class="bk-num">03</span>
-          <span class="bk-name">Photography Only</span>
-          <span class="bk-line"></span>
-          <span class="bk-cta">Book →</span>
-        </a>
-        <a href="https://buy.stripe.com/cNi9AUet50dy1NGfQzfrW04" target="_blank" class="bk-item">
-          <span class="bk-num">04</span>
-          <span class="bk-name">3D Virtual Tour</span>
-          <span class="bk-line"></span>
-          <span class="bk-cta">Book →</span>
-        </a>
-        <a href="https://buy.stripe.com/14A14o98L6BWdwodIrfrW06" target="_blank" class="bk-item">
-          <span class="bk-num">05</span>
-          <span class="bk-name">Floor Plans + Measurements</span>
-          <span class="bk-line"></span>
-          <span class="bk-cta">Book →</span>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="monthly-panel">
-    <div class="monthly-left">
-      <span class="monthly-eye">Monthly Retainer</span>
-      <div class="monthly-ttl">Power — $1,500 / month</div>
-      <p class="monthly-det">4 full Curated Property Experiences per month · Priority scheduling · Full service · Exclusivity per market available</p>
-    </div>
-    <a href="https://buy.stripe.com/fZu9AU0Cf0dybogeMvfrW00" target="_blank" class="monthly-cta">Start Monthly →</a>
-  </div>
-</section>
-<section class="measurements rv">
-  <div class="meas-inner">
-    <div class="meas-left">
-      <div class="sl" style="color:rgba(255,255,255,.3);">Floor Plans &amp; Measurements</div>
-      <h2 class="st">Precision at <em>Every Scale</em></h2>
-      <p class="meas-copy">Every property measured room by room. Accurate square footage, dimensioned layouts, and professional floor plans — all included in select packages or available as a standalone add-on.</p>
-      <div class="meas-items">
-        <div class="meas-item"><div class="meas-n">01</div><div><div class="meas-t">3D Capture</div><div class="meas-d">On-site scanning with Ricoh Theta for precise 3D measurements</div></div></div>
-        <div class="meas-item"><div class="meas-n">02</div><div><div class="meas-t">Floor Plan Rendering</div><div class="meas-d">Dimensioned layouts ready for MLS, marketing, and appraisals</div></div></div>
-        <div class="meas-item"><div class="meas-n">03</div><div><div class="meas-t">Square Footage Report</div><div class="meas-d">Room-by-room documentation for listing accuracy</div></div></div>
-      </div>
-    </div>
-    <div class="meas-right">
-      <div class="meas-stat"><div class="meas-stat-num">1</div><div class="meas-stat-lbl">Delivery Link</div></div>
-      <div class="meas-stat"><div class="meas-stat-num">1</div><div class="meas-stat-lbl">Site Visit</div></div>
-      <div class="meas-stat"><div class="meas-stat-num">8+</div><div class="meas-stat-lbl">Deliverables</div></div>
-      <div class="meas-stat"><div class="meas-stat-num" style="font-size:1.6rem;">South Florida</div><div class="meas-stat-lbl">Keys to Port St. Lucie</div></div>
-    </div>
-  </div>
-</section>
-<section class="process rv" id="process">
-  <div class="sl">How It Works</div>
-  <h2 class="st">Four Steps.<br/><em>Every Time.</em></h2>
-  <div class="proc-grid">
-    <div class="proc-step"><div class="ps-n">01</div><div class="ps-t">Inquire</div><div class="ps-d">Submit your intake form or book directly. We confirm availability and package details within 24 hours.</div><span class="ps-b">5 Minutes</span></div>
-    <div class="proc-step"><div class="ps-n">02</div><div class="ps-t">Book Your Date</div><div class="ps-d">Select your shoot date via Calendly. Receive instant confirmation with everything you need to prepare the property.</div><span class="ps-b">Instant Confirmation</span></div>
-    <div class="proc-step"><div class="ps-n">03</div><div class="ps-t">We Shoot</div><div class="ps-d">We arrive on time. Photos, video, 3D scan, measurements — all completed in one efficient visit.</div><span class="ps-b">One Visit</span></div>
-    <div class="proc-step"><div class="ps-n">04</div><div class="ps-t">You Receive</div><div class="ps-d">Everything in one link: your private delivery page, organized and yours to keep. MLS-ready, social-ready, print-ready.</div><span class="ps-b">Fast Turnaround</span></div>
   </div>
 </section>
 <section class="inquiry rv" id="inquiry">
@@ -454,7 +131,7 @@ footer{padding:44px 22px 36px;}
       <p class="f-tag">Curated Property Experiences</p>
     </div>
     <div style="display:flex;gap:56px;">
-      <div class="f-col"><div class="f-col-title">Navigate</div><a href="#serve">Services</a><a href="#work">Work</a><a href="#packages">Packages</a><a href="#process">Process</a></div>
+      <div class="f-col"><div class="f-col-title">Navigate</div><a href="developers.html">Developers</a><a href="property-managers.html">Property Managers</a><a href="agents.html">Agents</a><a href="index.html#work">Work</a></div>
       <div class="f-col"><div class="f-col-title">Book</div><a href="https://buy.stripe.com/bJefZiacP0dy2RK5bVfrW03" target="_blank">Book Now</a><a href="https://form.jotform.com/253508449354160" target="_blank">Intake Form</a><a href="#inquiry">Get in Touch</a></div>
       <div class="f-col"><div class="f-col-title">Follow</div><a href="https://www.instagram.com/prolificgroupllc?igsh=amtmZ3dnaTQyMjE2&utm_source=qr" target="_blank">Instagram</a><a href="https://www.tiktok.com/@prolificgroupllc?_r=1&_t=ZP-95Iq59NgRxe" target="_blank">TikTok</a></div>
     </div>
@@ -464,17 +141,6 @@ footer{padding:44px 22px 36px;}
     <div class="f-vals"><span>Integrity</span><span>·</span><span>Excellence</span><span>·</span><span>Service</span></div>
   </div>
 </footer>
-<script>
-const cd=document.getElementById('cd'),cr=document.getElementById('cr');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';});
-document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('h'));el.addEventListener('mouseleave',()=>document.body.classList.remove('h'));});
-(function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(a);})();
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('sc',window.scrollY>40));
-const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);obs.unobserve(e.target);}});},{threshold:.06});
-document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-function handleSubmit(e){e.preventDefault();const b=e.target;b.textContent='Sent ✓';b.style.background='#555';setTimeout(()=>{b.textContent='Send Inquiry →';b.style.background='';},3000);}
-</script>
+<script src="site.js"></script>
 </body>
 </html>
