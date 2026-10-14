@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pm.css"/>
+<title>Prolific for Property Managers</title><meta name="description" content="Photos and a 3D tour for every vacant unit. Order in two minutes, delivered within 48 hours, one monthly invoice."/>
+</head><body>
+<nav><a class="nl" href="index.html"><img src="logo.jpg" alt="Prolific"/><span>Prolific</span></a><a class="nb" href="order.html">Order a Unit</a></nav>
+<section class="wrap">
+  <div class="eye">For Property Managers</div>
+  <h1>Every vacancy,<br/><em>shot and live in 48 hours.</em></h1>
+  <p class="lead">Photos and a 3D tour for every unit, shot to your standard every time. Renters walk the unit before they call, so the showings you book are the ones that lease. Order with your own link, get everything in one link, pay one invoice a month.</p>
+  <div class="btns"><a class="btn dark" href="order.html">Order a Unit</a><a class="btn line" href="#account">Set Up a Monthly Account</a></div>
+</section>
+<div class="rule"></div>
+<section class="wrap">
+  <div class="eye">How It Works</div>
+  <h2>Four steps. <em>No phone tag.</em></h2>
+  <div class="grid">
+    <div class="cell"><div class="n">01</div><div class="t">Order</div><p>Use your company's order link. Address, access, a preferred date. Two minutes.</p></div>
+    <div class="cell"><div class="n">02</div><div class="t">We Shoot</div><p>Photos and a 3D tour, following your company's shot list on every unit.</p></div>
+    <div class="cell"><div class="n">03</div><div class="t">48 Hours</div><p>Everything lands in one link within 48 hours of the shoot. Listing-ready.</p></div>
+    <div class="cell"><div class="n">04</div><div class="t">One Invoice</div><p>All of the month's units on a single invoice. No per-job paperwork.</p></div>
+  </div>
+</section>
+<div class="rule"></div>
+<section class="wrap">
+  <div class="eye">Every Unit Includes</div>
+  <h2>One standard, <em>every property.</em></h2>
+  <ul class="inc">
+    <li>HDR photos of every room</li>
+    <li>3D tour with dollhouse view</li>
+    <li>Exterior and community shots</li>
+    <li>Your shot list, saved and followed</li>
+    <li>One delivery link per unit</li>
+    <li>Monthly link for your whole portfolio</li>
+    <li>Delivered within 48 hours</li>
+    <li>Add-ons: floor plans, video, renderings</li>
+  </ul>
+</section>
+<div class="rule"></div>
+<section class="wrap" id="account">
+  <div class="eye">Monthly Account</div>
+  <h2>Set it up <em>once.</em></h2>
+  <p class="lead">Tell us about your portfolio. We save your shot list and send your company its own order link. Your first unit is on us so you can compare it to what you run now.</p>
+  <form name="pm-account" method="POST" data-netlify="true" netlify-honeypot="bot" action="order-thanks.html">
+    <input type="hidden" name="form-name" value="pm-account"/><p class="hidden"><label>Leave empty <input name="bot"/></label></p>
+    <div class="row"><div><label>Company</label><input name="company" required/></div><div><label>Your Name</label><input name="name" required/></div></div>
+    <div class="row"><div><label>Email</label><input type="email" name="email" required/></div><div><label>Phone</label><input type="tel" name="phone"/></div></div>
+    <div class="row"><div><label>Units Managed</label><select name="units"><option>Under 25</option><option>25–100</option><option>100–500</option><option>500+</option></select></div><div><label>Vacancies in a Typical Month</label><input name="monthly_vacancies" placeholder="e.g. 4"/></div></div>
+    <div><label>Areas You Cover</label><input name="areas" placeholder="e.g. Broward, Miami-Dade"/></div>
+    <div><label>Anything We Should Know</label><textarea name="notes" placeholder="Shot list rules, lights on or off, closets open or closed..."></textarea></div>
+    <div><button class="btn dark" type="submit">Set Up My Account</button></div>
+  </form>
+</section>
+<footer><span>Prolific · Curated Property Experiences</span><span>South Florida · Keys to Port St. Lucie</span><a href="index.html">Back to site</a></footer>
+</body></html>

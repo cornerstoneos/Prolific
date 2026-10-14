@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="robots" content="noindex"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../pm.css"/>
+<title>{{CLIENT}} · {{UNIT}} | Prolific Delivery</title>
+<style>.ph{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-top:20px}.ph img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}.tour{width:100%;aspect-ratio:16/9;border:1px solid var(--line);margin-top:20px}.fp{max-width:100%;margin-top:20px;border:1px solid var(--line)}</style>
+</head><body>
+<!-- HOW TO USE: copy this file to delivery/<client>-<unit-slug>.html, replace every {{...}},
+     put photos in delivery/<client>-<unit-slug>/, set DRIVE_LINK to the unit's Drive folder (anyone with link can view). -->
+<nav><a class="nl" href="../index.html"><img src="../logo.jpg" alt="Prolific"/><span>Prolific</span></a><a class="nb" href="{{DRIVE_LINK}}" target="_blank">Download All</a></nav>
+<section class="wrap">
+  <div class="eye">Delivered for {{CLIENT}} · {{DATE}}</div>
+  <h1>{{ADDRESS}}<br/><em>{{UNIT}}</em></h1>
+  <p class="lead">{{BEDS_BATHS}}. Everything for this unit is below, and every file is in the Download All folder.</p>
+  <div class="btns"><a class="btn dark" href="{{DRIVE_LINK}}" target="_blank">Download All Files</a><a class="btn line" href="{{TOUR_LINK}}" target="_blank">Open 3D Tour</a></div>
+</section>
+<div class="rule"></div>
+<section class="wrap"><div class="eye">3D Tour</div><h2>Walk the <em>unit.</em></h2>
+  <iframe class="tour" src="{{TOUR_LINK}}" allowfullscreen loading="lazy"></iframe></section>
+<div class="rule"></div>
+<section class="wrap"><div class="eye">Photos</div><h2>Listing-ready <em>photos.</em></h2>
+  <div class="ph">
+    <!-- one line per photo -->
+    <img src="{{FOLDER}}/01.jpg" alt="" loading="lazy"/>
+  </div></section>
+<div class="rule"></div>
+<section class="wrap"><div class="eye">Floor Plan</div><h2>Floor <em>plan.</em></h2>
+  <img class="fp" src="{{FOLDER}}/floorplan.png" alt="Floor plan"/></section>
+<footer><span>Prolific · Curated Property Experiences</span><span>Questions? Reply to the delivery email.</span></footer>
+</body></html>
