@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Admin | Prolific</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#0c0c0c;--white:#fafaf8;--off:#f2f1ed;--mid:#77776f;--line:#e0dfd8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--white);color:var(--black);font-family:Montserrat,sans-serif;font-weight:400;font-size:14px;line-height:1.45}
+button,input,select,textarea{font:inherit;color:inherit}
+header{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--black);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Cormorant Garamond",serif;font-size:20px;letter-spacing:.22em;text-transform:uppercase}
+.brand img{width:28px;height:28px;object-fit:contain}
+.brand small{font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.2em;color:var(--mid)}
+nav.tabs{display:flex;gap:2px;overflow-x:auto;border-bottom:1px solid var(--line);padding:0 8px;background:var(--white);position:sticky;top:53px;z-index:19}
+nav.tabs button{border:0;background:none;padding:12px 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent}
+nav.tabs button.on{color:var(--black);border-bottom-color:var(--black)}
+main{max-width:1100px;margin:0 auto;padding:20px 16px 80px}
+h1{font:300 34px/1.1 "Cormorant Garamond",serif;margin-bottom:4px}h1 i{color:var(--mid)}
+h2{font:400 22px "Cormorant Garamond",serif;margin:28px 0 10px;border-bottom:1px solid var(--line);padding-bottom:4px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+h2 small{font-family:Montserrat,sans-serif;font-size:11px;color:var(--mid);letter-spacing:.06em}
+.muted{color:var(--mid);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--white);padding:14px}
+.stat .k{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid)}
+.stat .v{font:300 34px/1.1 "Cormorant Garamond",serif;margin-top:4px}
+.stat .s{font-size:11px;color:var(--mid)}
+.big{border:2px solid var(--black);padding:16px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:14px}
+.big .v{font:300 54px/1 "Cormorant Garamond",serif}
+.bar{height:6px;background:var(--off);flex:1 1 220px;position:relative}.bar i{position:absolute;inset:0 auto 0 0;background:var(--black)}
+.row{border-bottom:1px solid var(--line);padding:12px 0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:flex-start}
+.row .who{flex:1 1 240px;min-width:0}
+.row .who b{font-weight:500}.row .who .muted{display:block;margin-top:2px;overflow-wrap:anywhere}
+.chips{display:flex;flex-wrap:wrap;gap:6px;flex:1 1 320px}
+.chip{border:1px solid var(--black);background:var(--white);padding:7px 10px;font-size:11px;letter-spacing:.06em;cursor:pointer;min-height:34px}
+.chip:hover,.chip:active{background:var(--black);color:var(--white)}
+.chip.ghost{border-color:var(--line);color:var(--mid)}
+.tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);padding:1px 6px;margin-right:4px;color:var(--mid)}
+.tag.dark{background:var(--black);color:var(--white);border-color:var(--black)}
+.btn{background:var(--black);color:var(--white);border:1px solid var(--black);padding:10px 18px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.btn.o{background:var(--white);color:var(--black)}
+.btn:disabled{opacity:.4}
+form.f,.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:10px 0}
+label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);display:flex;flex-direction:column;gap:4px}
+input,select,textarea{border:1px solid var(--line);background:#fff;padding:9px 10px;font-size:14px;letter-spacing:0;text-transform:none;color:var(--black);width:100%}
+textarea{min-height:70px;resize:vertical}
+.full{grid-column:1/-1}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.filters input{flex:1 1 200px;width:auto}.filters select{width:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);font-weight:500}
+.scroll{overflow-x:auto}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--black);color:var(--white);padding:12px 16px;display:none;gap:14px;align-items:center;z-index:50;max-width:calc(100% - 32px);font-size:13px}
+#toast button{background:none;border:1px solid var(--white);color:var(--white);padding:5px 10px;font-size:11px;letter-spacing:.1em;cursor:pointer}
+dialog{border:1px solid var(--black);padding:20px;max-width:560px;width:calc(100% - 32px);background:var(--white)}
+dialog::backdrop{background:rgba(12,12,12,.45)}
+.login{max-width:380px;margin:12vh auto;padding:0 16px}
+.login img{width:56px;margin-bottom:16px}
+.hide{display:none!important}
+a{color:var(--black)}
+.empty{padding:16px 0;color:var(--mid);font-style:italic}
+header .btn{padding:8px 12px}
+@media(max-width:600px){#whoami{display:none}.brand small{display:none}}
+</style>
+</head>
+<body>
+
+<div id="loginView" class="login hide">
+  <img src="../logo.jpg" alt="Prolific"/>
+  <h1>Prolific <i>Admin</i></h1>
+  <p class="muted" style="margin:6px 0 18px">Founder sign-in. We email you a one-time link.</p>
+  <form id="loginForm" class="f" style="grid-template-columns:1fr">
+    <label>Email<input type="email" id="loginEmail" required autocomplete="email"/></label>
+    <button class="btn" type="submit">Email me a sign-in link</button>
+  </form>
+  <p id="loginMsg" class="muted"></p>
+</div>
+
+<div id="deniedView" class="login hide">
+  <h1>Not <i>authorized</i></h1>
+  <p class="muted" style="margin:10px 0 18px">This account is signed in but is not on the admin list.</p>
+  <button class="btn o" onclick="signOut()">Sign out</button>
+</div>
+
+<div id="app" class="hide">
+<header>
+  <div class="brand"><img src="../logo.jpg" alt=""/>Prolific <small>ADMIN</small></div>
+  <div style="display:flex;gap:8px;align-items:center"><span class="muted" id="whoami"></span><button class="btn o" onclick="signOut()">Sign out</button></div>
+</header>
+<nav class="tabs" id="tabs">
+  <button data-t="today" class="on">Today</button>
+  <button data-t="leads">Leads</button>
+  <button data-t="clients">Clients</button>
+  <button data-t="objections">Objections</button>
+  <button data-t="expenses">Expenses</button>
+  <button data-t="export">Export</button>
+</nav>
+<main>
+
+<section id="t-today">
+  <h1 id="todayTitle">Today</h1>
+  <p class="muted" id="todaySub"></p>
+  <div class="big" id="targetBox"></div>
+  <div class="grid" style="margin-top:14px" id="statGrid"></div>
+  <h2>Follow-ups due <small id="dueCount"></small></h2>
+  <div id="dueList"></div>
+  <h2 id="riskHead" class="hide">At risk: no order in 30 days <small id="riskCount"></small></h2>
+  <div id="riskList"></div>
+  <h2>Quick log <small>Find anyone, tap the outcome</small></h2>
+  <div class="filters"><input id="quickQ" placeholder="Search name, company, phone…"/></div>
+  <div id="quickList"></div>
+  <h2>By lane <small>all time</small></h2>
+  <div class="scroll"><table id="laneTable"></table></div>
+  <p class="muted" style="margin-top:8px">Appointment rate = appointments ÷ touches · Close rate = sales ÷ appointments · Touches per sale = touches ÷ sales · Nos = "not interested" outcomes (a no is a completed rep).</p>
+</section>
+
+<section id="t-leads" class="hide">
+  <h1>Leads</h1>
+  <div class="filters">
+    <input id="leadQ" placeholder="Search…"/>
+    <select id="leadLane"><option value="">All lanes</option></select>
+    <select id="leadStage"><option value="">All stages</option></select>
+    <select id="leadShow"><option value="active">Active</option><option value="untouched">Not touched yet</option><option value="all">All (incl. do-not-contact)</option></select>
+    <button class="btn" onclick="openLead()">+ Lead</button>
+  </div>
+  <p class="muted" id="leadCount"></p>
+  <div id="leadList"></div>
+</section>
+
+<section id="t-clients" class="hide">
+  <h1>Clients</h1>
+  <p class="muted">A sale logged on a lead creates the client and its first order. Every order updates the last order date; no order in 30 days → At risk (on Today).</p>
+  <div class="filters"><button class="btn" onclick="openClient()">+ Client</button></div>
+  <div class="scroll"><table id="clientTable"></table></div>
+  <h2>Orders <small id="orderTotals"></small></h2>
+  <div class="scroll"><table id="orderTable"></table></div>
+</section>
+
+<section id="t-objections" class="hide">
+  <h1>Objections</h1>
+  <p class="muted">Write them word for word. They become the next script.</p>
+  <form class="f" id="objForm">
+    <label class="full">What they said (verbatim)<textarea name="said" required></textarea></label>
+    <label>Lane<select name="lane" class="laneSel"></select></label>
+    <label>Date<input type="date" name="said_on"/></label>
+    <div><button class="btn" type="submit" style="margin-top:18px">Save</button></div>
+  </form>
+  <div id="objList"></div>
+</section>
+
+<section id="t-expenses" class="hide">
+  <h1>Expenses</h1>
+  <form class="f" id="expForm">
+    <label>Date<input type="date" name="spent_on" required/></label>
+    <label>Business<select name="business"><option>Prolific</option><option>Even</option><option>BLH</option><option>Other</option></select></label>
+    <label>Category<input name="category" list="expCats" placeholder="Software, gas, gear…"/></label>
+    <label>Amount ($)<input type="number" name="amount" step="0.01" min="0" required/></label>
+    <label class="full">Note<input name="note"/></label>
+    <div><button class="btn" type="submit">Save</button></div>
+  </form>
+  <datalist id="expCats"><option>Software</option><option>Gas / mileage</option><option>Gear</option><option>Hosting</option><option>Marketing / ads</option><option>Printing</option><option>Insurance</option><option>Fees</option></datalist>
+  <p class="muted" id="expTotals"></p>
+  <div class="scroll"><table id="expTable"></table></div>
+</section>
+
+<section id="t-export" class="hide">
+  <h1>Export</h1>
+  <p class="muted" style="margin-bottom:14px">CSV downloads. Client details and access info stay out of the repo; keep these files private.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px">
+    <button class="btn" onclick="exportCsv('leads')">Leads</button>
+    <button class="btn" onclick="exportCsv('touches')">Touches</button>
+    <button class="btn" onclick="exportCsv('clients')">Clients</button>
+    <button class="btn" onclick="exportCsv('orders')">Orders</button>
+    <button class="btn" onclick="exportCsv('expenses')">Expenses</button>
+    <button class="btn" onclick="exportCsv('objections')">Objections</button>
+  </div>
+</section>
+</main>
+</div>
+
+<!-- Log a touch (full form) -->
+<dialog id="logDlg">
+  <form id="logForm" class="f" method="dialog" style="grid-template-columns:1fr 1fr">
+    <div class="full"><h2 style="margin-top:0" id="logTitle">Log touch</h2></div>
+    <label>Outcome<select name="outcome" id="logOutcome" required></select></label>
+    <label>Channel<select name="channel" class="chanSel"></select></label>
+    <label>Date<input type="date" name="touched_on" required/></label>
+    <label>Next follow-up<input type="date" name="next_follow_up"/></label>
+    <label class="full">Notes (short)<input name="notes" maxlength="500"/></label>
+    <label class="full" id="logObjWrap">Objection, word for word (optional)<input name="objection"/></label>
+    <div class="full hide" id="saleWrap" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <label>Service<input name="service" placeholder="PM unit, CPE, Development Marketing…"/></label>
+      <label>Amount ($)<input type="number" step="0.01" min="0" name="amount"/></label>
+    </div>
+    <div class="full" style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn o" type="button" onclick="logDlg.close()">Cancel</button>
+      <button class="btn" type="submit" value="ok">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Lead editor -->
+<dialog id="leadDlg">
+  <form id="leadForm" class="f" method="dialog">
+    <div class="full"><h2 style="margin-top:0" id="leadTitle">Lead</h2></div>
+    <label>Name<input name="name"/></label>
+    <label>Company<input name="company"/></label>
+    <label>Lane<select name="lane" class="laneSel" required></select></label>
+    <label>Channel<select name="channel" class="chanSel"></select></label>
+    <label>Phone<input name="phone" type="tel"/></label>
+    <label>Email<input name="email" type="email"/></label>
+    <label>LinkedIn<input name="linkedin"/></label>
+    <label>Source<input name="source" placeholder="Sign, FB Marketplace, referral…"/></label>
+    <label>Stage<select name="stage" class="stageSel"></select></label>
+    <label>Title<input name="title"/></label>
+    <label>Area<input name="area"/></label>
+    <label>Project<input name="project"/></label>
+    <label class="full">Angle<textarea name="angle"></textarea></label>
+    <label class="full">Next step<input name="next_step"/></label>
+    <label class="full">Notes<textarea name="notes"></textarea></label>
+    <label style="flex-direction:row;align-items:center;gap:8px"><input type="checkbox" name="do_not_contact" style="width:auto"/> Do not contact</label>
+    <div class="full" style="display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap">
+      <div id="leadHistory" class="muted" style="flex:1 1 100%"></div>
+      <button class="btn o" type="button" onclick="leadDlg.close()">Cancel</button>
+      <button class="btn" type="submit" value="ok">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Client / order editor -->
+<dialog id="clientDlg">
+  <form id="clientForm" class="f" method="dialog">
+    <div class="full"><h2 style="margin-top:0">Client</h2></div>
+    <label>Name<input name="name" required/></label>
+    <label>Lane<select name="lane" class="laneSel"></select></label>
+    <label class="full">Notes<input name="notes"/></label>
+    <div class="full" style="display:flex;gap:8px;justify-content:flex-end"><button class="btn o" type="button" onclick="clientDlg.close()">Cancel</button><button class="btn" type="submit" value="ok">Save</button></div>
+  </form>
+</dialog>
+<dialog id="orderDlg">
+  <form id="orderForm" class="f" method="dialog">
+    <div class="full"><h2 style="margin-top:0" id="orderTitle">Order</h2></div>
+    <label>Date<input type="date" name="ordered_on" required/></label>
+    <label>Service<input name="service"/></label>
+    <label>Amount ($)<input type="number" step="0.01" min="0" name="amount"/></label>
+    <label class="full">Notes<input name="notes"/></label>
+    <div class="full" style="display:flex;gap:8px;justify-content:flex-end"><button class="btn o" type="button" onclick="orderDlg.close()">Cancel</button><button class="btn" type="submit" value="ok">Save</button></div>
+  </form>
+</dialog>
+
+<div id="toast"><span id="toastMsg"></span><button id="toastUndo">Undo</button><button id="toastEdit">Add note</button></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+const SUPABASE_URL = 'https://kagxguplajyecnmllopz.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_4zho3NbCK72AI3rQEBGGZg_v8EZTd43'; // publishable; RLS lets only admins read
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const FLOOR = 25;                 // owner: 25 touches/day is the floor, never a cap
+const GO_LIVE = '2026-10-24';     // rolling shortfall counts from the first CRM day
+const LANES = {developer:'Developer',pm:'Property manager',architect:'Architect',agent:'Agent',commercial:'Commercial',reo:'REO',fsbo:'FSBO',other:'Other'};
+const CHANNELS = {phone:'Phone',email:'Email',linkedin:'LinkedIn',instagram:'Instagram',fb_marketplace:'FB Marketplace',in_person:'In person',other:'Other'};
+const STAGES = {new:'New',contacted:'Contacted',follow_up:'Follow up',appointment:'Appointment',proposal:'Proposal',won:'Won',lost:'Lost',nurture:'Nurture'};
+const OUTCOMES = {answered:'Answered',no_answer:'No answer',call_back:'Call back',follow_up:'Follow up',not_interested:'Not interested',yes:'Yes',appointment:'Appointment',sale:'Sale'};
+
+const S = {leads:[],touches:[],clients:[],orders:[],objections:[],expenses:[]};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money = n => '$' + Number(n||0).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2});
+
+// Dates in the founder's time zone (America/New_York), as YYYY-MM-DD.
+function today(){ return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date()); }
+function addDays(d,n){ const t=new Date(d+'T12:00:00Z'); t.setUTCDate(t.getUTCDate()+n); return t.toISOString().slice(0,10); }
+function dow(d){ return new Date(d+'T12:00:00Z').getUTCDay(); }
+function fmtDate(d){ if(!d) return ''; return new Date(d+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'}); }
+function nextWorkday(d){ while(dow(d)===0) d=addDays(d,1); return d; }  // Sunday is His
+
+// Follow-up cadence (playbook §3): D0 → D3 → D7 → D14 → every 30 days. A no → 60-day nurture.
+function suggestNext(lead, outcome, date){
+  const n = S.touches.filter(t=>t.lead_id===lead.id).length + 1;  // count incl. this touch
+  if (outcome==='sale') return null;
+  if (outcome==='not_interested') return nextWorkday(addDays(date,60));
+  if (outcome==='call_back') return nextWorkday(addDays(date,1));
+  const gap = n===1?3 : n===2?4 : n===3?7 : 30;
+  return nextWorkday(addDays(date,gap));
+}
+function stageAfter(lead, outcome){
+  const order=['new','contacted','follow_up','proposal','appointment','won'];
+  const want = {answered:'contacted',no_answer:'contacted',call_back:'follow_up',follow_up:'follow_up',yes:'proposal',appointment:'appointment',sale:'won',not_interested:'nurture'}[outcome];
+  if (want==='nurture' || want==='won') return want;
+  if (['won','lost','nurture'].includes(lead.stage)) return lead.stage==='nurture' ? want : lead.stage;
+  return order.indexOf(want) > order.indexOf(lead.stage) ? want : lead.stage;
+}
+
+// ---------- auth ----------
+async function boot(){
+  const {data:{session}} = await sb.auth.getSession();
+  if (!session) return show('loginView');
+  const {data:ok, error} = await sb.rpc('am_i_admin');
+  if (error || !ok) return show('deniedView');
+  $('whoami').textContent = session.user.email;
+  show('app'); await loadAll();
+}
+function show(id){ ['loginView','deniedView','app'].forEach(v=>$(v).classList.toggle('hide', v!==id)); }
+$('loginForm').onsubmit = async e => {
+  e.preventDefault();
+  const email = $('loginEmail').value.trim();
+  $('loginMsg').textContent = 'Sending…';
+  const {error} = await sb.auth.signInWithOtp({email, options:{emailRedirectTo: location.origin + '/admin/'}});
+  $('loginMsg').textContent = error ? ('Error: ' + error.message) : 'Check your email for the sign-in link.';
+};
+async function signOut(){ await sb.auth.signOut(); location.reload(); }
+sb.auth.onAuthStateChange((ev)=>{ if (ev==='SIGNED_IN' && $('app').classList.contains('hide')) boot(); });
+
+// ---------- data ----------
+async function fetchAll(table, order){
+  const out=[]; let from=0;
+  for(;;){
+    const {data,error} = await sb.from(table).select('*').order(order,{ascending:false}).range(from, from+999);
+    if (error) { alert(table+': '+error.message); break; }
+    out.push(...data); if (data.length<1000) break; from+=1000;
+  }
+  return out;
+}
+async function loadAll(){
+  [S.leads,S.touches,S.clients,S.orders,S.objections,S.expenses] = await Promise.all([
+    fetchAll('leads','created_at'), fetchAll('touches','created_at'), fetchAll('clients','created_at'),
+    fetchAll('orders','ordered_on'), fetchAll('objections','said_on'), fetchAll('expenses','spent_on')]);
+  renderAll();
+}
+function lastTouch(leadId){ return S.touches.find(t=>t.lead_id===leadId); } // touches are sorted newest first
+function sortTouches(){ S.touches.sort((a,b)=> (b.touched_on+b.created_at).localeCompare(a.touched_on+a.created_at)); }
+function leadName(l){ return l.name && l.company ? `${l.name} · ${l.company}` : (l.name || l.company || l.project || 'Unnamed'); }
+
+// ---------- logging ----------
+let undoState=null, toastTimer=null;
+async function quickLog(leadId, outcome){
+  const lead = S.leads.find(l=>l.id===leadId); if(!lead) return;
+  if (outcome==='sale' || lead.do_not_contact) return openLog(leadId, outcome);
+  const d = today();
+  const row = {lead_id:leadId, outcome, channel:lead.channel, touched_on:d, next_follow_up:suggestNext(lead,outcome,d)};
+  const {data,error} = await sb.from('touches').insert(row).select().single();
+  if (error) return alert(error.message);
+  const prevStage = lead.stage, newStage = stageAfter(lead,outcome);
+  if (newStage!==prevStage){ await sb.from('leads').update({stage:newStage}).eq('id',leadId); lead.stage=newStage; }
+  S.touches.unshift(data); sortTouches();
+  undoState = {touchId:data.id, leadId, prevStage};
+  toast(`${OUTCOMES[outcome]} · ${leadName(lead)}${row.next_follow_up?` · next ${fmtDate(row.next_follow_up)}`:''}`);
+  renderAll();
+}
+function toast(msg){
+  $('toastMsg').textContent=msg; $('toast').style.display='flex';
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>{$('toast').style.display='none'; undoState=null;}, 7000);
+}
+$('toastUndo').onclick = async ()=>{
+  if(!undoState) return; const u=undoState; undoState=null; $('toast').style.display='none';
+  await sb.from('touches').delete().eq('id',u.touchId);
+  await sb.from('leads').update({stage:u.prevStage}).eq('id',u.leadId);
+  S.touches=S.touches.filter(t=>t.id!==u.touchId); const l=S.leads.find(x=>x.id===u.leadId); if(l) l.stage=u.prevStage;
+  renderAll();
+};
+$('toastEdit').onclick = ()=>{ if(!undoState) return; const t=S.touches.find(x=>x.id===undoState.touchId); $('toast').style.display='none'; openLog(t.lead_id, t.outcome, t); };
+
+let logCtx=null;
+function openLog(leadId, outcome='answered', existing=null){
+  const lead=S.leads.find(l=>l.id===leadId); logCtx={leadId, existing};
+  const f=$('logForm');
+  $('logTitle').textContent = (existing?'Edit touch · ':'Log touch · ') + leadName(lead) + (lead.do_not_contact?' (DO NOT CONTACT)':'');
+  f.outcome.value = existing?.outcome || outcome;
+  f.channel.value = existing?.channel || lead.channel || '';
+  f.touched_on.value = existing?.touched_on || today();
+  f.next_follow_up.value = existing ? (existing.next_follow_up||'') : (suggestNext(lead, f.outcome.value, today())||'');
+  f.notes.value = existing?.notes || ''; f.objection.value=''; f.service.value=''; f.amount.value='';
+  syncLogForm(); logDlg.showModal();
+}
+function syncLogForm(){ const o=$('logOutcome').value; $('saleWrap').classList.toggle('hide', o!=='sale'); }
+$('logOutcome').onchange = ()=>{ syncLogForm(); if(!logCtx.existing){ const lead=S.leads.find(l=>l.id===logCtx.leadId); $('logForm').next_follow_up.value = suggestNext(lead,$('logOutcome').value,$('logForm').touched_on.value)||''; } };
+$('logForm').onsubmit = async e => {
+  if (e.submitter?.value!=='ok') return;
+  e.preventDefault();
+  const f=e.target, lead=S.leads.find(l=>l.id===logCtx.leadId);
+  const row={lead_id:lead.id, outcome:f.outcome.value, channel:f.channel.value||null, touched_on:f.touched_on.value, next_follow_up:f.next_follow_up.value||null, notes:f.notes.value.trim()||null};
+  let res;
+  if (logCtx.existing) res = await sb.from('touches').update(row).eq('id',logCtx.existing.id).select().single();
+  else res = await sb.from('touches').insert(row).select().single();
+  if (res.error) return alert(res.error.message);
+  S.touches = S.touches.filter(t=>t.id!==res.data.id); S.touches.unshift(res.data); sortTouches();
+  if (!logCtx.existing){
+    const ns=stageAfter(lead,row.outcome); if(ns!==lead.stage){ await sb.from('leads').update({stage:ns}).eq('id',lead.id); lead.stage=ns; }
+  }
+  if (f.objection.value.trim()){
+    const {data} = await sb.from('objections').insert({lead_id:lead.id, said:f.objection.value.trim(), lane:lead.lane, said_on:row.touched_on}).select().single();
+    if (data) S.objections.unshift(data);
+  }
+  if (row.outcome==='sale' && !logCtx.existing) await recordSale(lead, row.touched_on, f.service.value.trim(), f.amount.value);
+  logDlg.close(); renderAll();
+};
+async function recordSale(lead, date, service, amount){
+  let client = S.clients.find(c=>c.lead_id===lead.id);
+  if (!client){
+    const {data,error} = await sb.from('clients').insert({lead_id:lead.id, name:lead.company||lead.name||'Client', lane:lead.lane}).select().single();
+    if (error) return alert(error.message); client=data; S.clients.unshift(client);
+  }
+  const {data:o,error} = await sb.from('orders').insert({client_id:client.id, ordered_on:date, service:service||null, amount:amount===''?null:Number(amount)}).select().single();
+  if (error) return alert(error.message);
+  S.orders.unshift(o); client.last_order_date = [client.last_order_date,date].filter(Boolean).sort().pop();
+}
+
+// ---------- metrics ----------
+function rollingTarget(){
+  // Floor 25. Any shortfall on the last 6 workdays (since go-live, Sundays skipped) rolls into today and stacks.
+  const t=today(); let carry=0, d=addDays(t,-1), days=0;
+  while(days<6 && d>=GO_LIVE){
+    if (dow(d)!==0){ const n=S.touches.filter(x=>x.touched_on===d).length; carry+=Math.max(0,FLOOR-n); days++; }
+    d=addDays(d,-1);
+  }
+  return {target: FLOOR+carry, carry};
+}
+function rates(list){
+  const n=list.length, appt=list.filter(t=>t.outcome==='appointment').length, sale=list.filter(t=>t.outcome==='sale').length, no=list.filter(t=>t.outcome==='not_interested').length, yes=list.filter(t=>t.outcome==='yes').length;
+  const pct=(a,b)=> b? (Math.round(a/b*1000)/10)+'%' : '—';
+  return {n, appt, sale, no, yes, apptRate:pct(appt,n), closeRate:pct(sale,appt), perSale: sale? (Math.round(n/sale*10)/10) : '—'};
+}
+
+// ---------- render ----------
+function outcomeChips(leadId){
+  return `<div class="chips">${Object.entries(OUTCOMES).map(([k,v])=>`<button class="chip" onclick="quickLog('${leadId}','${k}')">${v}</button>`).join('')}<button class="chip ghost" onclick="openLog('${leadId}')">Details…</button><button class="chip ghost" onclick="openLead('${leadId}')">Edit</button></div>`;
+}
+function leadRow(l, extra=''){
+  const lt=lastTouch(l.id);
+  const contact=[l.phone?`<a href="tel:${esc(l.phone.split('/')[0].trim())}">${esc(l.phone)}</a>`:'', l.email?`<a href="mailto:${esc(l.email.split('/')[0].trim())}">${esc(l.email)}</a>`:'', l.linkedin?`<a href="${esc(l.linkedin.startsWith('http')?l.linkedin:'https://'+l.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`:''].filter(Boolean).join(' · ');
+  return `<div class="row"><div class="who"><b>${esc(leadName(l))}</b>
+    <span class="muted"><span class="tag dark">${esc(LANES[l.lane]||l.lane)}</span><span class="tag">${esc(STAGES[l.stage]||l.stage)}</span>${l.channel?`<span class="tag">${esc(CHANNELS[l.channel])}</span>`:''}${l.do_not_contact?'<span class="tag dark">Do not contact</span>':''}${l.priority?`<span class="tag">${esc(l.priority)}</span>`:''}</span>
+    ${l.project&&l.company?`<span class="muted">${esc(l.project)}</span>`:''}
+    ${contact?`<span class="muted">${contact}</span>`:''}
+    <span class="muted">${lt?`Last: ${OUTCOMES[lt.outcome]} ${fmtDate(lt.touched_on)}${lt.next_follow_up?` · next ${fmtDate(lt.next_follow_up)}`:''}${lt.notes?` · “${esc(lt.notes)}”`:''}`:'Not touched yet'}${extra}</span>
+    ${l.next_step&&!lt?`<span class="muted">Next step: ${esc(l.next_step)}</span>`:''}
+  </div>${l.do_not_contact?'':outcomeChips(l.id)}</div>`;
+}
+function renderToday(){
+  const t=today(), isSun=dow(t)===0;
+  $('todayTitle').innerHTML = isSun ? 'Sunday <i>is His</i>' : `Today <i>${fmtDate(t)}</i>`;
+  $('todaySub').textContent = isSun ? 'No outreach today. Rest; Monday is prepped Saturday night.' : 'Follow-ups first, then new touches. 25 is the floor, never a cap.';
+  const todays=S.touches.filter(x=>x.touched_on===t), {target,carry}=rollingTarget();
+  const pct=Math.min(100, Math.round(todays.length/target*100));
+  $('targetBox').innerHTML = isSun ? `<div><div class="muted">THIS WEEK</div><div class="v">${weekTouches()}</div></div>` :
+    `<div><div class="muted" style="letter-spacing:.18em">TOUCHES TODAY</div><div class="v">${todays.length} <span style="font-size:28px;color:var(--mid)">/ ${target}</span></div>
+     <div class="muted">Floor ${FLOOR}${carry?` + ${carry} rolled over from the last 6 workdays`:''}. ${todays.length>=target?'Floor hit. Keep going.':`${target-todays.length} to go.`}</div></div>
+     <div class="bar"><i style="width:${pct}%"></i></div>`;
+  const r=rates(S.touches), r30=rates(S.touches.filter(x=>x.touched_on>=addDays(t,-30)));
+  const nosToday=todays.filter(x=>x.outcome==='not_interested').length;
+  $('statGrid').innerHTML = [
+    ['This week', weekTouches(), 'touches Mon–Sat'],
+    ['Nos today', nosToday, `${r.no} all time`],
+    ['Yeses', r.yes, 'all time'],
+    ['Appointment rate', r.apptRate, `${r.appt} appts · 30d ${r30.apptRate}`],
+    ['Close rate', r.closeRate, `${r.sale} sales · 30d ${r30.closeRate}`],
+    ['Touches per sale', r.perSale, `${r.n} touches all time`],
+  ].map(([k,v,s])=>`<div class="stat"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join('');
+  const due=S.leads.filter(l=>!l.do_not_contact && !['won','lost'].includes(l.stage)).map(l=>({l,lt:lastTouch(l.id)})).filter(x=>x.lt?.next_follow_up && x.lt.next_follow_up<=t).sort((a,b)=>a.lt.next_follow_up.localeCompare(b.lt.next_follow_up));
+  $('dueCount').textContent = due.length ? `${due.length} due` : '';
+  $('dueList').innerHTML = due.length ? due.map(x=>leadRow(x.l, x.lt.next_follow_up<t?` · <b>overdue since ${fmtDate(x.lt.next_follow_up)}</b>`:'')).join('') : '<div class="empty">Nothing due. Go get new touches.</div>';
+  const risk=S.clients.filter(c=>c.last_order_date && c.last_order_date < addDays(t,-30));
+  $('riskHead').classList.toggle('hide', !risk.length); $('riskCount').textContent = risk.length ? `${risk.length}` : '';
+  $('riskList').innerHTML = risk.map(c=>{ const l=S.leads.find(x=>x.id===c.lead_id); return l ? leadRow(l, ` · last order ${fmtDate(c.last_order_date)}`) : `<div class="row"><div class="who"><b>${esc(c.name)}</b><span class="muted">Last order ${fmtDate(c.last_order_date)}</span></div></div>`; }).join('');
+  renderQuick();
+  const lanes=Object.keys(LANES).filter(k=>S.leads.some(l=>l.lane===k));
+  const byLead=Object.fromEntries(S.leads.map(l=>[l.id,l.lane]));
+  $('laneTable').innerHTML = `<tr><th>Lane</th><th>Leads</th><th>Touches</th><th>Nos</th><th>Appts</th><th>Sales</th><th>Appt rate</th><th>Close rate</th><th>Touches/sale</th></tr>` +
+    lanes.map(k=>{ const rr=rates(S.touches.filter(x=>byLead[x.lead_id]===k)); return `<tr><td>${LANES[k]}</td><td>${S.leads.filter(l=>l.lane===k).length}</td><td>${rr.n}</td><td>${rr.no}</td><td>${rr.appt}</td><td>${rr.sale}</td><td>${rr.apptRate}</td><td>${rr.closeRate}</td><td>${rr.perSale}</td></tr>`; }).join('');
+}
+function weekTouches(){ const t=today(); let d=t; while(dow(d)!==1 && d>addDays(t,-7)) d=addDays(d,-1); return S.touches.filter(x=>x.touched_on>=d && x.touched_on<=t).length; }
+function matches(l,q){ q=q.toLowerCase(); return [l.name,l.company,l.project,l.phone,l.email,l.area,l.notes].some(v=>(v||'').toLowerCase().includes(q)); }
+function renderQuick(){
+  const q=$('quickQ').value.trim();
+  $('quickList').innerHTML = q ? (S.leads.filter(l=>matches(l,q)).slice(0,8).map(l=>leadRow(l)).join('') || '<div class="empty">No match. Add them under Leads.</div>') : '';
+}
+function renderLeads(){
+  const q=$('leadQ').value.trim(), lane=$('leadLane').value, stage=$('leadStage').value, showMode=$('leadShow').value;
+  let list=S.leads.filter(l=>(!lane||l.lane===lane)&&(!stage||l.stage===stage)&&(!q||matches(l,q)));
+  if (showMode==='active') list=list.filter(l=>!l.do_not_contact && !['won','lost'].includes(l.stage));
+  if (showMode==='untouched') list=list.filter(l=>!l.do_not_contact && !lastTouch(l.id));
+  const pr={A:0,B:1}; list.sort((a,b)=>(pr[a.priority]??2)-(pr[b.priority]??2) || leadName(a).localeCompare(leadName(b)));
+  $('leadCount').textContent = `${list.length} shown · ${S.leads.length} total`;
+  $('leadList').innerHTML = list.map(l=>leadRow(l)).join('') || '<div class="empty">No leads match.</div>';
+}
+function renderClients(){
+  const t=today();
+  $('clientTable').innerHTML = `<tr><th>Client</th><th>Lane</th><th>Last order</th><th>Orders</th><th>Revenue</th><th></th></tr>` + (S.clients.map(c=>{
+    const os=S.orders.filter(o=>o.client_id===c.id), rev=os.reduce((a,o)=>a+Number(o.amount||0),0), risk=c.last_order_date && c.last_order_date<addDays(t,-30);
+    return `<tr><td>${esc(c.name)}${risk?' <span class="tag dark">At risk</span>':''}</td><td>${esc(LANES[c.lane]||'')}</td><td>${fmtDate(c.last_order_date)}</td><td>${os.length}</td><td>${money(rev)}</td><td><button class="chip" onclick="openOrder('${c.id}')">+ Order</button></td></tr>`;
+  }).join('') || '<tr><td colspan="6" class="empty">No clients yet. The first direct order is the breakthrough.</td></tr>');
+  const month=t.slice(0,7), mo=S.orders.filter(o=>o.ordered_on.startsWith(month)), gross=mo.reduce((a,o)=>a+Number(o.amount||0),0), exp=S.expenses.filter(e=>e.spent_on.startsWith(month)&&e.business==='Prolific').reduce((a,e)=>a+Number(e.amount),0);
+  $('orderTotals').textContent = `This month: gross ${money(gross)} · giving 5% ${money(gross*0.05)} · Prolific expenses ${money(exp)} · net ${money(gross-gross*0.05-exp)} (goal $5,000)`;
+  const cn=Object.fromEntries(S.clients.map(c=>[c.id,c.name]));
+  $('orderTable').innerHTML = `<tr><th>Date</th><th>Client</th><th>Service</th><th>Amount</th><th>Giving 5%</th><th>Notes</th></tr>` + (S.orders.map(o=>`<tr><td>${fmtDate(o.ordered_on)}</td><td>${esc(cn[o.client_id])}</td><td>${esc(o.service)}</td><td>${o.amount!=null?money(o.amount):''}</td><td>${o.amount!=null?money(o.giving):''}</td><td>${esc(o.notes)}</td></tr>`).join('') || '<tr><td colspan="6" class="empty">No orders yet.</td></tr>');
+}
+function renderObjections(){
+  const groups={}; S.objections.forEach(o=>(groups[o.lane||'other']??=[]).push(o));
+  $('objList').innerHTML = Object.keys(groups).length ? Object.entries(groups).map(([k,os])=>`<h2>${esc(LANES[k]||k)} <small>${os.length}</small></h2>`+os.map(o=>{ const l=S.leads.find(x=>x.id===o.lead_id); return `<div class="row"><div class="who">“${esc(o.said)}”<span class="muted">${fmtDate(o.said_on)}${l?' · '+esc(leadName(l)):''}</span></div></div>`; }).join('')).join('') : '<div class="empty">No objections logged yet.</div>';
+}
+function renderExpenses(){
+  const month=today().slice(0,7), by={}; S.expenses.filter(e=>e.spent_on.startsWith(month)).forEach(e=>by[e.business]=(by[e.business]||0)+Number(e.amount));
+  $('expTotals').textContent = 'This month: ' + (Object.entries(by).map(([b,v])=>`${b} ${money(v)}`).join(' · ') || 'nothing yet');
+  $('expTable').innerHTML = `<tr><th>Date</th><th>Business</th><th>Category</th><th>Amount</th><th>Note</th><th></th></tr>` + (S.expenses.map(e=>`<tr><td>${fmtDate(e.spent_on)}</td><td>${esc(e.business)}</td><td>${esc(e.category)}</td><td>${money(e.amount)}</td><td>${esc(e.note)}</td><td><button class="chip ghost" onclick="delExpense('${e.id}')">Delete</button></td></tr>`).join('') || '<tr><td colspan="6" class="empty">No expenses yet.</td></tr>');
+}
+function renderAll(){ renderToday(); renderLeads(); renderClients(); renderObjections(); renderExpenses(); }
+
+// ---------- lead / client editors ----------
+let leadCtx=null;
+function openLead(id){
+  const l = id ? S.leads.find(x=>x.id===id) : {lane:'pm', stage:'new'}; leadCtx=id||null;
+  const f=$('leadForm'); $('leadTitle').textContent = id ? leadName(l) : 'New lead';
+  ['name','company','lane','channel','phone','email','linkedin','source','stage','title','area','project','angle','next_step','notes'].forEach(k=>f[k].value=l[k]||'');
+  if(!l.stage) f.stage.value='new'; f.do_not_contact.checked=!!l.do_not_contact;
+  const hist = id ? S.touches.filter(t=>t.lead_id===id) : [];
+  $('leadHistory').innerHTML = hist.length ? '<b>History</b><br>'+hist.map(t=>`${fmtDate(t.touched_on)} · ${OUTCOMES[t.outcome]}${t.channel?' · '+CHANNELS[t.channel]:''}${t.notes?' · '+esc(t.notes):''} <a href="#" onclick="event.preventDefault();leadDlg.close();openLog('${id}',null,S.touches.find(x=>x.id==='${t.id}'))">edit</a>`).join('<br>') : '';
+  leadDlg.showModal();
+}
+$('leadForm').onsubmit = async e => {
+  if (e.submitter?.value!=='ok') return; e.preventDefault();
+  const f=e.target, row={};
+  ['name','company','lane','channel','phone','email','linkedin','source','stage','title','area','project','angle','next_step','notes'].forEach(k=>row[k]=f[k].value.trim()||null);
+  row.lane=row.lane||'other'; row.stage=row.stage||'new'; row.do_not_contact=f.do_not_contact.checked;
+  if (!row.name && !row.company) return alert('Add a name or company.');
+  const res = leadCtx ? await sb.from('leads').update(row).eq('id',leadCtx).select().single() : await sb.from('leads').insert(row).select().single();
+  if (res.error) return alert(res.error.message);
+  S.leads = S.leads.filter(l=>l.id!==res.data.id); S.leads.unshift(res.data); leadDlg.close(); renderAll();
+};
+function openClient(){ $('clientForm').reset(); clientDlg.showModal(); }
+$('clientForm').onsubmit = async e => {
+  if (e.submitter?.value!=='ok') return; e.preventDefault(); const f=e.target;
+  const {data,error}=await sb.from('clients').insert({name:f.name.value.trim(), lane:f.lane.value||null, notes:f.notes.value.trim()||null}).select().single();
+  if (error) return alert(error.message); S.clients.unshift(data); clientDlg.close(); renderAll();
+};
+let orderCtx=null;
+function openOrder(cid){ orderCtx=cid; const f=$('orderForm'); f.reset(); f.ordered_on.value=today(); $('orderTitle').textContent='Order · '+S.clients.find(c=>c.id===cid).name; orderDlg.showModal(); }
+$('orderForm').onsubmit = async e => {
+  if (e.submitter?.value!=='ok') return; e.preventDefault(); const f=e.target;
+  const {data,error}=await sb.from('orders').insert({client_id:orderCtx, ordered_on:f.ordered_on.value, service:f.service.value.trim()||null, amount:f.amount.value===''?null:Number(f.amount.value), notes:f.notes.value.trim()||null}).select().single();
+  if (error) return alert(error.message); S.orders.unshift(data);
+  const c=S.clients.find(x=>x.id===orderCtx); c.last_order_date=[c.last_order_date,data.ordered_on].filter(Boolean).sort().pop();
+  orderDlg.close(); renderAll();
+};
+$('objForm').onsubmit = async e => {
+  e.preventDefault(); const f=e.target;
+  const {data,error}=await sb.from('objections').insert({said:f.said.value.trim(), lane:f.lane.value||null, said_on:f.said_on.value||today()}).select().single();
+  if (error) return alert(error.message); S.objections.unshift(data); f.reset(); f.said_on.value=today(); renderObjections();
+};
+$('expForm').onsubmit = async e => {
+  e.preventDefault(); const f=e.target;
+  const {data,error}=await sb.from('expenses').insert({spent_on:f.spent_on.value, business:f.business.value, category:f.category.value.trim()||null, amount:Number(f.amount.value), note:f.note.value.trim()||null}).select().single();
+  if (error) return alert(error.message); S.expenses.unshift(data); S.expenses.sort((a,b)=>b.spent_on.localeCompare(a.spent_on));
+  const d=f.spent_on.value, b=f.business.value; f.reset(); f.spent_on.value=d; f.business.value=b; renderAll();
+};
+async function delExpense(id){ if(!confirm('Delete this expense?')) return; const {error}=await sb.from('expenses').delete().eq('id',id); if(error) return alert(error.message); S.expenses=S.expenses.filter(e=>e.id!==id); renderAll(); }
+
+// ---------- export ----------
+function exportCsv(name){
+  const rows=S[name]; if(!rows.length) return alert('Nothing to export yet.');
+  let data=rows;
+  if (name==='touches'){ const ln=Object.fromEntries(S.leads.map(l=>[l.id,leadName(l)])); data=rows.map(r=>({lead:ln[r.lead_id]||'',...r})); }
+  if (name==='orders'){ const cn=Object.fromEntries(S.clients.map(c=>[c.id,c.name])); data=rows.map(r=>({client:cn[r.client_id]||'',...r})); }
+  const cols=Object.keys(data[0]);
+  const cell=v=>{ v = v==null ? '' : String(v); if (/^[=+\-@]/.test(v)) v="'"+v; return /[",\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v; };
+  const csv=[cols.join(','), ...data.map(r=>cols.map(c=>cell(r[c])).join(','))].join('\n');
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download=`prolific-${name}-${today()}.csv`; a.click(); URL.revokeObjectURL(a.href);
+}
+
+// ---------- setup ----------
+const opts=(o,blank)=> (blank?`<option value="">${blank}</option>`:'') + Object.entries(o).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+document.querySelectorAll('.laneSel').forEach(s=>s.innerHTML=opts(LANES));
+document.querySelectorAll('.chanSel').forEach(s=>s.innerHTML=opts(CHANNELS,'—'));
+document.querySelectorAll('.stageSel').forEach(s=>s.innerHTML=opts(STAGES));
+$('logOutcome').innerHTML=opts(OUTCOMES); $('leadLane').innerHTML=opts(LANES,'All lanes'); $('leadStage').innerHTML=opts(STAGES,'All stages');
+$('objForm').said_on.value=today(); $('expForm').spent_on.value=today();
+['leadQ','leadLane','leadStage','leadShow'].forEach(id=>$(id).addEventListener('input',renderLeads));
+$('quickQ').addEventListener('input',renderQuick);
+$('tabs').onclick = e => { const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('main > section').forEach(s=>s.classList.toggle('hide', s.id!=='t-'+b.dataset.t)); window.scrollTo(0,0); };
+boot();
+</script>
+</body>
+</html>
