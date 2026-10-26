@@ -96,6 +96,7 @@ header .btn{padding:8px 12px}
   <button data-t="clients">Clients</button>
   <button data-t="objections">Objections</button>
   <button data-t="expenses">Expenses</button>
+  <button data-t="calendar">Calendar</button>
   <button data-t="export">Export</button>
 </nav>
 <main>
@@ -164,6 +165,33 @@ header .btn{padding:8px 12px}
   <datalist id="expCats"><option>Software</option><option>Gas / mileage</option><option>Gear</option><option>Hosting</option><option>Marketing / ads</option><option>Printing</option><option>Insurance</option><option>Fees</option></datalist>
   <p class="muted" id="expTotals"></p>
   <div class="scroll"><table id="expTable"></table></div>
+</section>
+
+<section id="t-calendar" class="hide">
+  <h1>Calendar</h1>
+  <p class="muted">Availability = open hours − blocks − bookings (30-min travel buffer, 12 h notice, Sundays closed, shoots end 2 h before sunset, 3 h Nov–Feb). Public page: <a href="../book.html" target="_blank">book.html</a></p>
+
+  <h2>Upcoming bookings <small><button class="chip" onclick="openBooking()">+ Booking</button></small></h2>
+  <div id="bkList"></div>
+
+  <h2>Open hours <small>set per week</small></h2>
+  <div class="filters"><select id="ohWeek"></select><button class="chip" onclick="copyPrevWeek()">Copy previous week</button></div>
+  <div class="scroll"><table id="ohTable"></table></div>
+  <form class="f" id="ohForm"><label>Day<select name="weekday"><option value="1">Mon</option><option value="2">Tue</option><option value="3">Wed</option><option value="4">Thu</option><option value="5">Fri</option><option value="6">Sat</option></select></label><label>From<input type="time" name="starts" value="08:00" required/></label><label>To<input type="time" name="ends" value="17:00" required/></label><div><button class="btn" type="submit" style="margin-top:18px">Add hours</button></div></form>
+
+  <h2>Blocks <small>times you physically can't be somewhere</small></h2>
+  <div id="blkList"></div>
+  <form class="f" id="blkOneForm"><div class="full muted">One-off (appointment, personal)</div><label>Label (private)<input name="label" value="Busy" required/></label><label>Date<input type="date" name="d" required/></label><label>From<input type="time" name="starts" required/></label><label>To<input type="time" name="ends" required/></label><div><button class="btn" type="submit" style="margin-top:18px">Add block</button></div></form>
+  <form class="f" id="blkRecForm"><div class="full muted">Recurring (weekly)</div><label>Label (private)<input name="label" required placeholder="Bowman Monday meeting"/></label>
+    <label class="full" style="flex-direction:row;flex-wrap:wrap;gap:12px"><span id="recDays"></span></label>
+    <label>From<input type="time" name="starts" required/></label><label>To<input type="time" name="ends" required/></label><label>Starting (optional)<input type="date" name="active_from"/></label><label>Until (optional)<input type="date" name="active_until"/></label><div><button class="btn" type="submit" style="margin-top:18px">Add recurring</button></div></form>
+
+  <h2>Preview <small>what clients see</small></h2>
+  <div class="filters"><select id="pvSvc"></select></div>
+  <div id="pvList" class="muted"></div>
+
+  <h2>Phone calendar</h2>
+  <div id="feedBox" class="muted"></div>
 </section>
 
 <section id="t-export" class="hide">
@@ -248,6 +276,26 @@ header .btn{padding:8px 12px}
     <label>Amount ($)<input type="number" step="0.01" min="0" name="amount"/></label>
     <label class="full">Notes<input name="notes"/></label>
     <div class="full" style="display:flex;gap:8px;justify-content:flex-end"><button class="btn o" type="button" onclick="orderDlg.close()">Cancel</button><button class="btn" type="submit" value="ok">Save</button></div>
+  </form>
+</dialog>
+
+<dialog id="bkDlg">
+  <form id="bkForm" class="f" method="dialog">
+    <div class="full"><h2 style="margin-top:0">Booking (manual)</h2><p class="muted">Blocks the calendar like a web booking. Use for orders that came in by phone, text or Asteroom.</p></div>
+    <label>Service<select name="service_key" id="bkSvc"></select></label>
+    <label>Date<input type="date" name="d" required/></label>
+    <label>Start<input type="time" name="t" required/></label>
+    <label>Minutes<input type="number" name="minutes" min="15" step="15" required/></label>
+    <label>Client name<input name="client_name" required/></label>
+    <label>Company<input name="company"/></label>
+    <label>Phone<input name="client_phone"/></label>
+    <label>Email<input type="email" name="client_email"/></label>
+    <label class="full">Address<input name="address" required/></label>
+    <label>Unit #<input name="unit"/></label>
+    <label>On-site contact<input name="onsite_contact"/></label>
+    <label class="full">Access instructions (admin only, never emailed)<input name="access"/></label>
+    <label class="full">Notes<input name="notes"/></label>
+    <div class="full" style="display:flex;gap:8px;justify-content:flex-end"><button class="btn o" type="button" onclick="bkDlg.close()">Cancel</button><button class="btn" type="submit" value="ok">Save</button></div>
   </form>
 </dialog>
 
@@ -570,6 +618,103 @@ function exportCsv(name){
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download=`prolific-${name}-${today()}.csv`; a.click(); URL.revokeObjectURL(a.href);
 }
 
+
+// ---------- calendar (Phase 2B) ----------
+const TZ='America/New_York', DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const C={services:[],bookings:[],access:{},hours:[],blocks:[],token:null,loaded:false};
+function nyISO(d,t){ // local NY wall time → UTC ISO
+  const g=new Date(`${d}T${t}:00Z`);
+  const o=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).formatToParts(g).map(x=>[x.type,x.value]));
+  const asNY=Date.UTC(+o.year,o.month-1,+o.day,+o.hour,+o.minute);
+  return new Date(g.getTime()-(asNY-g.getTime())).toISOString();
+}
+const fmtDT=iso=>new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).format(new Date(iso));
+const fmtT=iso=>new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(new Date(iso));
+const hhmm=t=>(t||'').slice(0,5);
+function mondayOf(d){ let x=d; while(dow(x)!==1) x=addDays(x,-1); return x; }
+async function loadCal(){
+  const since=new Date(Date.now()-7*864e5).toISOString();
+  const [sv,bk,ac,oh,bl,fd]=await Promise.all([
+    sb.from('booking_services').select('*').order('sort'),
+    sb.from('bookings').select('*').gte('starts_at',since).order('starts_at'),
+    sb.from('booking_access').select('*'),
+    sb.from('open_hours').select('*').gte('week_of',addDays(mondayOf(today()),-7)).order('weekday').order('starts'),
+    sb.from('blocks').select('*').order('created_at'),
+    sb.from('calendar_feed').select('token').limit(1)]);
+  for (const r of [sv,bk,ac,oh,bl,fd]) if (r.error) return alert(r.error.message);
+  C.services=sv.data; C.bookings=bk.data; C.access=Object.fromEntries(ac.data.map(a=>[a.booking_id,a.access_instructions]));
+  C.hours=oh.data; C.blocks=bl.data; C.token=fd.data[0]?.token||null;
+  if (!C.loaded){
+    const weeks=[...Array(8)].map((_,i)=>addDays(mondayOf(today()),7*i));
+    $('ohWeek').innerHTML=weeks.map(w=>`<option value="${w}">Week of ${fmtDate(w)}</option>`).join('');
+    if (dow(today())===0) $('ohWeek').value=weeks[1];  // Sunday: plan the coming week
+    $('pvSvc').innerHTML=C.services.filter(x=>x.active).map(x=>`<option value="${x.key}">${esc(x.label)}</option>`).join('');
+    $('bkSvc').innerHTML=C.services.map(x=>`<option value="${x.key}" data-m="${x.minutes}">${esc(x.label)}</option>`).join('')+'<option value="">Other</option>';
+    $('recDays').innerHTML=[1,2,3,4,5,6].map(v=>`<label style="flex-direction:row;align-items:center;gap:4px"><input type="checkbox" name="wd" value="${v}" style="width:auto"/>${DOW[v]}</label>`).join('');
+    C.loaded=true;
+  }
+  renderCal(); preview();
+}
+function renderCal(){
+  const now=Date.now();
+  const up=C.bookings.filter(b=>new Date(b.ends_at).getTime()>now-864e5 && b.status!=='cancelled');
+  $('bkList').innerHTML = up.length ? up.map(b=>`<div class="row"><div class="who"><b>${fmtDT(b.starts_at)}–${fmtT(b.ends_at)}</b> · ${esc(b.service||'Shoot')}
+    <span class="muted"><span class="tag ${b.status==='confirmed'?'dark':''}">${esc(b.status)}</span><span class="tag">${esc(b.source)}</span>${esc(b.client_name)}${b.company?' · '+esc(b.company):''}${b.client_phone?` · <a href="tel:${esc(b.client_phone)}">${esc(b.client_phone)}</a>`:''}${b.client_email?` · <a href="mailto:${esc(b.client_email)}">${esc(b.client_email)}</a>`:''}</span>
+    <span class="muted">${esc(b.address)}${b.unit?' #'+esc(b.unit):''}${b.onsite_contact?' · On-site: '+esc(b.onsite_contact):''}</span>
+    ${C.access[b.id]?`<span class="muted"><b>Access:</b> ${esc(C.access[b.id])}</span>`:''}${b.notes?`<span class="muted">Notes: ${esc(b.notes)}</span>`:''}</div>
+    <div class="chips"><button class="chip" onclick="setBk('${b.id}','done')">Done</button><button class="chip ghost" onclick="setBk('${b.id}','cancelled')">Cancel</button></div></div>`).join('') : '<div class="empty">No upcoming bookings.</div>';
+  const w=$('ohWeek').value, rows=C.hours.filter(h=>h.week_of===w);
+  $('ohTable').innerHTML='<tr><th>Day</th><th>From</th><th>To</th><th></th></tr>'+(rows.map(h=>`<tr><td>${DOW[h.weekday]}</td><td>${hhmm(h.starts)}</td><td>${hhmm(h.ends)}</td><td><button class="chip ghost" onclick="delHours('${h.id}')">Remove</button></td></tr>`).join('')||'<tr><td colspan="4" class="empty">No open hours this week: nothing is bookable. Add hours or copy the previous week.</td></tr>');
+  const t=today();
+  const bl=C.blocks.filter(b=>b.recurring ? (!b.active_until||b.active_until>=t) : new Date(b.ends_at).getTime()>now);
+  $('blkList').innerHTML = bl.length ? bl.map(b=>`<div class="row"><div class="who"><b>${esc(b.label)}</b><span class="muted">${b.recurring?`Every ${b.weekdays.map(d=>DOW[d]).join(', ')} · ${hhmm(b.starts)}–${hhmm(b.ends)}${b.active_from?' · from '+fmtDate(b.active_from):''}${b.active_until?' · until '+fmtDate(b.active_until):''}`:`${fmtDT(b.starts_at)}–${fmtT(b.ends_at)}`}</span></div><div class="chips"><button class="chip ghost" onclick="delBlock('${b.id}')">Remove</button></div></div>`).join('') : '<div class="empty">No blocks.</div>';
+  const url=C.token?`webcal://kagxguplajyecnmllopz.supabase.co/functions/v1/calendar-feed?token=${C.token}`:null;
+  $('feedBox').innerHTML = url ? `Subscribe once on your phone and every booking and block shows up (refreshes every ~15 min; access codes never appear).<br><b>iPhone:</b> tap the link below, then Subscribe. Or Settings → Calendar → Accounts → Add Account → Other → Add Subscribed Calendar → paste.<br><input readonly value="${url}" onclick="this.select()" style="margin:8px 0"/><a class="btn" href="${url}">Subscribe on this phone</a> <button class="btn o" onclick="navigator.clipboard.writeText('${url}');this.textContent='Copied'">Copy link</button><br><span class="muted">Keep this link private: anyone with it can see your calendar.</span>` : 'No feed token yet.';
+}
+async function preview(){
+  const k=$('pvSvc').value; if(!k) return;
+  const {data,error}=await sb.rpc('admin_preview_slots',{p_service:k,p_days:14});
+  if (error) { $('pvList').textContent=error.message; return; }
+  const by={}; data.forEach(x=>{ const d=new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date(x.starts_at)); (by[d]??=[]).push(fmtT(x.starts_at)); });
+  $('pvList').innerHTML = Object.keys(by).length ? Object.entries(by).map(([d,ts])=>`<div><b>${fmtDate(d)}</b> · ${ts.length} start times (${ts[0]}–${ts[ts.length-1]})</div>`).join('') : 'No open times in the next 14 days for this service.';
+}
+async function setBk(id,status){ if(status==='cancelled'&&!confirm('Cancel this booking? It frees the time slot.')) return;
+  const {error}=await sb.from('bookings').update({status}).eq('id',id); if(error) return alert(error.message);
+  C.bookings.find(b=>b.id===id).status=status; renderCal(); preview(); }
+async function delHours(id){ const {error}=await sb.from('open_hours').delete().eq('id',id); if(error) return alert(error.message); C.hours=C.hours.filter(h=>h.id!==id); renderCal(); preview(); }
+async function delBlock(id){ if(!confirm('Remove this block?')) return; const {error}=await sb.from('blocks').delete().eq('id',id); if(error) return alert(error.message); C.blocks=C.blocks.filter(b=>b.id!==id); renderCal(); preview(); }
+async function copyPrevWeek(){
+  const w=$('ohWeek').value, prev=addDays(w,-7), src=C.hours.filter(h=>h.week_of===prev);
+  if (!src.length) return alert('Nothing to copy: the previous week has no hours.');
+  if (C.hours.some(h=>h.week_of===w) && !confirm('This week already has hours. Add the previous week\'s on top?')) return;
+  const {data,error}=await sb.from('open_hours').insert(src.map(h=>({week_of:w,weekday:h.weekday,starts:h.starts,ends:h.ends}))).select();
+  if (error) return alert(error.message); C.hours.push(...data); renderCal(); preview();
+}
+$('ohWeek').onchange=renderCal; $('pvSvc').onchange=preview;
+$('ohForm').onsubmit=async e=>{ e.preventDefault(); const f=e.target;
+  if (f.ends.value<=f.starts.value) return alert('End must be after start.');
+  const {data,error}=await sb.from('open_hours').insert({week_of:$('ohWeek').value,weekday:+f.weekday.value,starts:f.starts.value,ends:f.ends.value}).select().single();
+  if (error) return alert(error.message); C.hours.push(data); renderCal(); preview(); };
+$('blkOneForm').onsubmit=async e=>{ e.preventDefault(); const f=e.target;
+  if (f.ends.value<=f.starts.value) return alert('End must be after start.');
+  const {data,error}=await sb.from('blocks').insert({label:f.label.value.trim()||'Busy',recurring:false,starts_at:nyISO(f.d.value,f.starts.value),ends_at:nyISO(f.d.value,f.ends.value)}).select().single();
+  if (error) return alert(error.message); C.blocks.push(data); f.reset(); f.label.value='Busy'; renderCal(); preview(); };
+$('blkRecForm').onsubmit=async e=>{ e.preventDefault(); const f=e.target, wd=[...f.querySelectorAll('input[name=wd]:checked')].map(x=>+x.value);
+  if (!wd.length) return alert('Pick at least one day.'); if (f.ends.value<=f.starts.value) return alert('End must be after start.');
+  const {data,error}=await sb.from('blocks').insert({label:f.label.value.trim(),recurring:true,weekdays:wd,starts:f.starts.value,ends:f.ends.value,active_from:f.active_from.value||null,active_until:f.active_until.value||null}).select().single();
+  if (error) return alert(error.message); C.blocks.push(data); f.reset(); renderCal(); preview(); };
+function openBooking(){ const f=$('bkForm'); f.reset(); f.d.value=today(); const o=$('bkSvc').selectedOptions[0]; f.minutes.value=o?.dataset.m||60; bkDlg.showModal(); }
+$('bkSvc').onchange=()=>{ const o=$('bkSvc').selectedOptions[0]; if(o?.dataset.m) $('bkForm').minutes.value=o.dataset.m; };
+$('bkForm').onsubmit=async e=>{ if (e.submitter?.value!=='ok') return; e.preventDefault(); const f=e.target;
+  const start=nyISO(f.d.value,f.t.value), end=new Date(new Date(start).getTime()+(+f.minutes.value)*6e4).toISOString();
+  const clash=C.bookings.find(b=>b.status!=='cancelled' && new Date(b.starts_at)<new Date(end) && new Date(b.ends_at)>new Date(start));
+  if (clash && !confirm('This overlaps another booking ('+fmtDT(clash.starts_at)+'). Save anyway?')) return;
+  const svc=C.services.find(x=>x.key===f.service_key.value);
+  const row={starts_at:start,ends_at:end,service_key:svc?.key||null,service:svc?.label||'Other',client_name:f.client_name.value.trim(),company:f.company.value.trim()||null,client_phone:f.client_phone.value.trim()||null,client_email:f.client_email.value.trim()||null,address:f.address.value.trim(),unit:f.unit.value.trim()||null,onsite_contact:f.onsite_contact.value.trim()||null,notes:f.notes.value.trim()||null,status:'confirmed',source:'manual'};
+  const {data,error}=await sb.from('bookings').insert(row).select().single(); if (error) return alert(error.message);
+  if (f.access.value.trim()){ const r=await sb.from('booking_access').insert({booking_id:data.id,access_instructions:f.access.value.trim()}); if(r.error) alert('Saved, but access info failed: '+r.error.message); else C.access[data.id]=f.access.value.trim(); }
+  C.bookings.push(data); C.bookings.sort((a,b)=>a.starts_at.localeCompare(b.starts_at)); bkDlg.close(); renderCal(); preview(); };
+
 // ---------- setup ----------
 const opts=(o,blank)=> (blank?`<option value="">${blank}</option>`:'') + Object.entries(o).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
 document.querySelectorAll('.laneSel').forEach(s=>s.innerHTML=opts(LANES));
@@ -581,7 +726,8 @@ $('objForm').said_on.value=today(); $('expForm').spent_on.value=today();
 $('quickQ').addEventListener('input',renderQuick);
 $('tabs').onclick = e => { const b=e.target.closest('button'); if(!b) return;
   document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',x===b));
-  document.querySelectorAll('main > section').forEach(s=>s.classList.toggle('hide', s.id!=='t-'+b.dataset.t)); window.scrollTo(0,0); };
+  document.querySelectorAll('main > section').forEach(s=>s.classList.toggle('hide', s.id!=='t-'+b.dataset.t)); window.scrollTo(0,0);
+  if (b.dataset.t==='calendar') loadCal(); };
 boot();
 </script>
 </body>
