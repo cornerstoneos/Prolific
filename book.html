@@ -29,10 +29,10 @@
 <section class="wrap" id="flow">
   <div class="eye">Book a Shoot</div>
   <h1>Pick a time.<br/><em>We'll bring the light.</em></h1>
-  <p class="lead">Every time below is open and timed for good daylight on your property. Book in under two minutes. Developers: book a walk-through for your free launch plan.</p>
+  <p class="lead">Every shoot time below is open and timed for good daylight on your property. Book in under two minutes. Not sure what you need? Book a free consultation.</p>
 
   <div class="step">
-    <h2>1 · What are we shooting?</h2>
+    <h2>1 · What do you need?</h2>
     <div class="svc" id="svcList"><p class="muted" style="padding:20px;background:#fff">Loading…</p></div>
   </div>
 
@@ -98,7 +98,7 @@ async function api(path, body){
 async function loadServices(){
   try { services = await api('booking_services?select=key,label,minutes&active=eq.true&order=sort'); }
   catch(e){ $('svcList').innerHTML='<p class="err" style="padding:20px;background:#fff">Booking is unavailable right now. Call or text 704-222-9275.</p>'; return; }
-  $('svcList').innerHTML = services.map(s=>`<button type="button" data-k="${esc(s.key)}"><div class="t">${esc(s.label)}</div><div class="m">About ${s.minutes>=60?(s.minutes/60)+' hr':s.minutes+' min'} on site</div></button>`).join('');
+  $('svcList').innerHTML = services.map(s=>`<button type="button" data-k="${esc(s.key)}"><div class="t">${esc(s.label)}</div><div class="m">${s.key==='consult'?s.minutes+' min call':'About '+(s.minutes>=60?(s.minutes/60)+' hr':s.minutes+' min')+' on site'}</div></button>`).join('');
   const want = new URLSearchParams(location.search).get('s');
   if (want && services.some(s=>s.key===want)) pickService(want);
 }
@@ -128,6 +128,8 @@ $('times').onclick = e => { const b=e.target.closest('button'); if(!b) return;
   slot=slots.find(x=>x.s.toISOString()===b.dataset.t);
   document.querySelectorAll('#times button').forEach(x=>x.classList.toggle('on', x===b));
   $('pickSummary').innerHTML = `<b>${esc(svc.label)}</b><br>${fmtDay(slot.s)} · ${fmtTime(slot.s)}–${fmtTime(slot.e)} ET <a href="#stepTime" style="margin-left:8px">change</a>`;
+  const c=svc.key==='consult'; ['address','unit','access_instructions'].forEach(n=>{const el=document.querySelector('#bookForm [name='+n+']'); el.closest('.row')?el.closest('.row').classList.toggle('hidden',c):el.parentElement.classList.toggle('hidden',c); el.required=(n==='address'&&!c);});
+  document.querySelector('#bookForm [name=notes]').placeholder = c ? 'What are you working on? Project, listing, or portfolio' : 'Beds/baths, anything we should know, rooms to focus on';
   $('stepForm').classList.remove('hidden'); $('stepForm').scrollIntoView({behavior:'smooth',block:'start'});
 };
 
@@ -135,11 +137,12 @@ $('bookForm').onsubmit = async e => {
   e.preventDefault(); const f=e.target, err=$('bookErr'); err.classList.add('hidden');
   if (f.website.value) return;  // bot
   const v=k=>f[k].value.trim();
-  if (!v('name') || !v('address')) return showErr('Add your name and the property address.');
+  const consult = svc && svc.key==='consult';
+  if (!v('name') || (!consult && !v('address'))) return showErr(consult ? 'Add your name.' : 'Add your name and the property address.');
   if (!v('email') && !v('phone')) return showErr('Add an email or a phone number so we can confirm.');
   if (!slot) return showErr('Pick a time first.');
   $('bookBtn').disabled=true; $('bookBtn').textContent='Booking…';
-  const p={service:svc.key, starts_at:slot.s.toISOString(), name:v('name'), company:v('company'), email:v('email'), phone:v('phone'), address:v('address'), unit:v('unit'), onsite_contact:v('onsite_contact'), access_instructions:v('access_instructions'), notes:v('notes')};
+  const p={service:svc.key, starts_at:slot.s.toISOString(), name:v('name'), company:v('company'), email:v('email'), phone:v('phone'), address:consult ? 'Phone / video consultation' : v('address'), unit:v('unit'), onsite_contact:v('onsite_contact'), access_instructions:v('access_instructions'), notes:v('notes')};
   try {
     const res = await api('rpc/create_booking',{p});
     alertFounder(p);
@@ -156,9 +159,9 @@ function alertFounder(p){  // best effort; the booking is already saved
 }
 function showConfirm(res, p){
   const s=new Date(res.starts_at), e=new Date(res.ends_at);
-  $('confirmText').innerHTML = `<b>${esc(res.service)}</b><br>${fmtDay(s)} · ${fmtTime(s)}–${fmtTime(e)} ET<br>${esc(p.address)}${p.unit?' #'+esc(p.unit):''}<br><br>We'll see you there. Everything comes back in one link.`;
+  $('confirmText').innerHTML = `<b>${esc(res.service)}</b><br>${fmtDay(s)} · ${fmtTime(s)}–${fmtTime(e)} ET<br>${esc(p.address)}${p.unit?' #'+esc(p.unit):''}<br><br>${svc.key==='consult' ? "We'll call you at that time. Bring your questions." : "We'll see you there. Everything comes back in one link."}`;
   const z=d=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
-  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Prolific//Booking//EN','BEGIN:VEVENT','UID:'+res.id+'@prolific','DTSTAMP:'+z(new Date()),'DTSTART:'+z(s),'DTEND:'+z(e),'SUMMARY:Prolific shoot','LOCATION:'+(p.address+(p.unit?' #'+p.unit:'')).replace(/[,;]/g,'\\$&'),'DESCRIPTION:Questions? 704-222-9275','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Prolific//Booking//EN','BEGIN:VEVENT','UID:'+res.id+'@prolific','DTSTAMP:'+z(new Date()),'DTSTART:'+z(s),'DTEND:'+z(e),'SUMMARY:'+(svc.key==='consult'?'Prolific consultation':'Prolific shoot'),'LOCATION:'+(p.address+(p.unit?' #'+p.unit:'')).replace(/[,;]/g,'\\$&'),'DESCRIPTION:Questions? 704-222-9275','END:VEVENT','END:VCALENDAR'].join('\r\n');
   $('icsBtn').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
   $('payBtn').classList.toggle('hidden', svc.key!=='listing');
   $('flow').classList.add('hidden'); $('confirm').classList.remove('hidden'); window.scrollTo(0,0);
